@@ -1,0 +1,96 @@
+/**
+ * Primer Proyecto POO
+ * Jose David Mora Loria
+ * 2014004856
+ * Diego Delgado Cerdas
+ * 2013099268
+ * David Diaz
+ * 
+ * Roger Villalobos
+ *
+ * 31/07/2014
+ */
+package alejandriax;
+
+import java.awt.Font;
+
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+
+import alejandriax.vista.VentanaEmergente;
+
+
+/**
+ * @author JoséDavid 31/07/2014
+ */
+@SuppressWarnings("serial")
+public class InformacionProyecto extends VentanaEmergente 
+{
+	private final String VERSION = "VERSION 1.0.0 (Actualizado 17/5/14)";
+
+	public InformacionProyecto() 
+	{
+		super(null, null, false);
+		setSize(880, 561);
+		getContentPane().setLayout(null);
+
+		JLabel NomProyecto = new JLabel("Funes el Memorioso");
+		NomProyecto.setBounds(325, 37, 180, 22);
+		NomProyecto.setHorizontalAlignment(SwingConstants.CENTER);
+		NomProyecto.setFont(new Font("Consolas", Font.BOLD, 18));
+		getContentPane().add(NomProyecto);
+
+		JLabel Version = new JLabel(VERSION);
+		Version.setBounds(248, 70, 350, 22);
+		Version.setHorizontalAlignment(SwingConstants.CENTER);
+		Version.setFont(new Font("Consolas", Font.BOLD, 18));
+		getContentPane().add(Version);
+
+		JLabel Tec = new JLabel("Instituto Tecnol\u00f3gico de Costa Rica");
+		Tec.setBounds(248, 115, 350, 22);
+		Tec.setHorizontalAlignment(SwingConstants.CENTER);
+		Tec.setFont(new Font("Consolas", Font.BOLD, 18));
+		getContentPane().add(Tec);
+
+		JLabel Carrera = new JLabel("Ingenier\u00eda en Computaci\u00f3n");
+		Carrera.setBounds(296, 172, 250, 22);
+		Carrera.setHorizontalAlignment(SwingConstants.CENTER);
+		Carrera.setFont(new Font("Consolas", Font.BOLD, 18));
+		getContentPane().add(Carrera);
+
+		JLabel Curso = new JLabel("Programaci\u00f3n Orientada a Objetos");
+		Curso.setBounds(265, 205, 320, 22);
+		Curso.setHorizontalAlignment(SwingConstants.CENTER);
+		Curso.setFont(new Font("Consolas", Font.BOLD, 18));
+		getContentPane().add(Curso);
+
+		JLabel PrimProyecto = new JLabel("Proyecto Final");
+		PrimProyecto.setBounds(343, 238, 140, 22);
+		PrimProyecto.setHorizontalAlignment(SwingConstants.CENTER);
+		PrimProyecto.setFont(new Font("Consolas", Font.BOLD, 18));
+		getContentPane().add(PrimProyecto);
+
+		JLabel lblJosDavidMora = new JLabel("Jos\u00e9 David Mora Lor\u00eda");
+		lblJosDavidMora.setBounds(315, 345, 210, 22);
+		lblJosDavidMora.setHorizontalAlignment(SwingConstants.CENTER);
+		lblJosDavidMora.setFont(new Font("Consolas", Font.BOLD, 18));
+		getContentPane().add(lblJosDavidMora);
+
+		JLabel lblDiegoDelgado = new JLabel("Diego Delgado Cerdas");
+		lblDiegoDelgado.setBounds(325, 312, 200, 22);
+		lblDiegoDelgado.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDiegoDelgado.setFont(new Font("Consolas", Font.BOLD, 18));
+		getContentPane().add(lblDiegoDelgado);
+
+		JLabel lblGabrielRamirez = new JLabel("Gabriel Ramirez");
+		lblGabrielRamirez.setBounds(353, 378, 150, 22);
+		lblGabrielRamirez.setHorizontalAlignment(SwingConstants.CENTER);
+		lblGabrielRamirez.setFont(new Font("Consolas", Font.BOLD, 18));
+		getContentPane().add(lblGabrielRamirez);
+
+		JLabel Anno = new JLabel("2014");
+		Anno.setBounds(407, 438, 40, 22);
+		Anno.setHorizontalAlignment(SwingConstants.CENTER);
+		Anno.setFont(new Font("Consolas", Font.BOLD, 18));
+		getContentPane().add(Anno);	}
+}
