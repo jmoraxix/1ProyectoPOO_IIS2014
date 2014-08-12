@@ -27,7 +27,7 @@ public class VentanaBase extends JFrame {
 		//Declaracion basica de la venta
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
-		setSize(1366, 768);
+		setSize(1270, 720);
 		setTitle("ALEJANDRIAX");
 //		setExtendedState(MAXIMIZED_BOTH);
 //		Image icon = Toolkit.getDefaultToolkit().getImage(Funes.class.getResource("vista/imagenes/logo_principal_icono.png"));
