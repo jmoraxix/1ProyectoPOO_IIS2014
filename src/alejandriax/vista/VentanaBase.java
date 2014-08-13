@@ -15,6 +15,7 @@ package alejandriax.vista;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import alejandriax.vista.PanelConFondo;
 
 /**
  * @author jmora 31/7/14
