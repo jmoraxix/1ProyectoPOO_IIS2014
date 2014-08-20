@@ -31,7 +31,7 @@ public class VentanaBase extends JFrame {
 		setSize(1270, 720);
 		setTitle("ALEJANDRIAX");
 //		setExtendedState(MAXIMIZED_BOTH);
-//		Image icon = Toolkit.getDefaultToolkit().getImage(Funes.class.getResource("vista/imagenes/logo_principal_icono.png"));
+//		Image icon = Toolkit.getDefaultToolkit().getImage(Alejandriax.class.getResource("vista/imagenes/logo_principal_icono.png"));
 //		setIconImage(icon);
 
 		//Inicializar ventana
