@@ -5,7 +5,7 @@
  * 2013099268
  * Aug 22, 2014
  */
-package alejandriax.modelo.vo;
+package alejandriax.modelo;
 
 import java.awt.image.BufferedImage;
 
@@ -13,13 +13,13 @@ import java.awt.image.BufferedImage;
  * @author Diego Aug 22, 2014
  *
  */
-public class ArticuloVO {
+public class Articulo {
 
 	/**************Variables**************/
 	
 	private String tituloArticulo;
 	private BufferedImage imagen;
-	private CalificacionVO[] calificacion;
+	private Calificacion[] calificacion;
 	private String idArticulo;
 	private int cantidad;
 	
@@ -43,10 +43,10 @@ public class ArticuloVO {
 	public void setImagen(BufferedImage imagen) {
 		this.imagen = imagen;
 	}
-	public CalificacionVO[] getCalificacion() {
+	public Calificacion[] getCalificacion() {
 		return calificacion;
 	}
-	public void setCalificacion(CalificacionVO[] calificacion) {
+	public void setCalificacion(Calificacion[] calificacion) {
 		this.calificacion = calificacion;
 	}
 	public String getIdArticulo() {

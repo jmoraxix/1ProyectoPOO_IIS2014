@@ -5,7 +5,7 @@
  * 2013099268
  * Aug 22, 2014
  */
-package alejandriax.modelo.vo;
+package alejandriax.modelo;
 
 import java.util.Date;
 
@@ -20,7 +20,7 @@ public class Prestamo {
 	private String codigoPrestamo;
 	private Date fechaPrestamo;
 	private String estadoPrestamo;
-	private ArticuloVO idArticulo;
+	private Articulo idArticulo;
 	
 	
 	/**************Getters/Setters**************/
@@ -42,10 +42,10 @@ public class Prestamo {
 	public void setEstadoPrestamo(String estadoPrestamo) {
 		this.estadoPrestamo = estadoPrestamo;
 	}
-	public ArticuloVO getIdArticulo() {
+	public Articulo getIdArticulo() {
 		return idArticulo;
 	}
-	public void setIdArticulo(ArticuloVO idArticulo) {
+	public void setIdArticulo(Articulo idArticulo) {
 		this.idArticulo = idArticulo;
 	}
 

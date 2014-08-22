@@ -1,7 +1,7 @@
-package alejandriax.modelo.vo;
+package alejandriax.modelo;
 
 
-public class CalificacionVO {
+public class Calificacion {
 
 	/****VARIABLES****/
 	private String idArticulo;
@@ -10,7 +10,7 @@ public class CalificacionVO {
 
 	
 	/****CONSTRUCTOR****/
-	public CalificacionVO( String idArticulo, String calificacion, String comentario) {
+	public Calificacion( String idArticulo, String calificacion, String comentario) {
 		this.idArticulo = idArticulo;
 		this.calificacion = calificacion;
 		this.comentario = comentario;

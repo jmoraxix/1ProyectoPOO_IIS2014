@@ -5,13 +5,13 @@
  * 2013099268
  * Aug 22, 2014
  */
-package alejandriax.modelo.vo;
+package alejandriax.modelo;
 
 /**
  * @author Diego Aug 22, 2014
  *
  */
-public class Pelicula extends ArticuloVO {
+public class Pelicula extends Articulo {
 	
 	/**************Variables***************/
 	

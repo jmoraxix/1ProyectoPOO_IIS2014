@@ -6,14 +6,14 @@
  * Aug 22, 2014
  */
 
-package alejandriax.modelo.vo;
+package alejandriax.modelo;
 
 /**
  * @author Diego Aug 22, 2014
  *
  */
 
-public class PersonaVO {
+public class Persona {
 
 
 	
