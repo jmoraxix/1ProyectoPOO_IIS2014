@@ -8,54 +8,58 @@
 package alejandriax.modelo;
 
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 /**
  * @author Diego Aug 22, 2014
- *
+ * 
  */
 public class Articulo {
 
-	/**************Variables**************/
-	
+	/************** Variables **************/
+
 	private String tituloArticulo;
 	private BufferedImage imagen;
-	private Calificacion[] calificacion;
+	private ArrayList<Calificacion> calificaciones;
 	private String idArticulo;
-	private int cantidad;
-	
-	
-	public int getCantidad() {
-		return cantidad;
+
+	/**** Constructor ****/
+	public Articulo(String tituloArticulo, String idArticulo) {
+		this.tituloArticulo = tituloArticulo;
+		this.idArticulo = idArticulo;
 	}
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
-	}
-	/**************Getters/Setters**************/
+
+	/************** Getters/Setters **************/
 	public String getTituloArticulo() {
 		return tituloArticulo;
 	}
+
 	public void setTituloArticulo(String tituloArticulo) {
 		this.tituloArticulo = tituloArticulo;
 	}
+
 	public BufferedImage getImagen() {
 		return imagen;
 	}
+
 	public void setImagen(BufferedImage imagen) {
 		this.imagen = imagen;
 	}
-	public Calificacion[] getCalificacion() {
-		return calificacion;
+
+	public ArrayList<Calificacion> getCalificacion() {
+		return calificaciones;
 	}
-	public void setCalificacion(Calificacion[] calificacion) {
-		this.calificacion = calificacion;
+
+	public void addCalificacion(Calificacion calificaciones) {
+		this.calificaciones.add(calificaciones);
 	}
+
 	public String getIdArticulo() {
 		return idArticulo;
 	}
+
 	public void setIdArticulo(String idArticulo) {
 		this.idArticulo = idArticulo;
 	}
-	
-	
-	
+
 }

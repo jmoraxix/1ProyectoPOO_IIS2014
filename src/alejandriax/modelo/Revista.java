@@ -1,19 +1,23 @@
 /**
+ * Primer Proyecto POO
  * Jose David Mora Loria
  * 2014004856
  * Diego Delgado Cerdas
  * 2013099268
- * Aug 22, 2014
+ * David Diaz
+ * 2014004725
+ * Roger Villalobos
+ * 2014079369
+ * 22/08/2014
  */
 package alejandriax.modelo;
 
 /**
- * @author Diego Aug 22, 2014
- * 
+ * @author JoséDavid 22/08/2014
  */
-public class Libro extends Articulo {
+public class Revista extends Articulo {
 
-	/************** Variables **************/
+	/**** Variables ****/
 	private String autor;
 	private String editorial;
 	private String edicion;
@@ -21,15 +25,17 @@ public class Libro extends Articulo {
 	private String genero;
 
 	/**** Constructor ****/
-	public Libro(String idArticulo, String tituloArticulo, int cantidad,
-			String autor, String editorial, String genero) {
+	public Revista(String tituloArticulo, String idArticulo, String autor,
+			String editorial, String edicion, String idioma, String genero) {
 		super(tituloArticulo, idArticulo);
 		this.autor = autor;
 		this.editorial = editorial;
+		this.edicion = edicion;
+		this.idioma = idioma;
 		this.genero = genero;
 	}
 
-	/************** Getters/Setters ***************/
+	/**** GettersAndSetters ****/
 	public String getAutor() {
 		return autor;
 	}
@@ -69,4 +75,5 @@ public class Libro extends Articulo {
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
+
 }
