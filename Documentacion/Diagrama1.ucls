@@ -1,91 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class-diagram version="1.1.5" icons="true" automaticImage="JPEG" always-add-relationships="false" 
+<class-diagram version="1.1.6" icons="true" automaticImage="JPEG" always-add-relationships="false" 
   generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
-  <class id="1" language="java" name="alejandriax.modelo.vo.CalificacionVO" project="1proyectopoo" 
-    file="/1proyectopoo/src/alejandriax/modelo/vo/CalificacionVO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="137" y="209"/>    
+  <class id="1" language="java" name="alejandriax.modelo.Prestamo" project="PrimerProyectoPOO" 
+    file="/PrimerProyectoPOO/src/alejandriax/modelo/Prestamo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="844" y="185"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="alejandriax.modelo.vo.PersonaVO" project="1proyectopoo" 
-    file="/1proyectopoo/src/alejandriax/modelo/vo/PersonaVO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1094" y="210"/>    
+  <class id="2" language="java" name="alejandriax.modelo.Calificacion" project="PrimerProyectoPOO" 
+    file="/PrimerProyectoPOO/src/alejandriax/modelo/Calificacion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="192" y="195"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="alejandriax.modelo.vo.LibroVO" project="1proyectopoo" 
-    file="/1proyectopoo/src/alejandriax/modelo/vo/LibroVO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="347" y="576"/>    
+  <class id="3" language="java" name="alejandriax.modelo.Pelicula" project="PrimerProyectoPOO" 
+    file="/PrimerProyectoPOO/src/alejandriax/modelo/Pelicula.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="188" y="607"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="alejandriax.modelo.vo.Pelicula" project="1proyectopoo" 
-    file="/1proyectopoo/src/alejandriax/modelo/vo/Pelicula.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="694" y="576"/>    
+  <class id="4" language="java" name="alejandriax.modelo.Libro" project="PrimerProyectoPOO" 
+    file="/PrimerProyectoPOO/src/alejandriax/modelo/Libro.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="446" y="605"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="alejandriax.modelo.vo.ArticuloVO" project="1proyectopoo" 
-    file="/1proyectopoo/src/alejandriax/modelo/vo/ArticuloVO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="513" y="210"/>    
+  <class id="5" language="java" name="alejandriax.modelo.Persona" project="PrimerProyectoPOO" 
+    file="/PrimerProyectoPOO/src/alejandriax/modelo/Persona.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1164" y="257"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="alejandriax.modelo.vo.Prestamo" project="1proyectopoo" 
-    file="/1proyectopoo/src/alejandriax/modelo/vo/Prestamo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="810" y="207"/>    
+  <class id="6" language="java" name="alejandriax.modelo.Articulo" project="PrimerProyectoPOO" 
+    file="/PrimerProyectoPOO/src/alejandriax/modelo/Articulo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="536" y="191"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="7">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="8" name="prestamos"/>      
-      <multiplicity id="9" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="10">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="11" name="idArticulo"/>      
-      <multiplicity id="12" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="13">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <association id="14">    
+  <class id="7" language="java" name="alejandriax.modelo.Revista" project="PrimerProyectoPOO" 
+    file="/PrimerProyectoPOO/src/alejandriax/modelo/Revista.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="730" y="604"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="8">    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="15" name="calificacion"/>      
-      <multiplicity id="16" minimum="0" maximum="2147483647"/>    
+      <attribute id="9" name="prestamos"/>      
+      <multiplicity id="10" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="17">    
+  <generalization id="11">    
     <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="5"/>  
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <generalization id="12">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <association id="13">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="14" name="idArticulo"/>      
+      <multiplicity id="15" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="16">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="6"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     accessors="true" visibility="true">    
