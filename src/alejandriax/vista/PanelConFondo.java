@@ -13,12 +13,16 @@
 
 package alejandriax.vista;
 
+import java.awt.BorderLayout;
 import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import alejandriax.Alejandriax;
@@ -30,6 +34,8 @@ import alejandriax.Alejandriax;
  */
 @SuppressWarnings("serial")
 public class PanelConFondo extends JPanel {
+	
+	private JButton btn;
 
 	//Recibe un string con la URL de la imagen
 	public PanelConFondo(String urlImagen) {
@@ -61,7 +67,17 @@ public class PanelConFondo extends JPanel {
 		}
 
 		setOpaque(isOpaque);
-		setLayout(null);
+		setLayout(new BorderLayout(0, 0));
+
+		btn = new JButton("");
+		btn.setOpaque(false);
+		btn.setContentAreaFilled(false);
+		btn.setBorderPainted(false);
+		add(btn);
+	}
+
+	public JButton getBtn() {
+		return btn;
 	}
 
 }
