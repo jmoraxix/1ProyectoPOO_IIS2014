@@ -15,24 +15,23 @@ package alejandriax;
 
 import java.awt.Font;
 
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+import alejandriax.control.Coordinador;
 import alejandriax.vista.VentanaEmergente;
-
 
 /**
  * @author JoséDavid 31/07/2014
  */
 @SuppressWarnings("serial")
-public class InformacionProyecto extends VentanaEmergente 
-{
+public class InformacionProyecto extends VentanaEmergente {
 	private final String VERSION = "VERSION 1.0.0 (Actualizado 17/5/14)";
+	private static Coordinador coordinador;
 
-	public InformacionProyecto() 
-	{
-		super(null, null, false);
-		setSize(880, 561);
+	public InformacionProyecto(JFrame padre) {
+		super(padre, "Informaci\u00f3n proyecto", 880, 561);
 		getContentPane().setLayout(null);
 
 		JLabel NomProyecto = new JLabel("Funes el Memorioso");
@@ -65,8 +64,8 @@ public class InformacionProyecto extends VentanaEmergente
 		Curso.setFont(new Font("Consolas", Font.BOLD, 18));
 		getContentPane().add(Curso);
 
-		JLabel PrimProyecto = new JLabel("Proyecto Final");
-		PrimProyecto.setBounds(343, 238, 140, 22);
+		JLabel PrimProyecto = new JLabel("Primer Proyecto");
+		PrimProyecto.setBounds(347, 238, 158, 22);
 		PrimProyecto.setHorizontalAlignment(SwingConstants.CENTER);
 		PrimProyecto.setFont(new Font("Consolas", Font.BOLD, 18));
 		getContentPane().add(PrimProyecto);
@@ -93,5 +92,10 @@ public class InformacionProyecto extends VentanaEmergente
 		Anno.setBounds(407, 438, 40, 22);
 		Anno.setHorizontalAlignment(SwingConstants.CENTER);
 		Anno.setFont(new Font("Consolas", Font.BOLD, 18));
-		getContentPane().add(Anno);	}
+		getContentPane().add(Anno);
+	}
+
+	public static void setCoordinador(Coordinador coordinador) {
+		InformacionProyecto.coordinador = coordinador;
+	}
 }
