@@ -14,38 +14,53 @@
 package alejandriax.control;
 
 import alejandriax.modelo.Logica;
-
+import alejandriax.vista.cliente.VentanaPrincipal;
 
 /**
  * @author JoséDavid 31/7/2014
  */
 public class Coordinador {
 
-	/****DECLARACIÓN DE LA INSTANCIA COORDINADOR****/
-	private static Coordinador INSTANCE = new Coordinador();
+	/**** DECLARACIÓN DE LA INSTANCIA COORDINADOR ****/
+	private static final Coordinador INSTANCE = new Coordinador();
+
 	public static Coordinador getINSTANCE() {
 		return INSTANCE;
 	}
 
-	/****DECLARACIÓN DE PANTALLAS****/
-	//Declaración clase logica
+	/**** DECLARACIÓN DE PANTALLAS ****/
+	private static VentanaPrincipal ventanaPrincipal;
+	// Declaración clase logica
 	private static Logica logica;
-	
 
-	/****GETTERS AND SETTERS***/
+	/**** GETTERS AND SETTERS ***/
 	public static Logica getLogica() {
 		return logica;
 	}
+
 	public static void setLogica(Logica logica) {
 		Coordinador.logica = logica;
 	}
-	
-	/****FUNCIONES ENTRE CLASES****/
-	
-	
-	/**MOSTRAR VENTANAS**/
-	
-	/**OCULTAR VENTANAS**/
-	
-	/****FUNCIONES DEL MODELO****/
+
+	public static VentanaPrincipal getVentanaPrincipal() {
+		return ventanaPrincipal;
 	}
+
+	public static void setVentanaPrincipal(VentanaPrincipal ventanaPrincipal) {
+		Coordinador.ventanaPrincipal = ventanaPrincipal;
+	}
+
+	/**** FUNCIONES ENTRE CLASES ****/
+
+	/** MOSTRAR VENTANAS **/
+	public static void mostrarVentanaPrincipal() {
+		ventanaPrincipal.setVisible(true);
+	}
+
+	/** OCULTAR VENTANAS **/
+	public static void ocultarVentanaPrincipal() {
+		ventanaPrincipal.setVisible(false);
+	}
+
+	/**** FUNCIONES DEL MODELO ****/
+}
