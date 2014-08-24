@@ -98,4 +98,8 @@ public class InformacionProyecto extends VentanaEmergente {
 	public static void setCoordinador(Coordinador coordinador) {
 		InformacionProyecto.coordinador = coordinador;
 	}
+
+	public static Coordinador getCoordinador() {
+		return coordinador;
+	}
 }

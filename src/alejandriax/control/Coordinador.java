@@ -13,6 +13,7 @@
 
 package alejandriax.control;
 
+import alejandriax.InformacionProyecto;
 import alejandriax.modelo.Logica;
 import alejandriax.vista.cliente.VentanaPrincipal;
 
@@ -30,6 +31,7 @@ public class Coordinador {
 
 	/**** DECLARACIÓN DE PANTALLAS ****/
 	private static VentanaPrincipal ventanaPrincipal;
+	private static InformacionProyecto informacionProyecto;
 	// Declaración clase logica
 	private static Logica logica;
 
@@ -50,16 +52,32 @@ public class Coordinador {
 		Coordinador.ventanaPrincipal = ventanaPrincipal;
 	}
 
+	public static InformacionProyecto getInformacionProyecto() {
+		return informacionProyecto;
+	}
+
+	public static void setInformacionProyecto(
+			InformacionProyecto informacionProyecto) {
+		Coordinador.informacionProyecto = informacionProyecto;
+	}
+	
 	/**** FUNCIONES ENTRE CLASES ****/
+
 
 	/** MOSTRAR VENTANAS **/
 	public static void mostrarVentanaPrincipal() {
 		ventanaPrincipal.setVisible(true);
 	}
+	public static void mostrarInformacionProyecto(){
+		informacionProyecto.setVisible(true);
+	}
 
 	/** OCULTAR VENTANAS **/
 	public static void ocultarVentanaPrincipal() {
 		ventanaPrincipal.setVisible(false);
+	}
+	public static void ocultarInformacionProyecto(){
+		informacionProyecto.setVisible(false);
 	}
 
 	/**** FUNCIONES DEL MODELO ****/

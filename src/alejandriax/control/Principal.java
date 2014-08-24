@@ -20,6 +20,7 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
+import alejandriax.InformacionProyecto;
 import alejandriax.modelo.Logica;
 import alejandriax.vista.cliente.VentanaPrincipal;
 
@@ -45,6 +46,7 @@ public class Principal {
 
 	/**** DECLARACIÓN DE PANTALLAS ****/
 	private static VentanaPrincipal ventanaPrincipal;
+	private static InformacionProyecto informacionProyecto;
 
 	public static void main(String[] args) {
 		System.gc();
@@ -67,6 +69,7 @@ public class Principal {
 	private static void inicializarVentanas() {
 		/**** INSTANCIACIÓN CLASES ***/
 		ventanaPrincipal = new VentanaPrincipal();
+		informacionProyecto = new InformacionProyecto(ventanaPrincipal);
 		// Coordinador
 		coordinador = Coordinador.getINSTANCE();
 		// Lógica
@@ -74,14 +77,16 @@ public class Principal {
 
 		/**** RELACIONES ENTRE CLASES ****/
 		ventanaPrincipal.setCoordinador(coordinador);
+		informacionProyecto.setCoordinador(coordinador);
 		// Lógica
 		logica.setCoordinador(coordinador);
 
 		/**** RELACIONES CON EL COORDINADOR ****/
+		coordinador.setVentanaPrincipal(ventanaPrincipal);
+		coordinador.setInformacionProyecto(informacionProyecto);
 		// Lógica
 		coordinador.setLogica(logica);
-		coordinador.setVentanaPrincipal(ventanaPrincipal);
-
+		
 		coordinador.mostrarVentanaPrincipal();
 	}
 

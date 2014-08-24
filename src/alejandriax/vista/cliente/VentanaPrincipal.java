@@ -21,6 +21,10 @@ import alejandriax.vista.VentanaBase;
 public class VentanaPrincipal extends VentanaBase {
 
 	private static Coordinador coordinador;
+	
+	public VentanaPrincipal() {
+		
+	}
 
 	public static Coordinador getCoordinador() {
 		return coordinador;
