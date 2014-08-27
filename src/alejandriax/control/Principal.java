@@ -13,38 +13,47 @@
 
 package alejandriax.control;
 
-import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Toolkit;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
 import alejandriax.InformacionProyecto;
+import alejandriax.modelo.Colega;
+import alejandriax.modelo.Estudiante;
+import alejandriax.modelo.Familiar;
+import alejandriax.modelo.Libro;
 import alejandriax.modelo.Logica;
+import alejandriax.modelo.Pelicula;
+import alejandriax.modelo.Revista;
 import alejandriax.vista.cliente.VentanaPrincipal;
 
 /**
- * @author JoséDavid 31/7/2014
+ * @author Josï¿½David 31/7/2014
  */
 public class Principal {
 
 	/**** VARIABLES GLOBALES DEL SISTEMA ****/
-	private static final Dimension tamPantalla = Toolkit.getDefaultToolkit()
-			.getScreenSize();
 	private final static Font letraTitulo1 = new Font("Georgia", Font.BOLD, 34);
 	private final static Font letraTexto1 = new Font("Georgia", Font.PLAIN, 26);
 	private final static Font letraTexto2 = new Font("Georgia", Font.PLAIN, 20);
 	private final static Font letraTexto3 = new Font("Georgia", Font.PLAIN, 16);
+	private static ArrayList<Libro> libros = new ArrayList<Libro>();
+	private static ArrayList<Revista> revistas = new ArrayList<Revista>();
+	private static ArrayList<Pelicula> peliculas = new ArrayList<Pelicula>();
+	private static ArrayList<Colega> colegas = new ArrayList<Colega>();
+	private static ArrayList<Estudiante> estudiantes = new ArrayList<Estudiante>();
+	private static ArrayList<Familiar> familiares = new ArrayList<Familiar>();
 	private static String SESION_USUARIO;
 
-	/**** DECLARACIÓN DE CONTROLADORES ****/
-	// Declaración clase coordinador
+	/**** DECLARACIï¿½N DE CONTROLADORES ****/
+	// Declaraciï¿½n clase coordinador
 	private static Coordinador coordinador;
-	// Declaración clase logica
+	// Declaraciï¿½n clase logica
 	private static Logica logica;
 
-	/**** DECLARACIÓN DE PANTALLAS ****/
+	/**** DECLARACIï¿½N DE PANTALLAS ****/
 	private static VentanaPrincipal ventanaPrincipal;
 	private static InformacionProyecto informacionProyecto;
 
@@ -63,59 +72,120 @@ public class Principal {
 	}
 
 	/**
-	 * Método creado para declarar todas la ventanas y establecer relaciones con
+	 * Mï¿½todo creado para declarar todas la ventanas y establecer relaciones con
 	 * el coordinador
 	 */
+	@SuppressWarnings("static-access")
 	private static void inicializarVentanas() {
-		/**** INSTANCIACIÓN CLASES ***/
+		/**** INSTANCIACIï¿½N CLASES ***/
 		ventanaPrincipal = new VentanaPrincipal();
 		informacionProyecto = new InformacionProyecto(ventanaPrincipal);
 		// Coordinador
 		coordinador = Coordinador.getINSTANCE();
-		// Lógica
+		// Lï¿½gica
 		logica = new Logica();
 
 		/**** RELACIONES ENTRE CLASES ****/
 		ventanaPrincipal.setCoordinador(coordinador);
 		informacionProyecto.setCoordinador(coordinador);
-		// Lógica
+		// Lï¿½gica
 		logica.setCoordinador(coordinador);
 
 		/**** RELACIONES CON EL COORDINADOR ****/
 		coordinador.setVentanaPrincipal(ventanaPrincipal);
 		coordinador.setInformacionProyecto(informacionProyecto);
-		// Lógica
+		// Lï¿½gica
 		coordinador.setLogica(logica);
 		
 		coordinador.mostrarVentanaPrincipal();
 	}
 
 	/**** GETTERS AND SETTERS ****/
-	public static Dimension getTamPantalla() {
-		return tamPantalla;
-	}
-
-	public static Font getLetraTitulo1() {
-		return letraTitulo1;
-	}
-
-	public static Font getLetraTexto1() {
-		return letraTexto1;
-	}
-
-	public static Font getLetraTexto2() {
-		return letraTexto2;
-	}
-
-	public static Font getLetraTexto3() {
-		return letraTexto3;
-	}
-
 	public static String getSESION_USUARIO() {
 		return SESION_USUARIO;
 	}
 
 	public static void setSESION_USUARIO(String sESION_USUARIO) {
 		SESION_USUARIO = sESION_USUARIO;
+	}
+
+	public static ArrayList<Libro> getLibros() {
+		return libros;
+	}
+
+	public static void setLibros(ArrayList<Libro> libros) {
+		Principal.libros = libros;
+	}
+
+	public static ArrayList<Revista> getRevistas() {
+		return revistas;
+	}
+
+	public static void setRevistas(ArrayList<Revista> revistas) {
+		Principal.revistas = revistas;
+	}
+
+	public static ArrayList<Pelicula> getPeliculas() {
+		return peliculas;
+	}
+
+	public static void setPeliculas(ArrayList<Pelicula> peliculas) {
+		Principal.peliculas = peliculas;
+	}
+
+	public static ArrayList<Colega> getColegas() {
+		return colegas;
+	}
+
+	public static void setColegas(ArrayList<Colega> colegas) {
+		Principal.colegas = colegas;
+	}
+
+	public static ArrayList<Estudiante> getEstudiantes() {
+		return estudiantes;
+	}
+
+	public static void setEstudiantes(ArrayList<Estudiante> estudiantes) {
+		Principal.estudiantes = estudiantes;
+	}
+
+	public static ArrayList<Familiar> getFamiliares() {
+		return familiares;
+	}
+
+	public static void setFamiliares(ArrayList<Familiar> familiares) {
+		Principal.familiares = familiares;
+	}
+
+	public static Coordinador getCoordinador() {
+		return coordinador;
+	}
+
+	public static void setCoordinador(Coordinador coordinador) {
+		Principal.coordinador = coordinador;
+	}
+
+	public static Logica getLogica() {
+		return logica;
+	}
+
+	public static void setLogica(Logica logica) {
+		Principal.logica = logica;
+	}
+
+	public static Font getLetratitulo1() {
+		return letraTitulo1;
+	}
+
+	public static Font getLetratexto1() {
+		return letraTexto1;
+	}
+
+	public static Font getLetratexto2() {
+		return letraTexto2;
+	}
+
+	public static Font getLetratexto3() {
+		return letraTexto3;
 	}
 }
