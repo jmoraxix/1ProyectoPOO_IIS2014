@@ -20,6 +20,7 @@ import javax.swing.JPanel;
 import alejandriax.control.Coordinador;
 import alejandriax.control.Principal;
 import alejandriax.vista.PanelConFondo;
+import alejandriax.vista.PanelLateral;
 import alejandriax.vista.VentanaBase;
 
 /**
@@ -30,9 +31,11 @@ public class VentanaPrincipal extends VentanaBase {
 	/****Atributos****/
 	private static Coordinador coordinador;
 	private int posActual = 0; 
+	private PanelLateral panelLateral;
 
 	/****Constructor****/
 	public VentanaPrincipal() {
+		panelLateral = getPanelLateral();
 		inicializarBotones();
 		mostrarContenidoPrestamos();
 	}
@@ -47,7 +50,7 @@ public class VentanaPrincipal extends VentanaBase {
 				mostrarContenidoPrestamos();
 			}
 		});
-		agregarBotonPanelLateral(btnPrestamos);
+		panelLateral.agregarBoton(btnPrestamos);
 
 		//Botón de libros
 		PanelConFondo btnLibros = new PanelConFondo("boton_principal.png", false, "Libros");
@@ -57,7 +60,7 @@ public class VentanaPrincipal extends VentanaBase {
 				mostrarContenidoLibros();
 			}
 		});
-		agregarBotonPanelLateral(btnLibros);
+		panelLateral.agregarBoton(btnLibros);
 
 		//Botón de personas
 		PanelConFondo btnPersonas = new PanelConFondo("boton_principal.png", false, "Personas");
@@ -67,23 +70,23 @@ public class VentanaPrincipal extends VentanaBase {
 				mostrarContenidoPersonas();
 			}
 		});
-		agregarBotonPanelLateral(btnPersonas);
+		panelLateral.agregarBoton(btnPersonas);
 	}
 
 	//Muestra el contenido del PanelPrestamos
 	private void mostrarContenidoPrestamos(){
-		ocultarBotonLateral(posActual);
-		mostrarBotonLateral(0);
+		panelLateral.ocultarBotonLateral(posActual);
+		panelLateral.mostrarBotonLateral(0);
 		posActual = 0;
 	}
 	private void mostrarContenidoLibros(){
-		ocultarBotonLateral(posActual);
-		mostrarBotonLateral(1);
+		panelLateral.ocultarBotonLateral(posActual);
+		panelLateral.mostrarBotonLateral(1);
 		posActual = 1;
 	}
 	private void mostrarContenidoPersonas(){
-		ocultarBotonLateral(posActual);
-		mostrarBotonLateral(2);
+		panelLateral.ocultarBotonLateral(posActual);
+		panelLateral.mostrarBotonLateral(2);
 		posActual = 2;
 	}
 
