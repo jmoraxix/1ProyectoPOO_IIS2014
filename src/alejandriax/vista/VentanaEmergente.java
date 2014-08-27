@@ -28,15 +28,15 @@ import alejandriax.control.Principal;
 
 @SuppressWarnings("serial")
 public class VentanaEmergente extends JDialog {
-	Dimension tamTotal = Principal.getTamPantalla();
+	
 	private JPanel panel;
 
-	public VentanaEmergente(JFrame frame, String title, int largo, int alto) {
+	public VentanaEmergente(JFrame frame, String title) {
 		super(frame, title, true);
 		setModalExclusionType(Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLocationRelativeTo(frame);
-		setSize(largo, alto);
+		setSize(650, 480);
 
 		panel = new PanelConFondo("fondo_emergente.png");
 		setContentPane(panel);

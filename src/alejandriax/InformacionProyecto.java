@@ -23,7 +23,7 @@ import alejandriax.control.Coordinador;
 import alejandriax.vista.VentanaEmergente;
 
 /**
- * @author JoséDavid 31/07/2014
+ * @author Josï¿½David 31/07/2014
  */
 @SuppressWarnings("serial")
 public class InformacionProyecto extends VentanaEmergente {
@@ -31,7 +31,8 @@ public class InformacionProyecto extends VentanaEmergente {
 	private static Coordinador coordinador;
 
 	public InformacionProyecto(JFrame padre) {
-		super(padre, "Informaci\u00f3n proyecto", 880, 561);
+		super(padre, "Informaci\u00f3n proyecto");
+		setSize(880, 561);
 		getContentPane().setLayout(null);
 
 		JLabel NomProyecto = new JLabel("Funes el Memorioso");
