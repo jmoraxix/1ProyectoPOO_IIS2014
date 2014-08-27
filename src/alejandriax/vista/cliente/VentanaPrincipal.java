@@ -43,7 +43,7 @@ public class VentanaPrincipal extends VentanaBase {
 	//Agrega los botones a la barra lateral
 	private void inicializarBotones(){
 		//Botón de prestamos
-		PanelConFondo btnPrestamos = new PanelConFondo("boton_principal.png", false, "Préstamos");
+		PanelConFondo btnPrestamos = new PanelConFondo("boton_principal.png", false, "Pr\u00E9stamos");
 		btnPrestamos.getBtn().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
