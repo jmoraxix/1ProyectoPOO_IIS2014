@@ -26,6 +26,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import alejandriax.Alejandriax;
+import alejandriax.control.Principal;
 
 /**
  * @author jmora 31/7/2014
@@ -67,13 +68,31 @@ public class PanelConFondo extends JPanel {
 		}
 
 		setOpaque(isOpaque);
+	}
+
+	//Recibe un string con la URL de la imagen y si el panel es opaco o no y crea un 
+	//	botón con el título ingresado
+	public PanelConFondo(String urlImagen, boolean isOpaque, String titulo) {
+		setForeground(SystemColor.controlHighlight);
+
+		try {
+			URL imagen = Alejandriax.class.getResource("vista/imagenes/" + urlImagen);
+			BufferedImage img = ImageIO.read(imagen);
+			BgBorder borde = new BgBorder( img );
+			setBorder(borde);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		setOpaque(isOpaque);
 		setLayout(new BorderLayout(0, 0));
 
-		btn = new JButton("");
+		btn = new JButton(titulo);
 		btn.setOpaque(false);
 		btn.setContentAreaFilled(false);
 		btn.setBorderPainted(false);
-		add(btn);
+		btn.setFont(Principal.getLetraTexto2());
+		add(btn, BorderLayout.CENTER);
 	}
 
 	public JButton getBtn() {
