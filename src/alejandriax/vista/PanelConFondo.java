@@ -91,7 +91,7 @@ public class PanelConFondo extends JPanel {
 		btn.setOpaque(false);
 		btn.setContentAreaFilled(false);
 		btn.setBorderPainted(false);
-		btn.setFont(Principal.getLetraTexto2());
+		btn.setFont(Principal.getLetratexto2());
 		add(btn, BorderLayout.CENTER);
 	}
 
