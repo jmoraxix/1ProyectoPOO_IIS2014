@@ -22,6 +22,7 @@ import alejandriax.control.Principal;
 import alejandriax.vista.PanelConFondo;
 import alejandriax.vista.PanelLateral;
 import alejandriax.vista.VentanaBase;
+import alejandriax.vista.VentanaEmergente;
 
 /**
  * @author Jos�David 23/08/2014
@@ -88,6 +89,7 @@ public class VentanaPrincipal extends VentanaBase {
 		panelLateral.ocultarBotonLateral(posActual);
 		panelLateral.mostrarBotonLateral(2);
 		posActual = 2;
+		new VentanaEmergente(this, "Hola").setVisible(true);
 	}
 
 	/****Getters&Setters****/
