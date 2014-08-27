@@ -12,20 +12,27 @@
  */
 package alejandriax.vista.cliente;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
 import alejandriax.control.Coordinador;
 import alejandriax.vista.VentanaBase;
 
 /**
- * @author JoséDavid 23/08/2014
+ * @author Josï¿½David 23/08/2014
  */
 public class VentanaPrincipal extends VentanaBase {
-
-	private static Coordinador coordinador;
 	
+	/****Atributos****/
+	private static Coordinador coordinador;
+//	private JButton btn_
+	
+	/****Constructor****/
 	public VentanaPrincipal() {
 		
 	}
 
+	/****Getters&Setters****/
 	public static Coordinador getCoordinador() {
 		return coordinador;
 	}

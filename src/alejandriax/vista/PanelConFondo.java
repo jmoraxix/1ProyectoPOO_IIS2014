@@ -42,7 +42,7 @@ public class PanelConFondo extends JPanel {
 		setForeground(SystemColor.controlHighlight);
 
 		try {
-			URL imagen = Alejandriax.class.getResource(urlImagen);
+			URL imagen = Alejandriax.class.getResource("vista/imagenes/" + urlImagen);
 			BufferedImage img = ImageIO.read(imagen);
 			BgBorder borde = new BgBorder( img );
 			setBorder(borde);
@@ -58,7 +58,7 @@ public class PanelConFondo extends JPanel {
 		setForeground(SystemColor.controlHighlight);
 
 		try {
-			URL imagen = Alejandriax.class.getResource(urlImagen);
+			URL imagen = Alejandriax.class.getResource("vista/imagenes/" + urlImagen);
 			BufferedImage img = ImageIO.read(imagen);
 			BgBorder borde = new BgBorder( img );
 			setBorder(borde);

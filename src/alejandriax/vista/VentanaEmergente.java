@@ -38,7 +38,7 @@ public class VentanaEmergente extends JDialog {
 		setLocationRelativeTo(frame);
 		setSize(largo, alto);
 
-		panel = new PanelConFondo("vista/imagenes/fondo_emergente.png");
+		panel = new PanelConFondo("fondo_emergente.png");
 		setContentPane(panel);
 	}
 }
