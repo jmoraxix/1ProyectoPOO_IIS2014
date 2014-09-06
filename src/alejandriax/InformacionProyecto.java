@@ -83,11 +83,17 @@ public class InformacionProyecto extends VentanaEmergente {
 		lblDiegoDelgado.setFont(new Font("Consolas", Font.BOLD, 18));
 		getContentPane().add(lblDiegoDelgado);
 
-		JLabel lblGabrielRamirez = new JLabel("Gabriel Ramirez");
-		lblGabrielRamirez.setBounds(353, 378, 150, 22);
-		lblGabrielRamirez.setHorizontalAlignment(SwingConstants.CENTER);
-		lblGabrielRamirez.setFont(new Font("Consolas", Font.BOLD, 18));
-		getContentPane().add(lblGabrielRamirez);
+		JLabel lblRogerVillalobos = new JLabel("R\u00f3ger Villalobos Rodr\u00edguez");
+		lblRogerVillalobos.setBounds(353, 378, 150, 22);
+		lblRogerVillalobos.setHorizontalAlignment(SwingConstants.CENTER);
+		lblRogerVillalobos.setFont(new Font("Consolas", Font.BOLD, 18));
+		getContentPane().add(lblRogerVillalobos);
+		
+		JLabel lblDavidDiaz = new JLabel("David D\u00ed Aguilar");
+		lblDavidDiaz.setBounds(353, 378, 150, 22);
+		lblDavidDiaz.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDavidDiaz.setFont(new Font("Consolas", Font.BOLD, 18));
+		getContentPane().add(lblDavidDiaz);
 
 		JLabel Anno = new JLabel("2014");
 		Anno.setBounds(407, 438, 40, 22);
