@@ -24,7 +24,7 @@ import alejandriax.vista.PanelLateral;
 import alejandriax.vista.VentanaBase;
 
 /**
- * @author Jos�David 23/08/2014
+ * @author Jos\u00E9 David 23/08/2014
  */
 public class VentanaPrincipal extends VentanaBase {
 
