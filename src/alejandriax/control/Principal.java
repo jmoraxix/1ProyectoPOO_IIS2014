@@ -113,48 +113,48 @@ public class Principal {
 		return libros;
 	}
 
-	public static void setLibros(ArrayList<Libro> libros) {
-		Principal.libros = libros;
+	public static void addLibro(Libro libro) {
+		Principal.libros.add(libro);
 	}
 
 	public static ArrayList<Revista> getRevistas() {
 		return revistas;
 	}
 
-	public static void setRevistas(ArrayList<Revista> revistas) {
-		Principal.revistas = revistas;
+	public static void addRevista(Revista revista) {
+		Principal.revistas.add(revista);
 	}
 
 	public static ArrayList<Pelicula> getPeliculas() {
 		return peliculas;
 	}
 
-	public static void setPeliculas(ArrayList<Pelicula> peliculas) {
-		Principal.peliculas = peliculas;
+	public static void addPelicula(Pelicula pelicula) {
+		Principal.peliculas.add(pelicula);
 	}
 
 	public static ArrayList<Colega> getColegas() {
 		return colegas;
 	}
 
-	public static void setColegas(ArrayList<Colega> colegas) {
-		Principal.colegas = colegas;
+	public static void addColega(Colega colega) {
+		Principal.colegas.add(colega);
 	}
 
 	public static ArrayList<Estudiante> getEstudiantes() {
 		return estudiantes;
 	}
 
-	public static void setEstudiantes(ArrayList<Estudiante> estudiantes) {
-		Principal.estudiantes = estudiantes;
+	public static void addEstudiante(Estudiante estudiante) {
+		Principal.estudiantes.add(estudiante);
 	}
 
 	public static ArrayList<Familiar> getFamiliares() {
 		return familiares;
 	}
 
-	public static void setFamiliares(ArrayList<Familiar> familiares) {
-		Principal.familiares = familiares;
+	public static void addFamiliar(Familiar familiar) {
+		Principal.familiares.add(familiar);
 	}
 
 	public static Coordinador getCoordinador() {
