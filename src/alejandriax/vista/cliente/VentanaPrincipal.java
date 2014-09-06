@@ -82,8 +82,8 @@ public class VentanaPrincipal extends VentanaBase {
 		panelLateral.ocultarBotonLateral(posActual);
 		panelLateral.mostrarBotonLateral(0);
 		posActual = 0;
-		for(int i = 0; i<15; i++)
-			panelPrincipal.agregarContenido(new PanelConFondo("error_book.jpg"));
+		for(int i = 0; i<5; i++)
+			panelPrincipal.agregarContenido(new PanelConFondo("error_libro.png", false));
 	}
 	private void mostrarContenidoLibros(){
 		panelLateral.ocultarBotonLateral(posActual);

@@ -19,16 +19,17 @@ public class Prestamo {
 	private String codigoPrestamo;
 	private Date fechaPrestamo;
 	private String estadoPrestamo;
-	private Articulo idArticulo;
+	private Articulo articulo;
 
 	/**** Constructor ****/
 	public Prestamo(String codigoPrestamo, Date fechaPrestamo,
-			String estadoPrestamo, Articulo idArticulo) {
+			String estadoPrestamo, Articulo articulo) {
 		super();
 		this.codigoPrestamo = codigoPrestamo;
 		this.fechaPrestamo = fechaPrestamo;
 		this.estadoPrestamo = estadoPrestamo;
-		this.idArticulo = idArticulo;
+		this.articulo = articulo;
+		this.articulo.prestar();
 	}
 
 	/************** Getters/Setters **************/
@@ -56,12 +57,12 @@ public class Prestamo {
 		this.estadoPrestamo = estadoPrestamo;
 	}
 
-	public Articulo getIdArticulo() {
-		return idArticulo;
+	public Articulo getarticulo() {
+		return articulo;
 	}
 
-	public void setIdArticulo(Articulo idArticulo) {
-		this.idArticulo = idArticulo;
+	public void setarticulo(Articulo articulo) {
+		this.articulo = articulo;
 	}
 
 }
