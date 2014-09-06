@@ -48,7 +48,7 @@ public class PanelPrincipal extends PanelConFondo {
 
 	//Agrega un item al panel principal
 	public void agregarContenido(PanelConFondo panel){
-		if(items_x == 5){
+		if(items_x == 6){
 			items_x = 0;
 			items_y++;
 		}
