@@ -25,7 +25,7 @@ import alejandriax.vista.VentanaBase;
 import alejandriax.vista.VentanaEmergente;
 
 /**
- * @author Jos�David 23/08/2014
+ * @author Jos\u00E9 David 23/08/2014
  */
 public class VentanaPrincipal extends VentanaBase {
 
