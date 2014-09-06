@@ -20,8 +20,9 @@ public class Articulo {
 
 	private String tituloArticulo;
 	private BufferedImage imagen;
-	private ArrayList<Calificacion> calificaciones;
+	private Calificacion calificacion;
 	private String idArticulo;
+	private boolean disponible = true;
 
 	/**** Constructor ****/
 	public Articulo(String tituloArticulo, String idArticulo) {
@@ -46,20 +47,32 @@ public class Articulo {
 		this.imagen = imagen;
 	}
 
-	public ArrayList<Calificacion> getCalificacion() {
-		return calificaciones;
-	}
-
-	public void addCalificacion(Calificacion calificaciones) {
-		this.calificaciones.add(calificaciones);
-	}
-
 	public String getIdArticulo() {
 		return idArticulo;
 	}
 
 	public void setIdArticulo(String idArticulo) {
 		this.idArticulo = idArticulo;
+	}
+
+	public boolean getDisponibilidad() {
+		return disponible;
+	}
+
+	public void prestar() {
+		this.disponible = false;
+	}
+	
+	public void dimitirPrestamo() {
+		this.disponible = true;
+	}
+
+	public Calificacion getCalificacion() {
+		return calificacion;
+	}
+
+	public void setCalificacion(Calificacion calificacion) {
+		this.calificacion = calificacion;
 	}
 
 }
