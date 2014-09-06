@@ -83,7 +83,7 @@ public class VentanaBase extends JFrame {
 		return lateral;
 	}
 
-	protected JPanel getPanelPrincipal() {
+	protected PanelPrincipal getPanelPrincipal() {
 		return principal;
 	}
 }

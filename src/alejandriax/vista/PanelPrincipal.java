@@ -13,7 +13,11 @@
 
 package alejandriax.vista;
 
+import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+
+import alejandriax.control.Principal;
+import alejandriax.modelo.Familiar;
 
 /**
  * @author jmora 27/8/2014
@@ -22,7 +26,7 @@ import java.awt.GridBagLayout;
 public class PanelPrincipal extends PanelConFondo {
 
 	private int ancho, alto;
-	private int items_principal = 0;
+	private int items_x = 0, items_y = 0;
 	
 	public PanelPrincipal(String urlImagen, int ancho, int alto) {
 		//Inicializa el panel
@@ -43,17 +47,18 @@ public class PanelPrincipal extends PanelConFondo {
 	}
 
 	//Agrega un item al panel principal
-	protected void agregarContenidoPanelPrincipal(PanelConFondo panel){
-//		//Agrega boton al panel
-//		GridBagConstraints gbc = new GridBagConstraints();
-//		gbc.anchor = GridBagConstraints.WEST;
-//		gbc.fill = GridBagConstraints.BOTH;
-//		gbc.gridx = 1;
-//		gbc.gridy = items_lateral;
-//		lateral.add(panel, gbc);
-//
-//		//Incrementa el número de botones
-//		items_lateral++;
+	public void agregarContenido(PanelConFondo panel){
+		if(items_x == 5){
+			items_x = 0;
+			items_y++;
+		}
+		//Agrega boton al panel
+		GridBagConstraints gbc = new GridBagConstraints();
+		gbc.anchor = GridBagConstraints.WEST;
+		gbc.fill = GridBagConstraints.BOTH;
+		gbc.gridx = items_x++;
+		gbc.gridy = items_y;
+		add(panel, gbc);
 	}
 
 }

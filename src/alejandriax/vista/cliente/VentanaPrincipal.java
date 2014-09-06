@@ -21,6 +21,7 @@ import alejandriax.control.Coordinador;
 import alejandriax.control.Principal;
 import alejandriax.vista.PanelConFondo;
 import alejandriax.vista.PanelLateral;
+import alejandriax.vista.PanelPrincipal;
 import alejandriax.vista.VentanaBase;
 import alejandriax.vista.VentanaEmergente;
 
@@ -33,10 +34,12 @@ public class VentanaPrincipal extends VentanaBase {
 	private static Coordinador coordinador;
 	private int posActual = 0; 
 	private PanelLateral panelLateral;
+	private PanelPrincipal panelPrincipal;
 
 	/****Constructor****/
 	public VentanaPrincipal() {
 		panelLateral = getPanelLateral();
+		panelPrincipal = getPanelPrincipal();
 		inicializarBotones();
 		mostrarContenidoPrestamos();
 	}
@@ -79,6 +82,7 @@ public class VentanaPrincipal extends VentanaBase {
 		panelLateral.ocultarBotonLateral(posActual);
 		panelLateral.mostrarBotonLateral(0);
 		posActual = 0;
+//		panelPrincipal.agregarContenido(panel);
 	}
 	private void mostrarContenidoLibros(){
 		panelLateral.ocultarBotonLateral(posActual);
