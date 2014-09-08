@@ -18,8 +18,6 @@ import java.awt.GridBagLayout;
 import java.awt.Image;
 import java.awt.Insets;
 import java.awt.Toolkit;
-import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -39,6 +37,9 @@ public class VentanaBase extends JFrame {
 
 	public VentanaBase() {
 		// Declaracion basica de la venta
+		this.setJMenuBar(new BarraMenu(this));
+		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(ancho_lateral + ancho_principal, alto);
 		setTitle("ALEJANDRIAX");

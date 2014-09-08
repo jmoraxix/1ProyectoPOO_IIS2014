@@ -27,7 +27,7 @@ import alejandriax.control.Coordinador;
  */
 public class BarraMenu extends JMenuBar{
 	
-	private JMenu archivo, prestamos, personas, registro;
+	private JMenu archivo, prestamos, personas, registrarLibro;
 	private JMenuItem mInfo, mSalir, mCargarLibros, mCargarPersonas , mcrearPrestamo,
 						mCrearPersona, mCrearLibro;
 	
@@ -58,7 +58,8 @@ public class BarraMenu extends JMenuBar{
 			}
 		});
 		
-		mCargarLibros = new JMenuItem("Cargar libros                         ");
+		mCargarLibros = new JMenuItem("Cargar Libros");
+		mCargarLibros.setMnemonic('L');
 		mCargarLibros.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
@@ -66,9 +67,70 @@ public class BarraMenu extends JMenuBar{
 			}
 		});
 		
-		archivo.add(mntmAcercaDeNosotros);
+		mCargarPersonas = new JMenuItem("Cargar Personas");
+		mCargarPersonas.setMnemonic('P');
+		mCargarPersonas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		
 		archivo.add(mCargarLibros);
+		archivo.add(mCargarPersonas);
+		archivo.add(mntmAcercaDeNosotros);
 		archivo.add(mSalir);
+		
+		
+		
+		prestamos = new JMenu("Préstamos                         ");
+		prestamos.setMnemonic('P');
+		this.add(prestamos);
+		
+		mcrearPrestamo = new JMenuItem("Crear Préstamo");
+		mcrearPrestamo.setMnemonic('C');
+		mcrearPrestamo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		
+		prestamos.add(mcrearPrestamo);
+		
+		
+		
+		personas = new JMenu("Añadir Persona                         ");
+		personas.setMnemonic('N');
+		this.add(personas);
+		
+		mCrearPersona = new JMenuItem("Crear Persona");
+		mCrearPersona.setMnemonic('C');
+		mCrearPersona.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		personas.add(mCrearPersona);
+		
+		
+		registrarLibro =  new JMenu("Registrar Libro                         ");
+		registrarLibro.setMnemonic('R');
+		this.add(registrarLibro);
+		
+		mCrearLibro = new JMenuItem("Crear Libro");
+		mCrearLibro.setMnemonic('L');
+		mCrearLibro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		registrarLibro.add(mCrearLibro);
 	}
 	
 
