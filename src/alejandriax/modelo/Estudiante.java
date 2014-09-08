@@ -15,9 +15,11 @@ public class Estudiante extends Persona {
 	 * @param primerApellido
 	 * @param segundoApellido
 	 */
-	public Estudiante(String numeroCedula, String nombre,
-			String primerApellido, String segundoApellido) {
+	public Estudiante(String numeroCedula, String nombre,String primerApellido,
+			String segundoApellido) {
 		super(numeroCedula, nombre, primerApellido, segundoApellido);
+		setTelefono(telefono);
+		setCorreoElectronico(correoElectronico);
 	}
 
 }

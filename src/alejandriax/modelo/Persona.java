@@ -22,8 +22,8 @@ public class Persona {
 	private String nombre;
 	private String primerApellido;
 	private String segundoApellido;
-	private String telefono;
-	private String correoElectronico;
+	protected String telefono;
+	protected String correoElectronico;
 	private ArrayList<Prestamo> prestamos;
 
 	/**** Constructor ****/

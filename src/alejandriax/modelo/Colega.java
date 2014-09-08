@@ -27,6 +27,8 @@ public class Colega extends Persona {
 	public Colega(String numeroCedula, String nombre, String primerApellido,
 			String segundoApellido) {
 		super(numeroCedula, nombre, primerApellido, segundoApellido);
+		setTelefono(telefono);
+		setCorreoElectronico(correoElectronico);
 	}
 
 }
