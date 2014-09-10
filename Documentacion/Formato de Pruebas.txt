@@ -1,0 +1,13 @@
+familiares.txt
+numeroCedula;nombre;primerApellido;segundoApellido;telefono;correoElectronico
+estudiantes.txt
+numeroCedula;nombre;primerApellido;segundoApellido;telefono;correoElectronico
+colegas.txt
+numeroCedula;nombre;primerApellido;segundoApellido;telefono;correoElectronico
+
+libros.txt
+idArticulo;tituloArticulo;cantidad;autor;editorial;genero;edicion;[idioma]
+revistas.txt
+idArticulo;tituloArticulo;cantidad;autor;editorial;genero;edicion;idioma
+peliculas.txt
+idArticulo;tituloArticulo;cantidad;director;duracion;genero;anio;[protagonista]
