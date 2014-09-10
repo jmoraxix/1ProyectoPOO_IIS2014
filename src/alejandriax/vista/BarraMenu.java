@@ -19,6 +19,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 import alejandriax.control.Coordinador;
+import alejandriax.control.Lector;
+import alejandriax.control.Principal;
 
 /**
  * @author xDiegoxD 06/09/2014
@@ -35,6 +37,7 @@ public class BarraMenu extends JMenuBar{
 	public final static Font letraTexto1 = new Font("Georgia", Font.PLAIN, 28);
 	public final static Font letraTexto2 = new Font("Georgia", Font.PLAIN, 22);
 	private JFrame frame;
+	private Lector nuevoLector = new Lector();
 	
 	public BarraMenu(final JFrame frame){
 		this.frame = frame;
@@ -63,7 +66,7 @@ public class BarraMenu extends JMenuBar{
 		mCargarLibros.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				
+				nuevoLector.cargarLibros(Principal.getLibros());
 			}
 		});
 		
@@ -72,7 +75,7 @@ public class BarraMenu extends JMenuBar{
 		mCargarPersonas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				
+				nuevoLector.cargarEstudiantes(Principal.getEstudiantes());
 			}
 		});
 		
