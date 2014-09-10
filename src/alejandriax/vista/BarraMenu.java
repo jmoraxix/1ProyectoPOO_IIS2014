@@ -20,7 +20,6 @@ import javax.swing.JMenuItem;
 
 import alejandriax.control.Coordinador;
 import alejandriax.control.Lector;
-import alejandriax.control.Principal;
 
 /**
  * @author xDiegoxD 06/09/2014
@@ -89,11 +88,11 @@ public class BarraMenu extends JMenuBar{
 		
 		
 		
-		prestamos = new JMenu("Préstamos                         ");
+		prestamos = new JMenu("Pr\u00E9stamos                         ");
 		prestamos.setMnemonic('P');
 		this.add(prestamos);
 		
-		mcrearPrestamo = new JMenuItem("Crear Préstamo");
+		mcrearPrestamo = new JMenuItem("Crear Pr\u00E9stamo");
 		mcrearPrestamo.setMnemonic('C');
 		mcrearPrestamo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
