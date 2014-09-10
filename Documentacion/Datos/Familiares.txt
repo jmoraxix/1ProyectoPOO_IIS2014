@@ -1,0 +1,5 @@
+102534645;Kevin;Chavez;Jimenez;83241101;kecha@hotmail.com
+113745722;Tanya;Solano;Cambronero;82133241;tanya@yahoo.com
+109921121;Maria;Rosales;Hidalgo;71235223;marohi@hotmail.com
+113462439;Dave;Zuñiga;Castro;84623123;dazu@gmail.com
+105343215;Luis;Vasquez;Sandoval;89398333;luisva@hotmail.com
