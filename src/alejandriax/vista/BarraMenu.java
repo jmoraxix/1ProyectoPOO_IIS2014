@@ -66,7 +66,7 @@ public class BarraMenu extends JMenuBar{
 		mCargarLibros.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				nuevoLector.cargarLibros(Principal.getLibros());
+				nuevoLector.cargarLibros();
 			}
 		});
 		
@@ -75,7 +75,9 @@ public class BarraMenu extends JMenuBar{
 		mCargarPersonas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				nuevoLector.cargarEstudiantes(Principal.getEstudiantes());
+				nuevoLector.cargarEstudiantes();
+				nuevoLector.cargarFamiliares();
+				nuevoLector.cargarColegas();
 			}
 		});
 		
