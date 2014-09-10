@@ -22,10 +22,11 @@ public class Articulo {
 	private BufferedImage imagen;
 	private Calificacion calificacion;
 	private String idArticulo;
+	protected int cantidad;
 	private boolean disponible = true;
 
 	/**** Constructor ****/
-	public Articulo(String tituloArticulo, String idArticulo) {
+	public Articulo(String tituloArticulo, String idArticulo, int cantidad) {
 		this.tituloArticulo = tituloArticulo;
 		this.idArticulo = idArticulo;
 	}
