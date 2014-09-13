@@ -1,0 +1,5 @@
+pel000;Mi vecino Totoro;Hayao Miyazaki;86;Animación;1988;mi_vecino_totoro.jpg
+pel001;Paprika;Satoshi Kon;90;ciencia ficción;2006;paprika.jpg
+pel002;El Increible Castillo vagabundo;Hayao Miyazaki;119;Animación;2004;castillo_vagabundo.jpg
+pel003;Wolf Children;Mamoru Hosoda;117;Animación;2012;wolfchildren.jpg
+pel004;Death Note Lieve action;Shusuke Kaneko;141;Thriller;2006;deathnoteliveaction.jpg;Fujiwara Tatsuya
