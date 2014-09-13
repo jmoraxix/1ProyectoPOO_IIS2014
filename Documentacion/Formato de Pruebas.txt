@@ -11,3 +11,6 @@ revistas.txt
 idArticulo;tituloArticulo;autor;editorial;genero;nombrePortada;[edicion];[idioma]
 peliculas.txt
 idArticulo;tituloArticulo;director;duracion;genero;anio;nombrePortada;[protagonista]
+
+prestamos.txt
+codigoPrestamo;fechaPrestamo;estadoPrestamo;articulo
