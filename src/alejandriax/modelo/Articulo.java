@@ -19,7 +19,6 @@ public class Articulo {
 	private String imagen;
 	private Calificacion calificacion;
 	private String idArticulo;
-	protected int cantidad;
 	private boolean disponible = true;
 
 	/**** Constructor ****/
@@ -65,11 +64,11 @@ public class Articulo {
 		this.calificacion = calificacion;
 	}
 
-	private String getImagen() {
+	protected String getImagen() {
 		return imagen;
 	}
 
-	private void setImagen(String imagen) {
+	protected void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
 
