@@ -7,9 +7,6 @@
  */
 package alejandriax.modelo;
 
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-
 /**
  * @author Diego Aug 22, 2014
  * 
@@ -19,7 +16,7 @@ public class Articulo {
 	/************** Variables **************/
 
 	private String tituloArticulo;
-	private BufferedImage imagen;
+	private String imagen;
 	private Calificacion calificacion;
 	private String idArticulo;
 	protected int cantidad;
@@ -40,14 +37,6 @@ public class Articulo {
 		this.tituloArticulo = tituloArticulo;
 	}
 
-	public BufferedImage getImagen() {
-		return imagen;
-	}
-
-	public void setImagen(BufferedImage imagen) {
-		this.imagen = imagen;
-	}
-
 	public String getIdArticulo() {
 		return idArticulo;
 	}
@@ -63,7 +52,7 @@ public class Articulo {
 	public void prestar() {
 		this.disponible = false;
 	}
-	
+
 	public void dimitirPrestamo() {
 		this.disponible = true;
 	}
@@ -74,6 +63,14 @@ public class Articulo {
 
 	public void setCalificacion(Calificacion calificacion) {
 		this.calificacion = calificacion;
+	}
+
+	private String getImagen() {
+		return imagen;
+	}
+
+	private void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 
 }
