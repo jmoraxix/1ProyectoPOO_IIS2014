@@ -64,11 +64,11 @@ public class Articulo {
 		this.calificacion = calificacion;
 	}
 
-	protected String getImagen() {
+	public String getImagen() {
 		return imagen;
 	}
 
-	protected void setImagen(String imagen) {
+	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
 
