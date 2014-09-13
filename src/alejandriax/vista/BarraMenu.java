@@ -106,7 +106,7 @@ public class BarraMenu extends JMenuBar{
 		
 		
 		
-		personas = new JMenu("Añadir Persona                         ");
+		personas = new JMenu("Persona                         ");
 		personas.setMnemonic('N');
 		this.add(personas);
 		
@@ -122,7 +122,7 @@ public class BarraMenu extends JMenuBar{
 		personas.add(mCrearPersona);
 		
 		
-		registrarLibro =  new JMenu("Registrar Libro                         ");
+		registrarLibro =  new JMenu("Libro                         ");
 		registrarLibro.setMnemonic('R');
 		this.add(registrarLibro);
 		

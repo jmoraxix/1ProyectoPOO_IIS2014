@@ -18,27 +18,24 @@ package alejandriax.vista;
  *
  */
 import java.awt.Dialog;
-import java.awt.Dimension;
 
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
-import alejandriax.control.Principal;
 
 @SuppressWarnings("serial")
 public class VentanaEmergente extends JDialog {
 	
 	private JPanel panel;
 
-	public VentanaEmergente(JFrame frame, String title) {
+	public VentanaEmergente(JFrame frame, String title, String fondo) {
 		super(frame, title, true);
 		setModalExclusionType(Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLocationRelativeTo(frame);
 		setSize(650, 480);
 
-		panel = new PanelConFondo("fondo_emergente.png");
+		panel = new PanelConFondo(fondo);
 		setContentPane(panel);
 	}
 }
