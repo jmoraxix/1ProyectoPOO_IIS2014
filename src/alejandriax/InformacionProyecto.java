@@ -31,18 +31,18 @@ public class InformacionProyecto extends VentanaEmergente {
 	private static Coordinador coordinador;
 
 	public InformacionProyecto(JFrame padre) {
-		super(padre, "Informaci\u00f3n proyecto");
+		super(padre, "Informaci\u00f3n proyecto","fondo_emergente.png" );
 		setSize(880, 561);
 		getContentPane().setLayout(null);
 
-		JLabel NomProyecto = new JLabel("Funes el Memorioso");
-		NomProyecto.setBounds(325, 37, 180, 22);
+		JLabel NomProyecto = new JLabel("Biblioteca Alejandriax");
+		NomProyecto.setBounds(325, 37, 221, 22);
 		NomProyecto.setHorizontalAlignment(SwingConstants.CENTER);
 		NomProyecto.setFont(new Font("Consolas", Font.BOLD, 18));
 		getContentPane().add(NomProyecto);
 
-		JLabel Version = new JLabel(VERSION);
-		Version.setBounds(248, 70, 350, 22);
+		JLabel Version = new JLabel("VERSION 1.0.0 (Actualizado 14/07/14)");
+		Version.setBounds(248, 70, 360, 22);
 		Version.setHorizontalAlignment(SwingConstants.CENTER);
 		Version.setFont(new Font("Consolas", Font.BOLD, 18));
 		getContentPane().add(Version);
@@ -84,13 +84,13 @@ public class InformacionProyecto extends VentanaEmergente {
 		getContentPane().add(lblDiegoDelgado);
 
 		JLabel lblRogerVillalobos = new JLabel("R\u00f3ger Villalobos Rodr\u00edguez");
-		lblRogerVillalobos.setBounds(353, 378, 150, 22);
+		lblRogerVillalobos.setBounds(296, 405, 269, 22);
 		lblRogerVillalobos.setHorizontalAlignment(SwingConstants.CENTER);
 		lblRogerVillalobos.setFont(new Font("Consolas", Font.BOLD, 18));
 		getContentPane().add(lblRogerVillalobos);
 		
-		JLabel lblDavidDiaz = new JLabel("David D\u00ed Aguilar");
-		lblDavidDiaz.setBounds(353, 378, 150, 22);
+		JLabel lblDavidDiaz = new JLabel("David D\u00EDaz Aguilar");
+		lblDavidDiaz.setBounds(325, 378, 200, 22);
 		lblDavidDiaz.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDavidDiaz.setFont(new Font("Consolas", Font.BOLD, 18));
 		getContentPane().add(lblDavidDiaz);
