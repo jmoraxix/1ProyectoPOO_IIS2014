@@ -24,8 +24,8 @@ public class Pelicula extends Articulo {
 
 	/**** Constructor ****/
 	public Pelicula(String tituloArticulo, String idArticulo, int duracion,
-			int cantidad, String director, int anio, String genero) {
-		super(tituloArticulo, idArticulo, cantidad);
+			String director, int anio, String genero) {
+		super(tituloArticulo, idArticulo);
 		this.duracion = duracion;
 		this.director = director;
 		this.anio = anio;

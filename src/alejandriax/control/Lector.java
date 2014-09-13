@@ -99,7 +99,14 @@ public class Lector {
 			linea = bR.readLine();
 			while(linea!=null){
 				salida = linea.split(";");
-				Libro nueva = new Libro(salida[0], salida[1], Integer.parseInt(salida[2]), salida[3], salida[4], salida[5]);
+				Libro nueva = new Libro(salida[0], salida[1], salida[2], salida[3], salida[4]);
+				nueva.setImagen(salida[5]);
+				if(salida.length == 7){
+					nueva.setEdicion(salida[6]);
+				} else if(salida.length == 8){
+					nueva.setEdicion(salida[6]);
+					nueva.setIdioma(salida[7]);
+				}
 				Principal.addLibro(nueva);
 				linea = bR.readLine();
 			}

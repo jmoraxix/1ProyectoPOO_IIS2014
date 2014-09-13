@@ -21,9 +21,9 @@ public class Libro extends Articulo {
 	private String genero;
 
 	/**** Constructor ****/
-	public Libro(String idArticulo, String tituloArticulo, int cantidad,
+	public Libro(String idArticulo, String tituloArticulo,
 			String autor, String editorial, String genero) {
-		super(tituloArticulo, idArticulo,  cantidad);
+		super(tituloArticulo, idArticulo);
 		this.autor = autor;
 		this.editorial = editorial;
 		this.genero = genero;

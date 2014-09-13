@@ -22,7 +22,7 @@ public class Articulo {
 	private boolean disponible = true;
 
 	/**** Constructor ****/
-	public Articulo(String tituloArticulo, String idArticulo, int cantidad) {
+	public Articulo(String tituloArticulo, String idArticulo) {
 		this.tituloArticulo = tituloArticulo;
 		this.idArticulo = idArticulo;
 	}

@@ -25,10 +25,10 @@ public class Revista extends Articulo {
 	private String genero;
 
 	/**** Constructor ****/
-	public Revista(String tituloArticulo, String idArticulo, int cantidad,
+	public Revista(String tituloArticulo, String idArticulo,
 			String autor,String editorial, String edicion, 
 			String idioma, String genero) {
-		super(tituloArticulo, idArticulo, cantidad);
+		super(tituloArticulo, idArticulo);
 		this.autor = autor;
 		this.editorial = editorial;
 		this.edicion = edicion;
