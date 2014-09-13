@@ -1,4 +1,4 @@
-lib000;Cancion de hielo y fuego;1;Gerge R.R Martin;Gigamesh;Novela;games_of_thrones;2002;Español
-lib001;Harry Potter y la Piedra Filosofal;8;J.K Rowling;MC;Novela;harry_potter_y_la_piedra_filosofal;2000;
-lib002;El Señor de los anillos I: La comunidad del anillo;4;J.R.R.Tolkien;Minotauro;Novela;lord_of_the_rings;1977;Ingles
-lib003;Dispara, yo ya estoy muerto;6;Julia Navarro;Plaza and Janes;Novela;dispara_yo_ya_estoy_muerto;;Español
+lib000;Cancion de hielo y fuego;1;Gerge R.R Martin;Gigamesh;Novela;games_of_thrones.jpg;2002;Español
+lib001;Harry Potter y la Piedra Filosofal;8;J.K Rowling;MC;Novela;harry_potter_y_la_piedra_filosofal.jpg;2000;
+lib002;El Señor de los anillos I: La comunidad del anillo;4;J.R.R.Tolkien;Minotauro;Novela;lord_of_the_rings.jpg;1977;Ingles
+lib003;Dispara, yo ya estoy muerto;6;Julia Navarro;Plaza and Janes;Novela;dispara_yo_ya_estoy_muerto.jpg;;Español
