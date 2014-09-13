@@ -15,10 +15,7 @@ package alejandriax.vista.cliente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JPanel;
-
 import alejandriax.control.Coordinador;
-import alejandriax.control.Principal;
 import alejandriax.vista.PanelConFondo;
 import alejandriax.vista.PanelLateral;
 import alejandriax.vista.PanelPrincipal;
@@ -30,13 +27,13 @@ import alejandriax.vista.VentanaEmergente;
  */
 public class VentanaPrincipal extends VentanaBase {
 
-	/****Atributos****/
+	/**** Atributos ****/
 	private static Coordinador coordinador;
-	private int posActual = 0; 
+	private int posActual = 0;
 	private PanelLateral panelLateral;
 	private PanelPrincipal panelPrincipal;
 
-	/****Constructor****/
+	/**** Constructor ****/
 	public VentanaPrincipal() {
 		panelLateral = getPanelLateral();
 		panelPrincipal = getPanelPrincipal();
@@ -44,66 +41,86 @@ public class VentanaPrincipal extends VentanaBase {
 		mostrarContenidoPrestamos();
 	}
 
-	//Agrega los botones a la barra lateral
-	private void inicializarBotones(){
-		//Botón de prestamos
-		PanelConFondo btnPrestamos = new PanelConFondo("boton_principal.png", false, "Pr\u00E9stamos");
+	// Agrega los botones a la barra lateral
+	private void inicializarBotones() {
+		// Botón de prestamos
+		PanelConFondo btnPrestamos = new PanelConFondo("boton_principal.png",
+				false, "Pr\u00E9stamos");
 		btnPrestamos.getBtn().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				mostrarContenidoPrestamos();
+				if (getPosActual() != 0)
+					mostrarContenidoPrestamos();
 			}
 		});
 		panelLateral.agregarBoton(btnPrestamos);
 
-		//Botón de libros
-		PanelConFondo btnLibros = new PanelConFondo("boton_principal.png", false, "Libros");
+		// Botón de libros
+		PanelConFondo btnLibros = new PanelConFondo("boton_principal.png",
+				false, "Libros");
 		btnLibros.getBtn().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				mostrarContenidoLibros();
+				if (getPosActual() != 1)
+					mostrarContenidoLibros();
 			}
 		});
 		panelLateral.agregarBoton(btnLibros);
 
-		//Botón de personas
-		PanelConFondo btnPersonas = new PanelConFondo("boton_principal.png", false, "Personas");
+		// Botón de personas
+		PanelConFondo btnPersonas = new PanelConFondo("boton_principal.png",
+				false, "Personas");
 		btnPersonas.getBtn().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				mostrarContenidoPersonas();
+				if (getPosActual() != 2)
+					mostrarContenidoPersonas();
 			}
 		});
 		panelLateral.agregarBoton(btnPersonas);
 	}
 
-	//Muestra el contenido del PanelPrestamos
-	private void mostrarContenidoPrestamos(){
+	// Muestra el contenido del PanelPrestamos
+	private void mostrarContenidoPrestamos() {
+		panelPrincipal.limpiarPanel();
 		panelLateral.ocultarBotonLateral(posActual);
 		panelLateral.mostrarBotonLateral(0);
 		posActual = 0;
-		for(int i = 0; i<5; i++)
-			panelPrincipal.agregarContenido(new PanelConFondo("error_libro.png", false));
+		for (int i = 0; i < 4; i++)
+			panelPrincipal.agregarContenido(new PanelConFondo(
+					"error_libro.png", false));
 	}
-	private void mostrarContenidoLibros(){
+
+	private void mostrarContenidoLibros() {
+		panelPrincipal.limpiarPanel();
 		panelLateral.ocultarBotonLateral(posActual);
 		panelLateral.mostrarBotonLateral(1);
 		posActual = 1;
 	}
-	private void mostrarContenidoPersonas(){
+
+	private void mostrarContenidoPersonas() {
+		panelPrincipal.limpiarPanel();
 		panelLateral.ocultarBotonLateral(posActual);
 		panelLateral.mostrarBotonLateral(2);
 		posActual = 2;
 		new VentanaEmergente(this, "Hola").setVisible(true);
 	}
 
-	/****Getters&Setters****/
+	/**** Getters&Setters ****/
 	public static Coordinador getCoordinador() {
 		return coordinador;
 	}
 
 	public static void setCoordinador(Coordinador coordinador) {
 		VentanaPrincipal.coordinador = coordinador;
+	}
+
+	private int getPosActual() {
+		return posActual;
+	}
+
+	private void setPosActual(int posActual) {
+		this.posActual = posActual;
 	}
 
 }
