@@ -30,8 +30,8 @@ public class VentanaLibro extends VentanaEmergente {
 	 * @param frame
 	 * @param title
 	 */
-	public VentanaLibro(JFrame frame, String title, Libro libro) {
-		super(frame, title);
+	public VentanaLibro(JFrame frame, String title, Libro libro, String fondo) {
+		super(frame, title, fondo);
 		this.libro = libro;
 		getContentPane().setLayout(null);
 

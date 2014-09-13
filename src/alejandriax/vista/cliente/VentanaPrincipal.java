@@ -14,13 +14,16 @@ package alejandriax.vista.cliente;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import alejandriax.control.Coordinador;
+import alejandriax.control.Principal;
+import alejandriax.modelo.Persona;
+import alejandriax.modelo.Prestamo;
 import alejandriax.vista.PanelConFondo;
 import alejandriax.vista.PanelLateral;
 import alejandriax.vista.PanelPrincipal;
 import alejandriax.vista.VentanaBase;
-import alejandriax.vista.VentanaEmergente;
 
 /**
  * @author Jos\u00E9 David 23/08/2014
@@ -86,9 +89,21 @@ public class VentanaPrincipal extends VentanaBase {
 		panelLateral.ocultarBotonLateral(posActual);
 		panelLateral.mostrarBotonLateral(0);
 		posActual = 0;
-		for (int i = 0; i < 5; i++)
-			panelPrincipal.agregarContenido(new PanelConFondo(
-					"error_libro.png", false));
+		for (Persona persona : Principal.getPersonas()) {
+			ArrayList<Prestamo> prestamos = persona.getPrestamos();
+			for (Prestamo prestamo : prestamos) {
+				PanelConFondo panel = new PanelConFondo("portadas/"
+						+ prestamo.getArticulo().getImagen(), false);
+				System.out.println(prestamo.getArticulo().getTituloArticulo());
+				panel.getBtn().addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// new
+					}
+				});
+				panelPrincipal.agregarContenido(panel);
+			}
+		}
 	}
 
 	private void mostrarContenidoLibros() {
@@ -103,7 +118,6 @@ public class VentanaPrincipal extends VentanaBase {
 		panelLateral.ocultarBotonLateral(posActual);
 		panelLateral.mostrarBotonLateral(2);
 		posActual = 2;
-		new VentanaEmergente(this, "Hola").setVisible(true);
 	}
 
 	/**** Getters&Setters ****/
