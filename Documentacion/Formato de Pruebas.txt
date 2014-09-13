@@ -6,8 +6,8 @@ colegas.txt
 numeroCedula;nombre;primerApellido;segundoApellido;telefono;correoElectronico
 
 libros.txt
-idArticulo;tituloArticulo;cantidad;autor;editorial;genero;edicion;[idioma]
+idArticulo;tituloArticulo;cantidad;autor;editorial;genero;nombrePortada;[edicion];[idioma]
 revistas.txt
-idArticulo;tituloArticulo;cantidad;autor;editorial;genero;edicion;idioma
+idArticulo;tituloArticulo;cantidad;autor;editorial;genero;nombrePortada;[edicion];[idioma]
 peliculas.txt
-idArticulo;tituloArticulo;cantidad;director;duracion;genero;anio;[protagonista]
+idArticulo;tituloArticulo;cantidad;director;duracion;genero;anio;nombrePortada;[protagonista]
