@@ -35,7 +35,11 @@ public class Lector {
 			while(linea!=null){
 				salida = linea.split(";");
 				Estudiante nueva = new Estudiante(salida[0], salida[1], salida[2], salida[3]);
-				Principal.addEstudiante(nueva);
+				nueva.setTelefono(salida[4]);
+				nueva.setCorreoElectronico(salida[5]);
+				if(!Principal.getEstudiantes().contains(nueva)){
+					Principal.addEstudiante(nueva);
+				}
 				linea = bR.readLine();
 			}
 			fR.close();
@@ -57,7 +61,11 @@ public class Lector {
 			while(linea!=null){
 				salida = linea.split(";");
 				Familiar nueva = new Familiar(salida[0], salida[1], salida[2], salida[3]);
-				Principal.addFamiliar(nueva);
+				nueva.setTelefono(salida[4]);
+				nueva.setCorreoElectronico(salida[5]);
+				if(!Principal.getFamiliares().contains(nueva)){
+					Principal.addFamiliar(nueva);	
+				}
 				linea = bR.readLine();
 			}
 			fR.close();
@@ -79,6 +87,9 @@ public class Lector {
 			while(linea!=null){
 				salida = linea.split(";");
 				Colega nueva = new Colega(salida[0], salida[1], salida[2], salida[3]);
+				nueva.setTelefono(salida[4]);
+				nueva.setCorreoElectronico(salida[5]);
+				if(!Principal.getColegas().contains(nueva))
 				Principal.addColega(nueva);
 				linea = bR.readLine();
 			}
