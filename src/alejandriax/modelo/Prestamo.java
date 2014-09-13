@@ -57,11 +57,11 @@ public class Prestamo {
 		this.estadoPrestamo = estadoPrestamo;
 	}
 
-	public Articulo getarticulo() {
+	public Articulo getArticulo() {
 		return articulo;
 	}
 
-	public void setarticulo(Articulo articulo) {
+	public void setArticulo(Articulo articulo) {
 		this.articulo = articulo;
 	}
 
