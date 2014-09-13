@@ -18,8 +18,6 @@ public class Estudiante extends Persona {
 	public Estudiante(String numeroCedula, String nombre,String primerApellido,
 			String segundoApellido) {
 		super(numeroCedula, nombre, primerApellido, segundoApellido);
-		setTelefono(telefono);
-		setCorreoElectronico(correoElectronico);
 	}
 
 }
