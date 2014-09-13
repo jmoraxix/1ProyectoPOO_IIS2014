@@ -26,6 +26,7 @@ import alejandriax.modelo.Familiar;
 import alejandriax.modelo.Libro;
 import alejandriax.modelo.Logica;
 import alejandriax.modelo.Pelicula;
+import alejandriax.modelo.Persona;
 import alejandriax.modelo.Revista;
 import alejandriax.vista.cliente.VentanaPrincipal;
 
@@ -72,8 +73,8 @@ public class Principal {
 	}
 
 	/**
-	 * M�todo creado para declarar todas la ventanas y establecer relaciones con
-	 * el coordinador
+	 * M�todo creado para declarar todas la ventanas y establecer relaciones
+	 * con el coordinador
 	 */
 	@SuppressWarnings("static-access")
 	private static void inicializarVentanas() {
@@ -96,7 +97,7 @@ public class Principal {
 		coordinador.setInformacionProyecto(informacionProyecto);
 		// L�gica
 		coordinador.setLogica(logica);
-		
+
 		coordinador.mostrarVentanaPrincipal();
 	}
 
@@ -155,6 +156,14 @@ public class Principal {
 
 	public static void addFamiliar(Familiar familiar) {
 		Principal.familiares.add(familiar);
+	}
+
+	public static ArrayList<Persona> getPersonas() {
+		ArrayList<Persona> array = new ArrayList<Persona>();
+		array.addAll(colegas);
+		array.addAll(familiares);
+		array.addAll(estudiantes);
+		return array;
 	}
 
 	public static Coordinador getCoordinador() {
