@@ -25,6 +25,7 @@ import alejandriax.control.Principal;
 import alejandriax.modelo.Colega;
 import alejandriax.modelo.Estudiante;
 import alejandriax.modelo.Familiar;
+import alejandriax.modelo.Persona;
 
 /**
  * @author xDiegoxD 13/09/2014
@@ -42,8 +43,7 @@ public class AgregarPersona extends VentanaEmergente{
 	 * @param title
 	 */
 	public AgregarPersona(JFrame frame) {
-		super(frame, "Agregar Persona", "Fondo_principal.png");
-		setTitle("A\u00F1adir Persona");
+		super(frame, "Agregar Persona", "fondo_principal.png");
 
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setForeground(Color.BLACK);
@@ -124,9 +124,8 @@ public class AgregarPersona extends VentanaEmergente{
 		rbnFamiliar.setFont(Principal.getLetratexto2());
 		rbnFamiliar.setOpaque(false);
 		getContentPane().add(rbnFamiliar);
-		// TODO Auto-generated constructor stub
 
-		PanelConFondo btnSeguir = new PanelConFondo("check.png", false);
+		PanelConFondo btnSeguir = new PanelConFondo("check.png", false, "");
 		btnSeguir.getBtn().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(!txtCorreo.getText().equals("")&&
@@ -136,34 +135,49 @@ public class AgregarPersona extends VentanaEmergente{
 						!txtCedula.getText().equals("")&&
 						!txtTelefono.getText().equals("")&&
 						(rbnFamiliar.isSelected() || rbnColega.isSelected() || rbnEstudiante.isSelected()))
-					
-					
 				{
-					if(rbnFamiliar.isSelected()){
-					Familiar familiar = new Familiar(txtCedula.getText(), txtNombre.getText(), txtPrimerApellido.getText(), txtSegundoApellido.getText());
-					familiar.setTelefono(txtTelefono.getText());
-					Principal.addFamiliar(familiar);
+					// Verifica que la persona no exista
+					boolean existe = false;
+					for(Persona persona : Principal.getPersonas())
+						if(persona.getNumeroCedula().equals(txtCedula.getText()))
+								existe = true;
+					//Crea la persona y la añade a las listas o envia msj de error
+					if (!existe) {
+						if (rbnFamiliar.isSelected()) {
+							Familiar familiar = new Familiar(
+									txtCedula.getText(), txtNombre.getText(),
+									txtPrimerApellido.getText(),
+									txtSegundoApellido.getText());
+							familiar.setTelefono(txtTelefono.getText());
+							Principal.addFamiliar(familiar);
+						} else if (rbnColega.isSelected()) {
+							Colega colega = new Colega(txtCedula.getText(),
+									txtNombre.getText(),
+									txtPrimerApellido.getText(),
+									txtSegundoApellido.getText());
+							colega.setTelefono(txtTelefono.getText());
+							Principal.addColega(colega);
+						}
+
+						else if (rbnEstudiante.isSelected()) {
+							Estudiante estudiante = new Estudiante(
+									txtCedula.getText(), txtNombre.getText(),
+									txtPrimerApellido.getText(),
+									txtSegundoApellido.getText());
+							estudiante.setTelefono(txtTelefono.getText());
+							Principal.addEstudiante(estudiante);
+
+						}
 					}
-					else if (rbnColega.isSelected()){
-					Colega colega = new Colega(txtCedula.getText(), txtNombre.getText(), txtPrimerApellido.getText(), txtSegundoApellido.getText());
-					colega.setTelefono(txtTelefono.getText());
-					Principal.addColega(colega);
-					}
+					else 
+						JOptionPane.showMessageDialog(coordinador.getVentanaPrincipal(), "La persona ya existe, ingrese otra cédula.", "Error", JOptionPane.ERROR_MESSAGE);
 					
-					else if(rbnEstudiante.isSelected()){
-						Estudiante estudiante = new Estudiante(txtCedula.getText(), txtNombre.getText(), txtPrimerApellido.getText(), txtSegundoApellido.getText());
-						estudiante.setTelefono(txtTelefono.getText());
-						Principal.addEstudiante(estudiante);
-						
-					}
-					
+					// Oculta la ventana
 					coordinador.ocultarAgregarPersona();	
-
 				}
-				else {
-					JOptionPane.showMessageDialog(null, "Hay un campo requerido vac�o!", "Error", JOptionPane.ERROR_MESSAGE);
-
-				}
+				else 
+					JOptionPane.showMessageDialog(coordinador.getVentanaPrincipal(), "¡Hay un campo requerido vac\u00edo!", "Error", JOptionPane.ERROR_MESSAGE);
+				
 			}
 		});
 		btnSeguir.setBounds(540, 269, 59, 51);
