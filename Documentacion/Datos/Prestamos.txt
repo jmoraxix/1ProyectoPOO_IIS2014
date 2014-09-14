@@ -1,0 +1,13 @@
+pres000;2014;2;20;rojo;lib000
+pres001;2014;6;11;amarillo;lib002
+pres002;2014;7;3;amarillo;lib003
+pres003;2014;8;28;verde;lib001
+pres004;2014;7;3;amarillo;lib006
+pres005;2014;1;18;rojo;lib005
+pres006;2013;12;16;rojo;lib010
+pres007;2014;8;14;verde;lib004
+pres008;2014;2;8;rojo;lib008
+pres009;2014;3;20;rojo;lib011
+pres010;2014;6;27;amarillo;lib009
+pres011;2014;8;25;verde;lib012
+pres012;2014;8;19;verde;lib007
