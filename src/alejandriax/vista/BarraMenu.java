@@ -29,8 +29,8 @@ import alejandriax.control.Lector;
 public class BarraMenu extends JMenuBar{
 	
 	private JMenu archivo, prestamos, personas, registrarLibro;
-	private JMenuItem mInfo, mSalir, mCargarLibros, mCargarPersonas , mcrearPrestamo,
-						mCrearPersona, mCrearLibro;
+	private JMenuItem mInfo, mSalir, mCargarLibros , mcrearPrestamo, mCargarPrestamos,
+						mCrearPersona, mCrearLibro, mCargarEstudiantes, mCargarColegas, mCargarFamiliares;
 	
 	public final static Font letraTitulo1 = new Font("Georgia", Font.BOLD, 38);
 	public final static Font letraTexto1 = new Font("Georgia", Font.PLAIN, 28);
@@ -69,20 +69,8 @@ public class BarraMenu extends JMenuBar{
 			}
 		});
 		
-		mCargarPersonas = new JMenuItem("Cargar Personas");
-		mCargarPersonas.setMnemonic('P');
-		mCargarPersonas.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				nuevoLector.cargarEstudiantes();
-				nuevoLector.cargarFamiliares();
-				nuevoLector.cargarColegas();
-			}
-		});
 		
 		
-		archivo.add(mCargarLibros);
-		archivo.add(mCargarPersonas);
 		archivo.add(mntmAcercaDeNosotros);
 		archivo.add(mSalir);
 		
@@ -101,8 +89,17 @@ public class BarraMenu extends JMenuBar{
 			}
 		});
 		
+		mCargarPrestamos = new JMenuItem("Cargar Préstamos");
+		mCargarPrestamos.setMnemonic('L');
+		mCargarPrestamos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				nuevoLector.cargarLibros();
+			}
+		});
 		
 		prestamos.add(mcrearPrestamo);
+		prestamos.add(mCargarPrestamos);
 		
 		
 		
@@ -114,12 +111,42 @@ public class BarraMenu extends JMenuBar{
 		mCrearPersona.setMnemonic('C');
 		mCrearPersona.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				Coordinador.mostrarAgregarPersona();
 				
 			}
 		});
 		
+		mCargarColegas = new JMenuItem("Cargar Colegas");
+		mCargarColegas.setMnemonic('C');
+		mCargarColegas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		mCargarEstudiantes = new JMenuItem("Cargar Estudiantes");
+		mCargarEstudiantes.setMnemonic('C');
+		mCargarEstudiantes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		mCargarFamiliares = new JMenuItem("Cargar Familiares");
+		mCargarFamiliares.setMnemonic('C');
+		mCargarFamiliares.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		
 		personas.add(mCrearPersona);
+		personas.add(mCargarColegas);
+		personas.add(mCargarEstudiantes);
+		personas.add(mCargarFamiliares);
+		
+		
 		
 		
 		registrarLibro =  new JMenu("Libro                         ");
@@ -134,7 +161,18 @@ public class BarraMenu extends JMenuBar{
 				
 			}
 		});
+		
+		
+		mCargarLibros = new JMenuItem("Cargar Libros");
+		mCargarLibros.setMnemonic('L');
+		mCargarLibros.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				nuevoLector.cargarLibros();
+			}
+		});
 		registrarLibro.add(mCrearLibro);
+		registrarLibro.add(mCargarLibros);
 	}
 	
 
