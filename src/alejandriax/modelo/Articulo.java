@@ -15,33 +15,33 @@ public class Articulo {
 
 	/************** Variables **************/
 
-	private String tituloArticulo;
+	private String titulo;
 	private String imagen;
-	private Calificacion calificacion;
-	private String idArticulo;
+	private int calificacion;
+	private String ID;
 	private boolean disponible = true;
 
 	/**** Constructor ****/
 	public Articulo(String tituloArticulo, String idArticulo) {
-		this.tituloArticulo = tituloArticulo;
-		this.idArticulo = idArticulo;
+		this.titulo = tituloArticulo;
+		this.ID = idArticulo;
 	}
 
 	/************** Getters/Setters **************/
 	public String getTituloArticulo() {
-		return tituloArticulo;
+		return titulo;
 	}
 
 	public void setTituloArticulo(String tituloArticulo) {
-		this.tituloArticulo = tituloArticulo;
+		this.titulo = tituloArticulo;
 	}
 
 	public String getIdArticulo() {
-		return idArticulo;
+		return ID;
 	}
 
 	public void setIdArticulo(String idArticulo) {
-		this.idArticulo = idArticulo;
+		this.ID = idArticulo;
 	}
 
 	public boolean getDisponibilidad() {
@@ -56,20 +56,20 @@ public class Articulo {
 		this.disponible = true;
 	}
 
-	public Calificacion getCalificacion() {
-		return calificacion;
-	}
-
-	public void setCalificacion(Calificacion calificacion) {
-		this.calificacion = calificacion;
-	}
-
 	public String getImagen() {
 		return imagen;
 	}
 
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
+	}
+
+	public int getCalificacion() {
+		return calificacion;
+	}
+
+	public void setCalificacion(int calificacion) {
+		this.calificacion = calificacion;
 	}
 
 }
