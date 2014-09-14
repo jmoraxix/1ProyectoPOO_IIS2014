@@ -1,27 +1,40 @@
 package alejandriax.vista;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.awt.image.*;
-import java.util.List;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.Toolkit;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.awt.image.FilteredImageSource;
+import java.awt.image.ImageProducer;
+import java.awt.image.RGBImageFilter;
 import java.util.Arrays;
+import java.util.List;
 
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import alejandriax.Alejandriax;
+import alejandriax.modelo.Articulo;
 
-class PanelCalificacion extends JPanel {
-	LevelBar levelBar;
+public class PanelCalificacion extends JPanel {
+	private LevelBar levelBar;
+	private Articulo articulo;
 	
-    public PanelCalificacion() {
+    public PanelCalificacion(Articulo articulo) {
         super(new GridLayout(2,2));
+        this.articulo = articulo;
 //        ImageIcon defaultIcon = new ImageIcon(getClass().getResource("Star.png"));
         ImageIcon defaultIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(Alejandriax.class.getResource("vista/imagenes/Star.png")));
         ImageProducer ip = defaultIcon.getImage().getSource();
 
         ImageIcon yStar = makeStarImageIcon(ip, new float[]{1.0f,1.0f,.0f});
         List<ImageIcon> list = Arrays.asList(yStar, yStar, yStar, yStar, yStar, yStar, yStar, yStar, yStar, yStar);
-        levelBar = new LevelBar(defaultIcon, list, 1);
+        levelBar = new LevelBar(defaultIcon, list, 1, articulo);
         add(levelBar);
         setPreferredSize(new Dimension(200, 45));
         setOpaque(false);
@@ -45,8 +58,10 @@ class LevelBar extends JPanel implements MouseListener, MouseMotionListener {
     );
     protected final ImageIcon defaultIcon;
     private int clicked = -1;
-    public LevelBar(ImageIcon defaultIcon, List<ImageIcon> list, int gap) {
+    private Articulo articulo;
+    public LevelBar(ImageIcon defaultIcon, List<ImageIcon> list, int gap, Articulo articulo) {
         super(new GridLayout(1, 10, gap*2, gap*2));
+        this.articulo = articulo;
         this.defaultIcon = defaultIcon;
         this.iconList = list;
         this.gap = gap;
@@ -67,6 +82,7 @@ class LevelBar extends JPanel implements MouseListener, MouseMotionListener {
     }
     public void setLevel(int l) {
         clicked = l;
+        articulo.setCalificacion(clicked);
         repaintIcon(clicked);
     }
     private int getSelectedIconIndex(Point p) {
