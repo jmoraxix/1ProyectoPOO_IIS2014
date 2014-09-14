@@ -18,6 +18,7 @@ import java.util.Comparator;
 
 import alejandriax.modelo.Colega;
 import alejandriax.modelo.Libro;
+import alejandriax.modelo.Persona;
 
 /**
  * @author David
@@ -58,6 +59,40 @@ public class Ordenar {
 			@Override
 			public int compare(Libro o1, Libro o2) {
 				return o1.getGenero().compareTo(o2.getGenero());
+			}
+		});
+	}
+	
+	/****METODOS PARA ORDENAR PERSONAS****/
+	public static void ordenarPersonaCedula(ArrayList<Persona> pArray){
+		Collections.sort(pArray, new Comparator<Persona>(){
+			@Override
+			public int compare(Persona o1, Persona o2) {
+				return o1.getNumeroCedula().compareTo(o2.getNumeroCedula());
+			}
+		});
+	}
+	public static void ordenarPersonaNombre(ArrayList<Persona> pArray){
+		Collections.sort(pArray, new Comparator<Persona>(){
+			@Override
+			public int compare(Persona o1, Persona o2) {
+				return o1.getNombre().compareTo(o2.getNombre());
+			}
+		});
+	}
+	public static void ordenarPersonaPrimerApellido(ArrayList<Persona> pArray){
+		Collections.sort(pArray, new Comparator<Persona>(){
+			@Override
+			public int compare(Persona o1, Persona o2) {
+				return o1.getPrimerApellido().compareTo(o2.getPrimerApellido());
+			}
+		});
+	}
+	public static void ordenarPersonaSegundoApellido(ArrayList<Persona> pArray){
+		Collections.sort(pArray, new Comparator<Persona>(){
+			@Override
+			public int compare(Persona o1, Persona o2) {
+				return o1.getSegundoApellido().compareTo(o2.getSegundoApellido());
 			}
 		});
 	}

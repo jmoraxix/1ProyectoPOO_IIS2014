@@ -21,6 +21,7 @@ import javax.swing.JMenuItem;
 import alejandriax.control.Coordinador;
 import alejandriax.control.Lector;
 import alejandriax.control.Ordenar;
+import alejandriax.control.Principal;
 
 /**
  * @author xDiegoxD 06/09/2014
@@ -38,7 +39,6 @@ public class BarraMenu extends JMenuBar{
 	public final static Font letraTexto2 = new Font("Georgia", Font.PLAIN, 22);
 	private JFrame frame;
 	private Lector nuevoLector = new Lector();
-	private Ordenar nuevoOrdenar = new Ordenar();
 	
 	public BarraMenu(final JFrame frame){
 		this.frame = frame;
@@ -123,6 +123,7 @@ public class BarraMenu extends JMenuBar{
 		mCargarColegas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				nuevoLector.cargarColegas();
+				Ordenar.ordenarPersonaPrimerApellido(Principal.getColegas());
 			}
 		});
 		

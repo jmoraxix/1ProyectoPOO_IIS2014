@@ -24,11 +24,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Lector {
 	private String[] salida;
+	private String linea = "";
 	FileNameExtensionFilter filtroTxt=new FileNameExtensionFilter(".txt","txt");
 	
 	public void cargarEstudiantes(){
-		
-		String linea = "";
 		try{
 			JFileChooser rutaArchivo = new JFileChooser();
 			rutaArchivo.setFileFilter(filtroTxt);
@@ -65,8 +64,6 @@ public class Lector {
 	}
 	
 	public void cargarFamiliares(){
-		
-		String linea = "";
 		try{
 			JFileChooser rutaArchivo = new JFileChooser();
 			rutaArchivo.setFileFilter(filtroTxt);
@@ -103,8 +100,6 @@ public class Lector {
 	}
 	
 	public void cargarColegas(){
-		
-		String linea = "";
 		try{
 			JFileChooser rutaArchivo = new JFileChooser();
 			rutaArchivo.setFileFilter(filtroTxt);
