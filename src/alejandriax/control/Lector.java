@@ -57,8 +57,10 @@ public class Lector {
 			}
 			fR.close();
 		} catch (Exception e){
-			JOptionPane.showMessageDialog(null, "Error en archivo", 
-					"El archivo no existe", JOptionPane.ERROR_MESSAGE);
+			if(!e.toString().equals("java.lang.NullPointerException")){
+				JOptionPane.showMessageDialog(null, "Error en la lectura del archivo", 
+				"Error en lectura", JOptionPane.ERROR_MESSAGE);
+			}
 		}
 	}
 	
@@ -93,8 +95,10 @@ public class Lector {
 			}
 			fR.close();
 		} catch (Exception e){
-			JOptionPane.showMessageDialog(null, "Error en archivo", 
-					"El archivo no existe", JOptionPane.ERROR_MESSAGE);
+			if(!e.toString().equals("java.lang.NullPointerException")){
+				JOptionPane.showMessageDialog(null, "Error en la lectura del archivo", 
+				"Error en lectura", JOptionPane.ERROR_MESSAGE);
+			}
 		}
 	}
 	
@@ -129,8 +133,10 @@ public class Lector {
 			}
 			fR.close();
 		} catch (Exception e){
-			JOptionPane.showMessageDialog(null, "Error en archivo", 
-					"El archivo no existe", JOptionPane.ERROR_MESSAGE);
+			if(!e.toString().equals("java.lang.NullPointerException")){
+				JOptionPane.showMessageDialog(null, "Error en la lectura del archivo", 
+				"Error en lectura", JOptionPane.ERROR_MESSAGE);
+			}
 		}
 	}
 	
@@ -170,7 +176,7 @@ public class Lector {
 			fR.close();
 		} catch (Exception e){
 			if(!e.toString().equals("java.lang.NullPointerException")){
-				JOptionPane.showMessageDialog(null, "El archivo no es leible", 
+				JOptionPane.showMessageDialog(null, "Error en la lectura del archivo", 
 				"Error en lectura", JOptionPane.ERROR_MESSAGE);
 			}
 		}
