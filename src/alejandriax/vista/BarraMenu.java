@@ -20,7 +20,6 @@ import javax.swing.JMenuItem;
 
 import alejandriax.control.Coordinador;
 import alejandriax.control.Lector;
-import alejandriax.control.Principal;
 
 /**
  * @author xDiegoxD 06/09/2014
@@ -91,7 +90,7 @@ public class BarraMenu extends JMenuBar{
 		});
 		
 		mCargarPrestamos = new JMenuItem("Cargar Préstamos");
-		mCargarPrestamos.setMnemonic('L');
+		mCargarPrestamos.setMnemonic('S');
 		mCargarPrestamos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
@@ -109,7 +108,7 @@ public class BarraMenu extends JMenuBar{
 		this.add(personas);
 		
 		mCrearPersona = new JMenuItem("Crear Persona");
-		mCrearPersona.setMnemonic('C');
+		mCrearPersona.setMnemonic('P');
 		mCrearPersona.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Coordinador.mostrarAgregarPersona();
@@ -126,7 +125,7 @@ public class BarraMenu extends JMenuBar{
 		});
 		
 		mCargarEstudiantes = new JMenuItem("Cargar Estudiantes");
-		mCargarEstudiantes.setMnemonic('C');
+		mCargarEstudiantes.setMnemonic('E');
 		mCargarEstudiantes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				nuevoLector.cargarEstudiantes();
@@ -134,7 +133,7 @@ public class BarraMenu extends JMenuBar{
 		});
 		
 		mCargarFamiliares = new JMenuItem("Cargar Familiares");
-		mCargarFamiliares.setMnemonic('C');
+		mCargarFamiliares.setMnemonic('F');
 		mCargarFamiliares.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				nuevoLector.cargarFamiliares();
@@ -165,7 +164,7 @@ public class BarraMenu extends JMenuBar{
 		
 		
 		mCargarLibros = new JMenuItem("Cargar Libros");
-		mCargarLibros.setMnemonic('L');
+		mCargarLibros.setMnemonic('B');
 		mCargarLibros.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
