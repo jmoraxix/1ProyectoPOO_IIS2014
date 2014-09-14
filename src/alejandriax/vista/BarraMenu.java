@@ -20,6 +20,7 @@ import javax.swing.JMenuItem;
 
 import alejandriax.control.Coordinador;
 import alejandriax.control.Lector;
+import alejandriax.control.Principal;
 
 /**
  * @author xDiegoxD 06/09/2014
@@ -120,7 +121,7 @@ public class BarraMenu extends JMenuBar{
 		mCargarColegas.setMnemonic('C');
 		mCargarColegas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				nuevoLector.cargarColegas();
 			}
 		});
 		
@@ -128,7 +129,7 @@ public class BarraMenu extends JMenuBar{
 		mCargarEstudiantes.setMnemonic('C');
 		mCargarEstudiantes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				nuevoLector.cargarEstudiantes();
 			}
 		});
 		
@@ -136,7 +137,7 @@ public class BarraMenu extends JMenuBar{
 		mCargarFamiliares.setMnemonic('C');
 		mCargarFamiliares.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				nuevoLector.cargarFamiliares();
 			}
 		});
 		

@@ -18,16 +18,23 @@ import java.util.ArrayList;
 
 import alejandriax.modelo.*;
 
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Lector {
 	private String[] salida;
-
+	FileNameExtensionFilter filtroTxt=new FileNameExtensionFilter(".txt","txt");
+	
 	public void cargarEstudiantes(){
 		
 		String linea = "";
 		try{
-			File nomArchivo = new File("Documentacion/Datos/Estudiantes.txt");
+			JFileChooser rutaArchivo = new JFileChooser();
+			rutaArchivo.setFileFilter(filtroTxt);
+			rutaArchivo.showOpenDialog(rutaArchivo);
+			String path = rutaArchivo.getSelectedFile().getAbsolutePath();
+			File nomArchivo = new File(path);
 			FileReader fR = new FileReader(nomArchivo);
 			BufferedReader bR = new BufferedReader(fR);
 			
@@ -37,7 +44,13 @@ public class Lector {
 				Estudiante nueva = new Estudiante(salida[0], salida[1], salida[2], salida[3]);
 				nueva.setTelefono(salida[4]);
 				nueva.setCorreoElectronico(salida[5]);
-				if(!Principal.getEstudiantes().contains(nueva)){
+				Boolean existe = false;
+				for(Estudiante i : Principal.getEstudiantes()){
+					if(i.getNumeroCedula().equals(nueva.getNumeroCedula())){
+						existe = true;
+					}
+				}
+				if(!existe){
 					Principal.addEstudiante(nueva);
 				}
 				linea = bR.readLine();
@@ -53,7 +66,11 @@ public class Lector {
 		
 		String linea = "";
 		try{
-			File nomArchivo = new File("Documentacion/Datos/Familiares.txt");
+			JFileChooser rutaArchivo = new JFileChooser();
+			rutaArchivo.setFileFilter(filtroTxt);
+			rutaArchivo.showOpenDialog(rutaArchivo);
+			String path = rutaArchivo.getSelectedFile().getAbsolutePath();
+			File nomArchivo = new File(path);
 			FileReader fR = new FileReader(nomArchivo);
 			BufferedReader bR = new BufferedReader(fR);
 			
@@ -63,8 +80,14 @@ public class Lector {
 				Familiar nueva = new Familiar(salida[0], salida[1], salida[2], salida[3]);
 				nueva.setTelefono(salida[4]);
 				nueva.setCorreoElectronico(salida[5]);
-				if(!Principal.getFamiliares().contains(nueva)){
-					Principal.addFamiliar(nueva);	
+				Boolean existe = false;
+				for(Familiar i : Principal.getFamiliares()){
+					if(i.getNumeroCedula().equals(nueva.getNumeroCedula())){
+						existe = true;
+					}
+				}
+				if(!existe){
+					Principal.addFamiliar(nueva);
 				}
 				linea = bR.readLine();
 			}
@@ -79,7 +102,11 @@ public class Lector {
 		
 		String linea = "";
 		try{
-			File nomArchivo = new File("Documentacion/Datos/Colega.txt");
+			JFileChooser rutaArchivo = new JFileChooser();
+			rutaArchivo.setFileFilter(filtroTxt);
+			rutaArchivo.showOpenDialog(rutaArchivo);
+			String path = rutaArchivo.getSelectedFile().getAbsolutePath();
+			File nomArchivo = new File(path);
 			FileReader fR = new FileReader(nomArchivo);
 			BufferedReader bR = new BufferedReader(fR);
 			
@@ -89,8 +116,15 @@ public class Lector {
 				Colega nueva = new Colega(salida[0], salida[1], salida[2], salida[3]);
 				nueva.setTelefono(salida[4]);
 				nueva.setCorreoElectronico(salida[5]);
-				if(!Principal.getColegas().contains(nueva))
-				Principal.addColega(nueva);
+				Boolean existe = false;
+				for(Colega i : Principal.getColegas()){
+					if(i.getNumeroCedula().equals(nueva.getNumeroCedula())){
+						existe = true;
+					}
+				}
+				if(!existe){
+					Principal.addColega(nueva);
+				}
 				linea = bR.readLine();
 			}
 			fR.close();
@@ -103,7 +137,11 @@ public class Lector {
 	public void cargarLibros(){
 		String linea = "";
 		try{
-			File nomArchivo = new File("Documentacion/Datos/Libros.txt");
+			JFileChooser rutaArchivo = new JFileChooser();
+			rutaArchivo.setFileFilter(filtroTxt);
+			rutaArchivo.showOpenDialog(rutaArchivo);
+			String path = rutaArchivo.getSelectedFile().getAbsolutePath();
+			File nomArchivo = new File(path);
 			FileReader fR = new FileReader(nomArchivo);
 			BufferedReader bR = new BufferedReader(fR);
 			
@@ -118,13 +156,23 @@ public class Lector {
 					nueva.setEdicion(salida[6]);
 					nueva.setIdioma(salida[7]);
 				}
-				Principal.addLibro(nueva);
+				Boolean existe = false;
+				for(Libro i : Principal.getLibros()){
+					if(i.getIdArticulo().equals(nueva.getIdArticulo())){
+						existe = true;
+					}
+				}
+				if(!existe){
+					Principal.addLibro(nueva);
+				}
 				linea = bR.readLine();
 			}
 			fR.close();
 		} catch (Exception e){
-			JOptionPane.showMessageDialog(null, "Error en archivo", 
-					"El archivo no existe", JOptionPane.ERROR_MESSAGE);
+			if(!e.toString().equals("java.lang.NullPointerException")){
+				JOptionPane.showMessageDialog(null, "El archivo no es leible", 
+				"Error en lectura", JOptionPane.ERROR_MESSAGE);
+			}
 		}
 	}
 }
