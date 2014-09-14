@@ -27,7 +27,7 @@ import alejandriax.modelo.Persona;
 public class Ordenar {
 
 	/****METODOS PARA ORDENAR LIBROS****/
-	public void ordenarLibroTitulo(ArrayList<Libro> pArray){
+	public static void ordenarLibroTitulo(ArrayList<Libro> pArray){
 		Collections.sort(pArray, new Comparator<Libro>(){
 			@Override
 			public int compare(Libro o1, Libro o2) {
@@ -36,7 +36,7 @@ public class Ordenar {
 		});
 	}
 	
-	public void ordenarLibroId(ArrayList<Libro> pArray){
+	public static void ordenarLibroId(ArrayList<Libro> pArray){
 		Collections.sort(pArray, new Comparator<Libro>(){
 			@Override
 			public int compare(Libro o1, Libro o2) {
@@ -45,7 +45,7 @@ public class Ordenar {
 		});
 	}
 	
-	public void ordenarLibroAutor(ArrayList<Libro> pArray){
+	public static void ordenarLibroAutor(ArrayList<Libro> pArray){
 		Collections.sort(pArray, new Comparator<Libro>(){
 			@Override
 			public int compare(Libro o1, Libro o2) {
@@ -54,7 +54,7 @@ public class Ordenar {
 		});
 	}
 	
-	public void ordenarLibroGenero(ArrayList<Libro> pArray){
+	public static void ordenarLibroGenero(ArrayList<Libro> pArray){
 		Collections.sort(pArray, new Comparator<Libro>(){
 			@Override
 			public int compare(Libro o1, Libro o2) {
