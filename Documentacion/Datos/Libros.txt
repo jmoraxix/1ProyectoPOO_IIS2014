@@ -2,3 +2,12 @@ lib000;Cancion de hielo y fuego;Gerge R.R Martin;Gigamesh;Novela;games_of_throne
 lib001;Harry Potter y la Piedra Filosofal;J.K Rowling;MC;Novela;harry_potter_y_la_piedra_filosofal.jpg;2000;
 lib002;El Señor de los anillos I: La comunidad del anillo;J.R.R.Tolkien;Minotauro;Novela;lord_of_the_rings.jpg;1977;Ingles
 lib003;Dispara, yo ya estoy muerto;Julia Navarro;Plaza and Janes;Novela;dispara_yo_ya_estoy_muerto.jpg;;Español
+lib004;Divergente;Veronica Roth;Harper Collins;Ciencia ficcion;divergente.jpg
+lib005;El cementerio de Praga;Umberto Eco;Houghton Mifflin Harcourt;novela histórica;el_cementerio_de_praga.jpg
+lib006;El temor de un hombre sabio;Patrick Rothfuss;Plaza & Janés;Fantasía épica;el_temor_de_un_hombre_sabio.jpg
+lib007;Hamlet;William Shakespeare;Alianza Editorial;tragedia;hamlet.jpg
+lib008;La ladrona de libros;Markus Zusak;Alfred A. Knopf;Ficcion historica;la_ladrona_de_libros.jpg
+lib009;La meta secreta de los templarios;Juan G.Atienza;martinez roca;aventura epica;la_meta_secreta_de_los_templarios.jpg
+lib010;Los juegos del hambre;Suzanne Collins;Scholastic Press;Novela;los_juegos_del_hambre.jpg
+lib011;Los ultimos dias de los incas;Kim Macquarrie;La esfera de los libros; Novela historica;los_ultimos_dias-de_los_incas.jpg
+lib012;Romeo y Julieta;William Shakespeare;Alianza Editorial;tragedia;romeo_y_julieta.jpg
