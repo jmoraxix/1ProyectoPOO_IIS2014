@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 import alejandriax.control.Coordinador;
 import alejandriax.control.Principal;
+import alejandriax.modelo.Libro;
 import alejandriax.modelo.Persona;
 import alejandriax.modelo.Prestamo;
 import alejandriax.vista.PanelConFondo;
@@ -91,14 +92,13 @@ public class VentanaPrincipal extends VentanaBase {
 		posActual = 0;
 		for (Persona persona : Principal.getPersonas()) {
 			ArrayList<Prestamo> prestamos = persona.getPrestamos();
-			for (Prestamo prestamo : prestamos) {
+			for (final Prestamo prestamo : prestamos) {
 				PanelConFondo panel = new PanelConFondo("portadas/"
-						+ prestamo.getArticulo().getImagen(), false);
-				System.out.println(prestamo.getArticulo().getTituloArticulo());
+						+ prestamo.getArticulo().getImagen(), false, "");
 				panel.getBtn().addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						// new
+						new MostrarLibro(coordinador.getVentanaPrincipal(), prestamo.getArticulo()).setVisible(true);
 					}
 				});
 				panelPrincipal.agregarContenido(panel);
@@ -111,6 +111,17 @@ public class VentanaPrincipal extends VentanaBase {
 		panelLateral.ocultarBotonLateral(posActual);
 		panelLateral.mostrarBotonLateral(1);
 		posActual = 1;
+		for (final Libro libro : Principal.getLibros()) {
+			System.out.println(libro.getImagen());
+			PanelConFondo panel = new PanelConFondo("portadas/" + libro.getImagen(), false, "");
+			panel.getBtn().addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					new MostrarLibro(coordinador.getVentanaPrincipal(), libro).setVisible(true);
+				}
+			});
+			panelPrincipal.agregarContenido(panel);
+		}
 	}
 
 	private void mostrarContenidoPersonas() {
@@ -118,6 +129,16 @@ public class VentanaPrincipal extends VentanaBase {
 		panelLateral.ocultarBotonLateral(posActual);
 		panelLateral.mostrarBotonLateral(2);
 		posActual = 2;
+		for (Persona persona : Principal.getPersonas()) {
+			PanelConFondo panel = new PanelConFondo("usuario.png", false, "");
+			panel.getBtn().addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+//					new MostrarLibro(coordinador.getVentanaPrincipal(), prestamo.getArticulo()).setVisible(true);
+				}
+			});
+		panelPrincipal.agregarContenido(panel);
+		}
 	}
 
 	/**** Getters&Setters ****/
