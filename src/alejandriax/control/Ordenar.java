@@ -64,7 +64,7 @@ public class Ordenar {
 	}
 	
 	/****METODOS PARA ORDENAR PERSONAS****/
-	public static void ordenarPersonaCedula(ArrayList<Persona> pArray){
+	public static void ordenarPersonaCedula(ArrayList<? extends Persona> pArray){
 		Collections.sort(pArray, new Comparator<Persona>(){
 			@Override
 			public int compare(Persona o1, Persona o2) {
@@ -72,7 +72,7 @@ public class Ordenar {
 			}
 		});
 	}
-	public static void ordenarPersonaNombre(ArrayList<Persona> pArray){
+	public static void ordenarPersonaNombre(ArrayList<? extends Persona> pArray){
 		Collections.sort(pArray, new Comparator<Persona>(){
 			@Override
 			public int compare(Persona o1, Persona o2) {
@@ -80,7 +80,7 @@ public class Ordenar {
 			}
 		});
 	}
-	public static void ordenarPersonaPrimerApellido(ArrayList<Persona> pArray){
+	public static void ordenarPersonaPrimerApellido(ArrayList<? extends Persona> pArray){
 		Collections.sort(pArray, new Comparator<Persona>(){
 			@Override
 			public int compare(Persona o1, Persona o2) {
@@ -88,7 +88,7 @@ public class Ordenar {
 			}
 		});
 	}
-	public static void ordenarPersonaSegundoApellido(ArrayList<Persona> pArray){
+	public static void ordenarPersonaSegundoApellido(ArrayList<? extends Persona> pArray){
 		Collections.sort(pArray, new Comparator<Persona>(){
 			@Override
 			public int compare(Persona o1, Persona o2) {
