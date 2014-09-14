@@ -43,7 +43,7 @@ public class MostrarLibro extends VentanaEmergente {
 	private void inicializarVentana() {
 		getContentPane().setLayout(null);
 
-		PanelConFondo imagen = new PanelConFondo(libro.getImagen());
+		PanelConFondo imagen = new PanelConFondo("portadas/" + libro.getImagen());
 		imagen.setBounds(81, 58, 184, 256);
 		getContentPane().add(imagen);
 

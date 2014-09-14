@@ -21,6 +21,7 @@ import alejandriax.control.Principal;
 import alejandriax.modelo.Libro;
 import alejandriax.modelo.Persona;
 import alejandriax.modelo.Prestamo;
+import alejandriax.vista.MostrarPersona;
 import alejandriax.vista.PanelConFondo;
 import alejandriax.vista.PanelLateral;
 import alejandriax.vista.PanelPrincipal;
@@ -129,12 +130,12 @@ public class VentanaPrincipal extends VentanaBase {
 		panelLateral.ocultarBotonLateral(posActual);
 		panelLateral.mostrarBotonLateral(2);
 		posActual = 2;
-		for (Persona persona : Principal.getPersonas()) {
+		for (final Persona persona : Principal.getPersonas()) {
 			PanelConFondo panel = new PanelConFondo("usuario.png", false, "");
 			panel.getBtn().addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-//					new MostrarLibro(coordinador.getVentanaPrincipal(), prestamo.getArticulo()).setVisible(true);
+					new MostrarPersona(coordinador.getVentanaPrincipal(), persona).setVisible(true);
 				}
 			});
 		panelPrincipal.agregarContenido(panel);
