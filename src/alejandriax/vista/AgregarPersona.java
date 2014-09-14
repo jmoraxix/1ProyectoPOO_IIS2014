@@ -17,116 +17,177 @@ import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
+import alejandriax.control.Coordinador;
 import alejandriax.control.Principal;
+import alejandriax.modelo.Colega;
+import alejandriax.modelo.Estudiante;
+import alejandriax.modelo.Familiar;
 
 /**
  * @author xDiegoxD 13/09/2014
  *
  * 
  */
-public class AñadirPersona extends VentanaEmergente{
-	private TransparentTextField txtNombre;
+public class AgregarPersona extends VentanaEmergente{
+	private TransparentTextField txtNombre, txtPrimerApellido, txtSegundoApellido, txtTelefono, txtCedula, txtCorreo ;
+	private JRadioButton rbnColega, rbnFamiliar, rbnEstudiante;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private Coordinador coordinador;
 
 	/**
 	 * @param frame
 	 * @param title
 	 */
-	public AñadirPersona(JFrame frame, String title) {
-		super(frame, title, "Fondo_principal.png");
+	public AgregarPersona(JFrame frame) {
+		super(frame, "Agregar Persona", "Fondo_principal.png");
 		setTitle("A\u00F1adir Persona");
-		
+
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setForeground(Color.BLACK);
 		lblNombre.setFont(Principal.getLetratexto2());
 		lblNombre.setBounds(26, 11, 80, 33);
 		getContentPane().add(lblNombre);
-		
+
 		JLabel lblPrimerApellido = new JLabel("Primer Apellido:");
 		lblPrimerApellido.setFont(Principal.getLetratexto2());
 		lblPrimerApellido.setBounds(44, 98, 147, 33);
 		getContentPane().add(lblPrimerApellido);
-		
+
 		JLabel lblSegundoApellido = new JLabel("Segundo Apellido:");
 		lblSegundoApellido.setFont(Principal.getLetratexto2());
 		lblSegundoApellido.setBounds(384, 98, 162, 33);
 		getContentPane().add(lblSegundoApellido);
-		
+
 		JLabel lblTelefono = new JLabel("N\u00FAmero de Tel\u00E9fono:");
 		lblTelefono.setFont(Principal.getLetratexto2());
 		lblTelefono.setBounds(380, 180, 244, 33);
 		getContentPane().add(lblTelefono);
-		
+
 		JLabel lblCorreoElectronico = new JLabel("Correo Electr\u00F3nico:");
 		lblCorreoElectronico.setFont(Principal.getLetratexto2());
 		lblCorreoElectronico.setBounds(26, 180, 244, 33);
 		getContentPane().add(lblCorreoElectronico);
-		
+
 		txtNombre = new TransparentTextField("", 0);
 		txtNombre.setBounds(26, 42, 179, 31);
-		
+
 		getContentPane().add(txtNombre);
-		
-		TransparentTextField txtPrimerApellido = new TransparentTextField("", 0);
+
+		txtPrimerApellido = new TransparentTextField("", 0);
 		txtPrimerApellido.setBounds(27, 127, 179, 31);
 		getContentPane().add(txtPrimerApellido);
-		
-		TransparentTextField txtSegundoApellido = new TransparentTextField("", 0);
+
+		txtSegundoApellido = new TransparentTextField("", 0);
 		txtSegundoApellido.setBounds(384, 127, 179, 31);
 		getContentPane().add(txtSegundoApellido);
-		
-		TransparentTextField txtCorreo = new TransparentTextField("", 0);
+
+		txtCorreo = new TransparentTextField("", 0);
 		txtCorreo.setBounds(26, 214, 179, 31);
 		getContentPane().add(txtCorreo);
-		
-		TransparentTextField txtTelefono = new TransparentTextField("", 0);
+
+		txtTelefono = new TransparentTextField("", 0);
 		txtTelefono.setBounds(384, 214, 179, 31);
 		getContentPane().add(txtTelefono);
-		
+
 		JLabel lblImagen = new JLabel("Imagen:");
 		lblImagen.setForeground(Color.BLACK);
 		lblImagen.setFont(new Font("Georgia", Font.PLAIN, 20));
-		lblImagen.setBounds(285, 11, 80, 33);
+		lblImagen.setBounds(483, 11, 80, 33);
 		getContentPane().add(lblImagen);
-		
+
 		JLabel lblCategora = new JLabel("Categor\u00EDa:");
 		lblCategora.setForeground(Color.BLACK);
 		lblCategora.setFont(new Font("Georgia", Font.PLAIN, 20));
 		lblCategora.setBounds(179, 256, 109, 33);
 		getContentPane().add(lblCategora);
-		
-		JRadioButton rbnEstudiante = new JRadioButton("Estudiante");
+
+		rbnEstudiante = new JRadioButton("Estudiante");
 		buttonGroup.add(rbnEstudiante);
 		rbnEstudiante.setOpaque(false);
 		rbnEstudiante.setFont(Principal.getLetratexto2());
 		rbnEstudiante.setBounds(44, 297, 133, 23);
 		getContentPane().add(rbnEstudiante);
-		
-		JRadioButton rbnColega = new JRadioButton("Colega");
+
+		rbnColega = new JRadioButton("Colega");
 		buttonGroup.add(rbnColega);
 		rbnColega.setFont(Principal.getLetratexto2());
 		rbnColega.setBounds(179, 297, 98, 23);
 		rbnColega.setOpaque(false);
 		getContentPane().add(rbnColega);
-		
-		JRadioButton rbnFamiliar = new JRadioButton("Familiar");
+
+		rbnFamiliar = new JRadioButton("Familiar");
 		buttonGroup.add(rbnFamiliar);
 		rbnFamiliar.setBounds(285, 297, 109, 23);
 		rbnFamiliar.setFont(Principal.getLetratexto2());
 		rbnFamiliar.setOpaque(false);
 		getContentPane().add(rbnFamiliar);
 		// TODO Auto-generated constructor stub
-		
+
 		PanelConFondo btnSeguir = new PanelConFondo("check.png", false);
 		btnSeguir.getBtn().addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// new
+			public void actionPerformed(ActionEvent arg0) {
+				if(!txtCorreo.getText().equals("")&&
+						!txtNombre.getText().equals("")&&
+						!txtPrimerApellido.getText().equals("")&&
+						!txtSegundoApellido.getText().equals("")&&
+						!txtCedula.getText().equals("")&&
+						!txtTelefono.getText().equals("")&&
+						(rbnFamiliar.isSelected() || rbnColega.isSelected() || rbnEstudiante.isSelected()))
+					
+					
+				{
+					if(rbnFamiliar.isSelected()){
+					Familiar familiar = new Familiar(txtCedula.getText(), txtNombre.getText(), txtPrimerApellido.getText(), txtSegundoApellido.getText());
+					familiar.setTelefono(txtTelefono.getText());
+					Principal.addFamiliar(familiar);
+					}
+					else if (rbnColega.isSelected()){
+					Colega colega = new Colega(txtCedula.getText(), txtNombre.getText(), txtPrimerApellido.getText(), txtSegundoApellido.getText());
+					colega.setTelefono(txtTelefono.getText());
+					Principal.addColega(colega);
+					}
+					
+					else if(rbnEstudiante.isSelected()){
+						Estudiante estudiante = new Estudiante(txtCedula.getText(), txtNombre.getText(), txtPrimerApellido.getText(), txtSegundoApellido.getText());
+						estudiante.setTelefono(txtTelefono.getText());
+						Principal.addEstudiante(estudiante);
+						
+					}
+					
+					coordinador.ocultarAgregarPersona();	
+
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Hay un campo requerido vacío!", "Error", JOptionPane.ERROR_MESSAGE);
+
+				}
 			}
 		});
 		btnSeguir.setBounds(540, 269, 59, 51);
 		getContentPane().add(btnSeguir);
+
+		JLabel lblCedula = new JLabel("C\u00E9dula:");
+		lblCedula.setForeground(Color.BLACK);
+		lblCedula.setFont(new Font("Georgia", Font.PLAIN, 20));
+		lblCedula.setBounds(234, 11, 80, 33);
+		getContentPane().add(lblCedula);
+
+
+		txtCedula = new TransparentTextField("", 0);
+		txtCedula.setBounds(234, 42, 179, 31);
+		getContentPane().add(txtCedula);
+	}
+
+
+	/***Getters & Setters**/
+	public Coordinador getCoordinador() {
+		return coordinador;
+	}
+
+	public void setCoordinador(Coordinador coordinador) {
+		this.coordinador = coordinador;
 	}
 }
