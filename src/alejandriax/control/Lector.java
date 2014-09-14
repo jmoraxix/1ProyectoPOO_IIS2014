@@ -23,8 +23,8 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Lector {
-	private String[] salida;
-	private String linea = "";
+	private static String[] salida;
+	private static String linea = "";
 	FileNameExtensionFilter filtroTxt=new FileNameExtensionFilter(".txt","txt");
 	
 	public void cargarEstudiantes(){

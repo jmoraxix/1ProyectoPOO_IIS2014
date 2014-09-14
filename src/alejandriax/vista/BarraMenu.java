@@ -12,6 +12,7 @@ package alejandriax.vista;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -22,6 +23,7 @@ import alejandriax.control.Coordinador;
 import alejandriax.control.Lector;
 import alejandriax.control.Ordenar;
 import alejandriax.control.Principal;
+import alejandriax.modelo.Persona;
 
 /**
  * @author xDiegoxD 06/09/2014
@@ -91,7 +93,7 @@ public class BarraMenu extends JMenuBar{
 			}
 		});
 		
-		mCargarPrestamos = new JMenuItem("Cargar Préstamos");
+		mCargarPrestamos = new JMenuItem("Cargar Prï¿½stamos");
 		mCargarPrestamos.setMnemonic('S');
 		mCargarPrestamos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -123,7 +125,7 @@ public class BarraMenu extends JMenuBar{
 		mCargarColegas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				nuevoLector.cargarColegas();
-				Ordenar.ordenarPersonaPrimerApellido(Principal.getColegas());
+//				Ordenar.ordenarPersonaPrimerApellido(Principal.getColegas());
 			}
 		});
 		
