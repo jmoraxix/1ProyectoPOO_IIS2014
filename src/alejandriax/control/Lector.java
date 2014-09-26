@@ -15,6 +15,7 @@ package alejandriax.control;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Date;
 
 import alejandriax.modelo.*;
 
@@ -165,6 +166,57 @@ public class Lector {
 				}
 				if(!existe){
 					Principal.addLibro(nueva);
+				}
+				linea = bR.readLine();
+			}
+			fR.close();
+		} catch (Exception e){
+			if(!e.toString().equals("java.lang.NullPointerException")){
+				JOptionPane.showMessageDialog(null, "Error en la lectura del archivo", 
+				"Error en lectura", JOptionPane.ERROR_MESSAGE);
+			}
+		}
+	}
+	
+	@SuppressWarnings("deprecation")
+	public void cargarPrestamos(){
+		String linea = "";
+		try{
+			JFileChooser rutaArchivo = new JFileChooser();
+			rutaArchivo.setFileFilter(filtroTxt);
+			rutaArchivo.showOpenDialog(rutaArchivo);
+			String path = rutaArchivo.getSelectedFile().getAbsolutePath();
+			File nomArchivo = new File(path);
+			FileReader fR = new FileReader(nomArchivo);
+			BufferedReader bR = new BufferedReader(fR);
+			
+			linea = bR.readLine();
+			while(linea!=null){
+				salida = linea.split(";");
+				
+				Boolean existeArt = false;
+				Articulo articulo = null;
+				for(Libro i : Principal.getLibros()){
+					if(i.getIdArticulo().equals(salida[5])){
+						existeArt = true;
+						articulo = i;
+					}
+				}
+				
+				Boolean existePer = false;
+				Persona persona = null;
+				for(Persona p : Principal.getPersonas()){
+					if(p.getNumeroCedula().equals(salida[6])){
+						existePer = true;
+						persona = p;
+					}
+				}
+				
+				if(existeArt && existePer){
+					Prestamo nueva = new Prestamo(salida[0], 
+							new Date(Integer.parseInt(salida[1]), Integer.parseInt(salida[2]), Integer.parseInt(salida[3])), 
+							salida[4], articulo);
+					persona.addPrestamos(nueva);
 				}
 				linea = bR.readLine();
 			}

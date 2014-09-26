@@ -93,12 +93,12 @@ public class BarraMenu extends JMenuBar{
 			}
 		});
 		
-		mCargarPrestamos = new JMenuItem("Cargar Pr�stamos");
+		mCargarPrestamos = new JMenuItem("Cargar Pr\u00E9stamos");
 		mCargarPrestamos.setMnemonic('S');
 		mCargarPrestamos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				nuevoLector.cargarLibros();
+				nuevoLector.cargarPrestamos();
 			}
 		});
 		

@@ -24,7 +24,7 @@ public class Persona {
 	private String segundoApellido;
 	protected String telefono;
 	protected String correoElectronico;
-	private ArrayList<Prestamo> prestamos;
+	private ArrayList<Prestamo> prestamos = new ArrayList<Prestamo>();
 
 	/**** Constructor ****/
 	public Persona(String numeroCedula, String nombre, String primerApellido,
