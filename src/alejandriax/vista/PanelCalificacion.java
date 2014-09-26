@@ -44,6 +44,10 @@ public class PanelCalificacion extends JPanel {
     	return levelBar.getLevel();
     }
     
+    public void setCalificacion(int calif){
+    	levelBar.setLevel(calif);
+    }
+    
     private ImageIcon makeStarImageIcon(ImageProducer ip, float[] filter) {
         return new ImageIcon(createImage(new FilteredImageSource(ip, new SelectedImageFilter(filter))));
     }

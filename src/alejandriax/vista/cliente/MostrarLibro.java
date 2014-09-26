@@ -112,6 +112,8 @@ public class MostrarLibro extends VentanaEmergente {
 		
 		PanelCalificacion panelCalificacion = new PanelCalificacion(libro);
 		panelCalificacion.setBounds(81, 328, 184, 28);
+		if(libro.getCalificacion() != 0)
+			panelCalificacion.setCalificacion(libro.getCalificacion());
 		getContentPane().add(panelCalificacion);
 	}
 

@@ -91,17 +91,23 @@ public class VentanaPrincipal extends VentanaBase {
 		panelLateral.ocultarBotonLateral(posActual);
 		panelLateral.mostrarBotonLateral(0);
 		posActual = 0;
-		for (Persona persona : Principal.getPersonas()) {
+		for(Persona persona : Principal.getPersonas()) {
 			ArrayList<Prestamo> prestamos = persona.getPrestamos();
-			for (final Prestamo prestamo : prestamos) {
-				Portada panel = new Portada(prestamo.getArticulo().getImagen());
-				panel.getPanel().getBtn().addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						new MostrarLibro(coordinador.getVentanaPrincipal(), prestamo.getArticulo()).setVisible(true);
-					}
-				});
-				panelPrincipal.agregarContenido(panel);
+			if(!prestamos.isEmpty()) {
+				for (final Prestamo prestamo : prestamos) {
+					Portada panel = new Portada(prestamo.getArticulo()
+							.getImagen());
+					panel.getPanel().getBtn()
+							.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent e) {
+									new MostrarLibro(coordinador
+											.getVentanaPrincipal(), prestamo
+											.getArticulo()).setVisible(true);
+								}
+							});
+					panelPrincipal.agregarContenido(panel);
+				}
 			}
 		}
 	}
@@ -129,14 +135,14 @@ public class VentanaPrincipal extends VentanaBase {
 		panelLateral.mostrarBotonLateral(2);
 		posActual = 2;
 		for (final Persona persona : Principal.getPersonas()) {
-			Portada panel = new Portada("usuario.png");
-			panel.getPanel().getBtn().addActionListener(new ActionListener() {
+			PanelConFondo panel = new PanelConFondo("usuario.png", false, "");
+			panel.getBtn().addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					new MostrarPersona(coordinador.getVentanaPrincipal(), persona).setVisible(true);
 				}
 			});
-		panelPrincipal.agregarContenido(panel);
+			panelPrincipal.agregarContenido(panel);
 		}
 	}
 

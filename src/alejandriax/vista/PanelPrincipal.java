@@ -17,6 +17,8 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.util.ArrayList;
 
+import javax.swing.JPanel;
+
 /**
  * @author jmora 27/8/2014 Declara el panel principal con su layout y métodos
  *         para manejarlo
@@ -25,7 +27,7 @@ public class PanelPrincipal extends PanelConFondo {
 
 	private int ancho, alto;
 	private int items_x = 0, items_y = 0;
-	private ArrayList<Portada> items = new ArrayList<Portada>();
+	private ArrayList<JPanel> items = new ArrayList<JPanel>();
 
 	public PanelPrincipal(String urlImagen, int ancho, int alto) {
 		// Inicializa el panel
@@ -50,7 +52,7 @@ public class PanelPrincipal extends PanelConFondo {
 	}
 
 	// Agrega un item al panel principal
-	public void agregarContenido(Portada panel) {
+	public void agregarContenido(JPanel panel) {
 		if (items_x == 6) {
 			items_x = 0;
 			items_y++;
@@ -69,7 +71,7 @@ public class PanelPrincipal extends PanelConFondo {
 	public void limpiarPanel() {
 		items_x = 0;
 		items_y = 0;
-		for (Portada panel : items) {
+		for (JPanel panel : items) {
 			panel.setVisible(false);
 			panel.setEnabled(false);
 		}
