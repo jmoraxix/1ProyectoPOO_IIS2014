@@ -193,7 +193,7 @@ public class Lector {
 			linea = bR.readLine();
 			while(linea!=null){
 				salida = linea.split(";");
-				
+		
 				Boolean existeArt = false;
 				Articulo articulo = null;
 				for(Libro i : Principal.getLibros()){
@@ -207,8 +207,14 @@ public class Lector {
 				Persona persona = null;
 				for(Persona p : Principal.getPersonas()){
 					if(p.getNumeroCedula().equals(salida[6])){
-						existePer = true;
-						persona = p;
+						Boolean existePrestamo = false;
+						for(Prestamo prestamo : p.getPrestamos())
+							if(prestamo.getCodigoPrestamo().equals(salida[0]))
+								existePrestamo = true;
+						if(!existePrestamo){
+							existePer = true;
+							persona = p;
+						}
 					}
 				}
 				

@@ -7,7 +7,7 @@
  * Gabriel Ramirez
  * 201020244
  */
-package alejandriax.modelo;
+package alejandriax.vista.cliente;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -25,25 +25,19 @@ import javax.swing.border.TitledBorder;
 import alejandriax.vista.PanelConFondo;
 import alejandriax.vista.TransparentTextField;
 import alejandriax.vista.VentanaEmergente;
-
-
+import javax.swing.JTextArea;
 
 /**
  * @author xDiegoxD 06/09/2014
- *
  * 
  */
 public class EnviarCorreo extends VentanaEmergente implements ActionListener{
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JRadioButton  rdb10dias, rdb15dias, rdbSobreFecha;
-	private TransparentTextField txtAsunto, txtMensaje;
+	private TransparentTextField txtAsunto;
+	private JTextArea txtMensaje;
 
-	/**
-	 * @param frame
-	 * @param title
-	 * @param fondo
-	 */
-	public EnviarCorreo(JFrame frame) {
+	public EnviarCorreo(JFrame frame, String correoReceptor) {
 		super(frame, "Enviar Correo", "fondo_barra_lateral.png");
 		
 		JLabel lblRecordatorio = new JLabel("Recordatorio Correo Electr\u00F3nico:");
@@ -69,7 +63,7 @@ public class EnviarCorreo extends VentanaEmergente implements ActionListener{
 		getContentPane().add(panelMensaje);
 		panelMensaje.setLayout(null);
 		
-		txtMensaje = new TransparentTextField();
+		txtMensaje = new JTextArea();
 		txtMensaje.setBounds(6, 16, 531, 161);
 		panelMensaje.add(txtMensaje);
 		
