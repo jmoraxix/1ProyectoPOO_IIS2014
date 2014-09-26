@@ -11,6 +11,8 @@ package alejandriax.modelo;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
@@ -31,8 +33,10 @@ import alejandriax.vista.VentanaEmergente;
  *
  * 
  */
-public class EnviarCorreo extends VentanaEmergente{
+public class EnviarCorreo extends VentanaEmergente implements ActionListener{
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private JRadioButton  rdb10dias, rdb15dias, rdbSobreFecha;
+	private TransparentTextField txtAsunto, txtMensaje;
 
 	/**
 	 * @param frame
@@ -55,7 +59,7 @@ public class EnviarCorreo extends VentanaEmergente{
 		getContentPane().add(panelAsunto);
 		panelAsunto.setLayout(null);
 		
-		TransparentTextField txtAsunto = new TransparentTextField("", 0);
+		txtAsunto = new TransparentTextField("", 0);
 		txtAsunto.setBounds(6, 16, 179, 31);
 		panelAsunto.add(txtAsunto);
 		
@@ -65,24 +69,31 @@ public class EnviarCorreo extends VentanaEmergente{
 		getContentPane().add(panelMensaje);
 		panelMensaje.setLayout(null);
 		
-		TransparentTextField txtMensaje = new TransparentTextField();
+		txtMensaje = new TransparentTextField();
 		txtMensaje.setBounds(6, 16, 531, 161);
 		panelMensaje.add(txtMensaje);
 		
-		JRadioButton rdb10dias = new JRadioButton("10 D\u00EDas");
+		rdb10dias = new JRadioButton("10 D\u00EDas");
+		rdb10dias.addActionListener(this);
+		rdb10dias.setSelected(true);
+		rdb10dias.setOpaque(false);
 		buttonGroup.add(rdb10dias);
 		rdb10dias.setBounds(233, 122, 61, 23);
 		getContentPane().add(rdb10dias);
 		
-		JRadioButton rdb15dias = new JRadioButton("15 D\u00EDas");
+		rdb15dias = new JRadioButton("15 D\u00EDas");
+		rdb15dias.addActionListener(this);
+		rdb15dias.setOpaque(false);
 		buttonGroup.add(rdb15dias);
 		rdb15dias.setBounds(296, 122, 61, 23);
 		getContentPane().add(rdb15dias);
 		
-		JRadioButton rdbtnSobreFecha = new JRadioButton("Sobre Fecha");
-		buttonGroup.add(rdbtnSobreFecha);
-		rdbtnSobreFecha.setBounds(359, 122, 85, 23);
-		getContentPane().add(rdbtnSobreFecha);
+		rdbSobreFecha = new JRadioButton("Sobre Fecha");
+		rdbSobreFecha.addActionListener(this);
+		rdbSobreFecha.setOpaque(false);
+		buttonGroup.add(rdbSobreFecha);
+		rdbSobreFecha.setBounds(359, 122, 85, 23);
+		getContentPane().add(rdbSobreFecha);
 		
 
 		PanelConFondo panelGmail = new PanelConFondo("gmailicon.png", false, "");
@@ -93,6 +104,31 @@ public class EnviarCorreo extends VentanaEmergente{
 		panelHotmail.setBounds(530, 91, 53, 54);
 		getContentPane().add(panelHotmail);
 		// TODO Auto-generated constructor stub
+	}
+	
+	public void actionPerformed(ActionEvent e){
+		
+		if(rdb10dias.isSelected()){
+	    	txtAsunto.setText("Recordatorio primeros 10 dias");
+			txtMensaje.setText(" Este mensaje es para recordarle que el libro prestado cumple con 10 dias \n " 
+					+ "Este es un mensaje autogenerado."
+					+ "Por favor no responda este mensaje"
+					+ "Gracias");
+		} else if(rdb15dias.isSelected()){
+			txtAsunto.setText("Recordatorio primeros 10 dias");
+			txtMensaje.setText(" Este mensaje es para recordarle que el libro prestado cumple con 10 dias \n " 
+					+ "Este es un mensaje autogenerado."
+					+ "Por favor no responda este mensaje"
+					+ "Gracias");
+		} else if(rdbSobreFecha.isSelected()){
+			txtAsunto.setText("Recordatorio primeros 10 dias");
+			txtMensaje.setText(" Este mensaje es para recordarle que el libro prestado cumple con 10 dias \n " 
+					+ "Este es un mensaje autogenerado."
+					+ "Por favor no responda este mensaje"
+					+ "Gracias");
+		}
+		
+		
 	}
 }
 	
