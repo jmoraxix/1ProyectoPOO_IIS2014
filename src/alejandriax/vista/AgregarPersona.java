@@ -108,7 +108,7 @@ public class AgregarPersona extends VentanaEmergente{
 		buttonGroup.add(rbnEstudiante);
 		rbnEstudiante.setOpaque(false);
 		rbnEstudiante.setFont(Principal.getLetratexto2());
-		rbnEstudiante.setBounds(44, 297, 133, 23);
+		rbnEstudiante.setBounds(44, 298, 133, 23);
 		getContentPane().add(rbnEstudiante);
 
 		rbnColega = new JRadioButton("Colega");
