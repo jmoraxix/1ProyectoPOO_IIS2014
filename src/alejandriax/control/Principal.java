@@ -117,6 +117,7 @@ public class Principal {
 	}
 
 	public static ArrayList<Libro> getLibros() {
+		Ordenar.ordenarLibroTitulo(libros);
 		return libros;
 	}
 
@@ -169,6 +170,7 @@ public class Principal {
 		array.addAll(colegas);
 		array.addAll(familiares);
 		array.addAll(estudiantes);
+		Ordenar.ordenarPersonaPrimerApellido(array);
 		return array;
 	}
 

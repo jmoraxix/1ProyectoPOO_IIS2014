@@ -30,6 +30,7 @@ import alejandriax.vista.VentanaBase;
 /**
  * @author Jos\u00E9 David 23/08/2014
  */
+@SuppressWarnings("serial")
 public class VentanaPrincipal extends VentanaBase {
 
 	/**** Atributos ****/
@@ -96,14 +97,13 @@ public class VentanaPrincipal extends VentanaBase {
 			if(!prestamos.isEmpty()) {
 				for (final Prestamo prestamo : prestamos) {
 					Portada panel = new Portada(prestamo.getArticulo()
-							.getImagen());
+							.getImagen(), prestamo.getEstadoPrestamo());
 					panel.getPanel().getBtn()
 							.addActionListener(new ActionListener() {
 								@Override
 								public void actionPerformed(ActionEvent e) {
-									new MostrarLibro(coordinador
-											.getVentanaPrincipal(), prestamo
-											.getArticulo()).setVisible(true);
+									new MostrarPrestamo(coordinador.getVentanaPrincipal(),
+											prestamo.getArticulo()).setVisible(true);
 								}
 							});
 					panelPrincipal.agregarContenido(panel);
