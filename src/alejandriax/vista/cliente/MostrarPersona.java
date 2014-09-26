@@ -7,7 +7,7 @@
  * Gabriel Ramirez
  * 201020244
  */
-package alejandriax.vista;
+package alejandriax.vista.cliente;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -19,6 +19,7 @@ import javax.swing.JLabel;
 import alejandriax.control.Coordinador;
 import alejandriax.control.Principal;
 import alejandriax.modelo.Persona;
+import alejandriax.vista.VentanaEmergente;
 
 /**
  * @author xDiegoxD 13/09/2014

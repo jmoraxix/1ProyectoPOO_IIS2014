@@ -21,7 +21,6 @@ import alejandriax.control.Principal;
 import alejandriax.modelo.Libro;
 import alejandriax.modelo.Persona;
 import alejandriax.modelo.Prestamo;
-import alejandriax.vista.MostrarPersona;
 import alejandriax.vista.PanelConFondo;
 import alejandriax.vista.PanelLateral;
 import alejandriax.vista.PanelPrincipal;
