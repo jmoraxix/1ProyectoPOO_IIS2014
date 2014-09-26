@@ -25,6 +25,7 @@ import alejandriax.vista.MostrarPersona;
 import alejandriax.vista.PanelConFondo;
 import alejandriax.vista.PanelLateral;
 import alejandriax.vista.PanelPrincipal;
+import alejandriax.vista.Portada;
 import alejandriax.vista.VentanaBase;
 
 /**
@@ -94,9 +95,8 @@ public class VentanaPrincipal extends VentanaBase {
 		for (Persona persona : Principal.getPersonas()) {
 			ArrayList<Prestamo> prestamos = persona.getPrestamos();
 			for (final Prestamo prestamo : prestamos) {
-				PanelConFondo panel = new PanelConFondo("portadas/"
-						+ prestamo.getArticulo().getImagen(), false, "");
-				panel.getBtn().addActionListener(new ActionListener() {
+				Portada panel = new Portada(prestamo.getArticulo().getImagen());
+				panel.getPanel().getBtn().addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						new MostrarLibro(coordinador.getVentanaPrincipal(), prestamo.getArticulo()).setVisible(true);
@@ -113,9 +113,8 @@ public class VentanaPrincipal extends VentanaBase {
 		panelLateral.mostrarBotonLateral(1);
 		posActual = 1;
 		for (final Libro libro : Principal.getLibros()) {
-			System.out.println(libro.getImagen());
-			PanelConFondo panel = new PanelConFondo("portadas/" + libro.getImagen(), false, "");
-			panel.getBtn().addActionListener(new ActionListener() {
+			Portada panel = new Portada(libro.getImagen());
+			panel.getPanel().getBtn().addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					new MostrarLibro(coordinador.getVentanaPrincipal(), libro).setVisible(true);
@@ -131,8 +130,8 @@ public class VentanaPrincipal extends VentanaBase {
 		panelLateral.mostrarBotonLateral(2);
 		posActual = 2;
 		for (final Persona persona : Principal.getPersonas()) {
-			PanelConFondo panel = new PanelConFondo("usuario.png", false, "");
-			panel.getBtn().addActionListener(new ActionListener() {
+			Portada panel = new Portada("usuario.png");
+			panel.getPanel().getBtn().addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					new MostrarPersona(coordinador.getVentanaPrincipal(), persona).setVisible(true);
