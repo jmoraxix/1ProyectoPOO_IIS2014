@@ -36,15 +36,15 @@ public class VentanaBase extends JFrame {
 	private PanelPrincipal principal;
 
 	public VentanaBase() {
-		// Declaracion basica de la venta
-		this.setJMenuBar(new BarraMenu(this));
-		
-		
+		// Declaracion básica de la venta
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(ancho_lateral + ancho_principal, alto);
 		setTitle("ALEJANDRIAX");
 		Image icon = Toolkit.getDefaultToolkit().getImage(Alejandriax.class.getResource("vista/imagenes/logo_principal_icono.png"));
 		setIconImage(icon);
+		
+		//Se declara la barra de menú
+		this.setJMenuBar(new BarraMenu(this));
 
 		// Inicializar ventana y paneles
 		// Panel con el contenido principal

@@ -25,7 +25,7 @@ public class PanelPrincipal extends PanelConFondo {
 
 	private int ancho, alto;
 	private int items_x = 0, items_y = 0;
-	private ArrayList<PanelConFondo> items = new ArrayList<PanelConFondo>();
+	private ArrayList<Portada> items = new ArrayList<Portada>();
 
 	public PanelPrincipal(String urlImagen, int ancho, int alto) {
 		// Inicializa el panel
@@ -50,7 +50,7 @@ public class PanelPrincipal extends PanelConFondo {
 	}
 
 	// Agrega un item al panel principal
-	public void agregarContenido(PanelConFondo panel) {
+	public void agregarContenido(Portada panel) {
 		if (items_x == 6) {
 			items_x = 0;
 			items_y++;
@@ -69,11 +69,13 @@ public class PanelPrincipal extends PanelConFondo {
 	public void limpiarPanel() {
 		items_x = 0;
 		items_y = 0;
-		for (PanelConFondo panel : items) {
+		for (Portada panel : items) {
 			panel.setVisible(false);
 			panel.setEnabled(false);
 		}
 		items.clear();
+		
+		System.gc();
 	}
 
 }

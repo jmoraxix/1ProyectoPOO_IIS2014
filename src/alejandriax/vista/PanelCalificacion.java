@@ -82,7 +82,6 @@ class LevelBar extends JPanel implements MouseListener, MouseMotionListener {
     }
     public void setLevel(int l) {
         clicked = l;
-        articulo.setCalificacion(clicked);
         repaintIcon(clicked);
     }
     private int getSelectedIconIndex(Point p) {
@@ -109,6 +108,7 @@ class LevelBar extends JPanel implements MouseListener, MouseMotionListener {
     }
     @Override public void mouseClicked(MouseEvent e) {
         clicked = getSelectedIconIndex(e.getPoint());
+        articulo.setCalificacion(clicked);
     }
     @Override public void mouseExited(MouseEvent e) {
         repaintIcon(clicked);
