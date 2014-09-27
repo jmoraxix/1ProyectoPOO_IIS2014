@@ -16,25 +16,26 @@ package alejandriax.control;
 import alejandriax.InformacionProyecto;
 import alejandriax.modelo.Logica;
 import alejandriax.vista.AgregarPersona;
+import alejandriax.vista.cliente.ConsultaPersona;
 import alejandriax.vista.cliente.VentanaPrincipal;
 
 /**
- * @author JoséDavid 31/7/2014
+ * @author Josï¿½David 31/7/2014
  */
 public class Coordinador {
 
-	/**** DECLARACIÓN DE LA INSTANCIA COORDINADOR ****/
+	/**** DECLARACIï¿½N DE LA INSTANCIA COORDINADOR ****/
 	private static final Coordinador INSTANCE = new Coordinador();
 
 	public static Coordinador getINSTANCE() {
 		return INSTANCE;
 	}
 
-	/**** DECLARACIÓN DE PANTALLAS ****/
+	/**** DECLARACIï¿½N DE PANTALLAS ****/
 	private static VentanaPrincipal ventanaPrincipal;
 	private static InformacionProyecto informacionProyecto;
 	private static AgregarPersona agregarPersona;
-	// Declaración clase logica
+	// Declaraciï¿½n clase logica
 	private static Logica logica;
 
 	/**** GETTERS AND SETTERS ***/
@@ -70,9 +71,6 @@ public class Coordinador {
 	public static void setAgregarPersona(AgregarPersona agregarPersona) {
 		Coordinador.agregarPersona = agregarPersona;
 	}
-	
-	/**** FUNCIONES ENTRE CLASES ****/
-
 
 	/** MOSTRAR VENTANAS **/
 	public static void mostrarVentanaPrincipal() {
@@ -81,11 +79,10 @@ public class Coordinador {
 	public static void mostrarInformacionProyecto(){
 		informacionProyecto.setVisible(true);
 	}
-
 	public static void mostrarAgregarPersona(){
-		agregarPersona.setVisible(true);
-		
+		agregarPersona.setVisible(true);	
 	}
+	
 	/** OCULTAR VENTANAS **/
 	public static void ocultarVentanaPrincipal() {
 		ventanaPrincipal.setVisible(false);
@@ -95,9 +92,5 @@ public class Coordinador {
 	}
 	public static void ocultarAgregarPersona(){
 		agregarPersona.setVisible(false);
-		
 	}
-	
-
-	/**** FUNCIONES DEL MODELO ****/
 }

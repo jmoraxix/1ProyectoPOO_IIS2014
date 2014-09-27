@@ -29,6 +29,7 @@ import alejandriax.modelo.Pelicula;
 import alejandriax.modelo.Persona;
 import alejandriax.modelo.Revista;
 import alejandriax.vista.AgregarPersona;
+import alejandriax.vista.cliente.ConsultaPersona;
 import alejandriax.vista.cliente.VentanaPrincipal;
 
 /**
@@ -59,7 +60,7 @@ public class Principal {
 	private static VentanaPrincipal ventanaPrincipal;
 	private static InformacionProyecto informacionProyecto;
 	private static AgregarPersona agregarPersona;
-
+	
 	public static void main(String[] args) {
 		System.gc();
 
@@ -180,14 +181,6 @@ public class Principal {
 
 	public static void setCoordinador(Coordinador coordinador) {
 		Principal.coordinador = coordinador;
-	}
-
-	public static Logica getLogica() {
-		return logica;
-	}
-
-	public static void setLogica(Logica logica) {
-		Principal.logica = logica;
 	}
 
 	public static Font getLetratitulo1() {

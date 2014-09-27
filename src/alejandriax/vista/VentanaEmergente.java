@@ -38,4 +38,15 @@ public class VentanaEmergente extends JDialog {
 		panel = new PanelConFondo(fondo);
 		setContentPane(panel);
 	}
+	
+	public VentanaEmergente(JFrame frame, String title, String fondo, int ancho, int alto) {
+		super(frame, title, true);
+		setModalExclusionType(Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(frame);
+		setSize(ancho, alto);
+
+		panel = new PanelConFondo(fondo);
+		setContentPane(panel);
+	}
 }
