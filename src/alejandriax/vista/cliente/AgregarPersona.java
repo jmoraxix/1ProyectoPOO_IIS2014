@@ -179,7 +179,7 @@ public class AgregarPersona extends VentanaEmergente{
 						}
 					}
 					else 
-						JOptionPane.showMessageDialog(coordinador.getVentanaPrincipal(), "La persona ya existe, ingrese otra cédula.", "Error", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(coordinador.getAgregarPersona(), "La persona ya existe, ingrese otra cédula.", "Error", JOptionPane.ERROR_MESSAGE);
 					
 					// Oculta la ventana
 					coordinador.ocultarAgregarPersona();	
