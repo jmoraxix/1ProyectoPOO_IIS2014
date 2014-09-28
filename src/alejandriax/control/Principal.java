@@ -30,6 +30,7 @@ import alejandriax.modelo.Persona;
 import alejandriax.modelo.Revista;
 import alejandriax.vista.cliente.AgregarLibro;
 import alejandriax.vista.cliente.AgregarPersona;
+import alejandriax.vista.cliente.ConsultaPersona;
 import alejandriax.vista.cliente.VentanaPrincipal;
 
 /**
@@ -61,7 +62,7 @@ public class Principal {
 	private static InformacionProyecto informacionProyecto;
 	private static AgregarPersona agregarPersona;
 	private static AgregarLibro agregarLibro;
-	
+	private static ConsultaPersona consultaPersona;
 	public static void main(String[] args) {
 		System.gc();
 
@@ -87,6 +88,7 @@ public class Principal {
 		informacionProyecto = new InformacionProyecto(ventanaPrincipal);
 		agregarPersona = new AgregarPersona(ventanaPrincipal);
 		agregarLibro = new AgregarLibro(ventanaPrincipal);
+		consultaPersona = new ConsultaPersona(ventanaPrincipal);
 		
 		// Coordinador
 		coordinador = Coordinador.getINSTANCE();
@@ -98,6 +100,7 @@ public class Principal {
 		informacionProyecto.setCoordinador(coordinador);
 		agregarPersona.setCoordinador(coordinador);
 		agregarLibro.setCoordinador(coordinador);
+		consultaPersona.setCoordinador(coordinador);
 		// L�gica
 		logica.setCoordinador(coordinador);
 
@@ -106,6 +109,7 @@ public class Principal {
 		coordinador.setInformacionProyecto(informacionProyecto);
 		coordinador.setAgregarPersona(agregarPersona);
 		coordinador.setAgregarLibro(agregarLibro);
+		coordinador.setConsultaPersona(consultaPersona);
 		// L�gica
 		coordinador.setLogica(logica);
 

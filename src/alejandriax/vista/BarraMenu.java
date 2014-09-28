@@ -79,7 +79,7 @@ public class BarraMenu extends JMenuBar{
 		});
 		prestamos.add(mcrearPrestamo);
 
-		mConsultarPrestamos = new JMenuItem("Consultar Préstamos");
+		mConsultarPrestamos = new JMenuItem("Consultar Pr\u00E9stamos");
 		mConsultarPrestamos.setMnemonic('P');
 		prestamos.add(mConsultarPrestamos);
 
