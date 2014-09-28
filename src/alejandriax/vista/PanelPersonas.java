@@ -144,7 +144,7 @@ public class PanelPersonas extends JPanel {
 		gbc.gridx = 5;
 		add(lblCorreo, gbc);
 		//Verifica si tiene préstamos
-		JLabel lblPrest = new JLabel((persona.getPrestamos().isEmpty() ? "Si" : "No"));
+		JLabel lblPrest = new JLabel(!persona.getPrestamos().isEmpty() ? "Si" : "No");
 		componentes.add(lblPrest);
 		gbc.gridx = 6;
 		add(lblPrest, gbc);
@@ -152,7 +152,7 @@ public class PanelPersonas extends JPanel {
 		JButton btn = new JButton("Ver persona");
 		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new MostrarPersona(ventana, persona);
+				new MostrarPersona(ventana, persona).setVisible(true);
 			}
 		});
 		componentes.add(btn);
