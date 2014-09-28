@@ -17,6 +17,7 @@ import alejandriax.InformacionProyecto;
 import alejandriax.modelo.Logica;
 import alejandriax.vista.cliente.AgregarLibro;
 import alejandriax.vista.cliente.AgregarPersona;
+import alejandriax.vista.cliente.AgregarPrestamo;
 import alejandriax.vista.cliente.ConsultaLibro;
 import alejandriax.vista.cliente.ConsultaPersona;
 import alejandriax.vista.cliente.ConsultaPrestamo;
@@ -42,6 +43,7 @@ public class Coordinador {
 	private static ConsultaPersona consultaPersona;
 	private static ConsultaLibro consultaLibro;
 	private static ConsultaPrestamo consultaPrestamo;
+	private static AgregarPrestamo agregarPrestamo;
 	// Declaraci�n clase logica
 	private static Logica logica;
 
@@ -111,6 +113,14 @@ public class Coordinador {
 		Coordinador.consultaPrestamo = consultaPrestamo;
 	}
 
+	public static AgregarPrestamo getAgregarPrestamo() {
+		return agregarPrestamo;
+	}
+
+	public static void setAgregarPrestamo(AgregarPrestamo agregarPrestamo) {
+		Coordinador.agregarPrestamo = agregarPrestamo;
+	}
+
 	/** MOSTRAR VENTANAS **/
 	public static void mostrarVentanaPrincipal() {
 		ventanaPrincipal.setVisible(true);
@@ -132,6 +142,9 @@ public class Coordinador {
 	}
 	public static void mostrarConsultaPrestamo(){
 		consultaPrestamo.setVisible(true);
+	}
+	public static void mostrarAgregarPrestamo(){
+		agregarPrestamo.setVisible(true);
 	}
 	
 	/** OCULTAR VENTANAS **/
@@ -155,6 +168,9 @@ public class Coordinador {
 	}
 	public static void ocultarConsultaPrestamo(){
 		consultaPrestamo.setVisible(false);
+	}
+	public static void ocultarAgregarPrestamo(){
+		agregarPrestamo.setVisible(false);
 	}
 	
 }
