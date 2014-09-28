@@ -12,7 +12,6 @@ package alejandriax.vista;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -21,9 +20,6 @@ import javax.swing.JMenuItem;
 
 import alejandriax.control.Coordinador;
 import alejandriax.control.Lector;
-import alejandriax.control.Ordenar;
-import alejandriax.control.Principal;
-import alejandriax.modelo.Persona;
 import alejandriax.vista.cliente.ConsultaPersona;
 
 /**
@@ -155,6 +151,7 @@ public class BarraMenu extends JMenuBar{
 		mCrearLibro.setMnemonic('L');
 		mCrearLibro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Coordinador.mostrarAgregarLibro();
 			}
 		});
 		registrarLibro.add(mCrearLibro);

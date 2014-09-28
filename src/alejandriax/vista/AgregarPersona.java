@@ -13,12 +13,15 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 
 import alejandriax.control.Coordinador;
 import alejandriax.control.Principal;
@@ -72,15 +75,17 @@ public class AgregarPersona extends VentanaEmergente{
 		getContentPane().add(lblCorreoElectronico);
 
 		txtNombre = new TransparentTextField("", 0);
+		soloLetras(txtNombre);
 		txtNombre.setBounds(26, 42, 179, 31);
-
 		getContentPane().add(txtNombre);
 
 		txtPrimerApellido = new TransparentTextField("", 0);
+		soloLetras(txtPrimerApellido);
 		txtPrimerApellido.setBounds(27, 127, 179, 31);
 		getContentPane().add(txtPrimerApellido);
 
 		txtSegundoApellido = new TransparentTextField("", 0);
+		soloLetras(txtSegundoApellido);
 		txtSegundoApellido.setBounds(384, 127, 179, 31);
 		getContentPane().add(txtSegundoApellido);
 
@@ -89,6 +94,7 @@ public class AgregarPersona extends VentanaEmergente{
 		getContentPane().add(txtCorreo);
 
 		txtTelefono = new TransparentTextField("", 0);
+		soloNumeros(txtTelefono);
 		txtTelefono.setBounds(384, 214, 179, 31);
 		getContentPane().add(txtTelefono);
 
@@ -191,10 +197,35 @@ public class AgregarPersona extends VentanaEmergente{
 
 
 		txtCedula = new TransparentTextField("", 0);
+		soloNumeros(txtCedula);
 		txtCedula.setBounds(234, 42, 179, 31);
 		getContentPane().add(txtCedula);
 	}
 
+	
+	public void soloLetras(JTextField txt){
+		txt.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char c= e.getKeyChar();
+				if (Character.isDigit(c)) {
+					e.consume();		
+				}
+			}
+		});
+	}
+
+	public void soloNumeros(JTextField txt){
+		txt.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char c= e.getKeyChar();
+				if (!Character.isDigit(c)) {
+					e.consume();		
+				}
+			}
+		});
+	}
 
 	/***Getters & Setters**/
 	public Coordinador getCoordinador() {
