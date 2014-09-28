@@ -7,7 +7,7 @@
  * Gabriel Ramirez
  * 201020244
  */
-package alejandriax.vista;
+package alejandriax.vista.cliente;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -24,6 +24,10 @@ import javax.swing.JTextField;
 import alejandriax.control.Coordinador;
 import alejandriax.control.Principal;
 import alejandriax.modelo.Libro;
+import alejandriax.vista.PanelCalificacion;
+import alejandriax.vista.PanelConFondo;
+import alejandriax.vista.TransparentTextField;
+import alejandriax.vista.VentanaEmergente;
 
 /**
  * @author xDiegoxD 27/09/2014
@@ -47,30 +51,30 @@ public class AgregarLibro extends VentanaEmergente {
 	public AgregarLibro(JFrame frame) {
 		super(frame,"Agregar Libro", "fondo_principal.png");
 		this.libro = (Libro) libro;
+		Libro libro = new Libro(null, null, null, null, null);
 		
-		
-		JLabel lblTitulo = new JLabel("T\u00EDtulo:");
+		JLabel lblTitulo = new JLabel("T\u00EDtulo: *");
 		lblTitulo.setForeground(Color.BLACK);
 		lblTitulo.setFont(Principal.getLetratexto2());
 		lblTitulo.setBounds(25, 24, 80, 33);
 		getContentPane().add(lblTitulo);
 
 		txtTituloLibro = new TransparentTextField("", 0);
-		soloLetras(txtTituloLibro);
 		txtTituloLibro.setBounds(115, 28, 179, 31);
 		getContentPane().add(txtTituloLibro);
 		
-		JLabel lblAutor = new JLabel("Autor:");
+		JLabel lblAutor = new JLabel("Autor: *");
 		lblAutor.setForeground(Color.BLACK);
 		lblAutor.setFont(new Font("Georgia", Font.PLAIN, 20));
 		lblAutor.setBounds(25, 118, 80, 33);
 		getContentPane().add(lblAutor);
 		
 		txtAutor = new TransparentTextField("", 0);
+		soloLetras(txtAutor);
 		txtAutor.setBounds(115, 118, 179, 31);
 		getContentPane().add(txtAutor);
 		
-		JLabel lblEditorial = new JLabel("Editorial:");
+		JLabel lblEditorial = new JLabel("Editorial: *");
 		lblEditorial.setForeground(Color.BLACK);
 		lblEditorial.setFont(new Font("Georgia", Font.PLAIN, 20));
 		lblEditorial.setBounds(25, 198, 101, 33);
@@ -85,19 +89,18 @@ public class AgregarLibro extends VentanaEmergente {
 		getContentPane().add(txtEdicion);
 		
 		txtGenero = new TransparentTextField("", 0);
+		soloLetras(txtGenero);
 		txtGenero.setBounds(434, 118, 179, 31);
 		getContentPane().add(txtGenero);
 		
-		lblEdicion = new JLabel("Edici\u00F3n:");
+		lblEdicion = new JLabel("Edici\u00F3n: *");
 		lblEdicion.setForeground(Color.BLACK);
 		lblEdicion.setFont(new Font("Georgia", Font.PLAIN, 20));
-		lblEdicion.setBounds(344, 198, 80, 33);
+		lblEdicion.setBounds(344, 198, 92, 33);
 		getContentPane().add(lblEdicion);
 		
 		PanelCalificacion panelCalificacion = new PanelCalificacion(libro);
 		panelCalificacion.setBounds(173, 284, 184, 28);
-//		if(libro.getCalificacion() != 0)
-//		panelCalificacion.setCalificacion(libro.getCalificacion());
 		getContentPane().add(panelCalificacion);
 		
 		lblCalificacion = new JLabel("Calificaci\u00F3n:");
@@ -105,6 +108,13 @@ public class AgregarLibro extends VentanaEmergente {
 		lblCalificacion.setFont(new Font("Georgia", Font.PLAIN, 20));
 		lblCalificacion.setBounds(25, 279, 116, 33);
 		getContentPane().add(lblCalificacion);
+		
+
+		lblGenero = new JLabel("G\u00E9nero: *");
+		lblGenero.setForeground(Color.BLACK);
+		lblGenero.setFont(new Font("Georgia", Font.PLAIN, 20));
+		lblGenero.setBounds(344, 118, 92, 33);
+		getContentPane().add(lblGenero);
 		
 		
 		PanelConFondo btnSeguir = new PanelConFondo("check.png", false, "");
@@ -136,7 +146,7 @@ public class AgregarLibro extends VentanaEmergente {
 						JOptionPane.showMessageDialog(coordinador.getVentanaPrincipal(), "La persona ya existe, ingrese otra cédula.", "Error", JOptionPane.ERROR_MESSAGE);
 					
 					// Oculta la ventana
-					coordinador.ocultarAgregarPersona();	
+					coordinador.ocultarAgregarLibro();	
 				}
 				else 
 					JOptionPane.showMessageDialog(coordinador.getVentanaPrincipal(), "¡Hay un campo requerido vac\u00edo!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -146,11 +156,6 @@ public class AgregarLibro extends VentanaEmergente {
 		btnSeguir.setBounds(540, 269, 59, 51);
 		getContentPane().add(btnSeguir);
 		
-		lblGenero = new JLabel("G\u00E9nero:");
-		lblGenero.setForeground(Color.BLACK);
-		lblGenero.setFont(new Font("Georgia", Font.PLAIN, 20));
-		lblGenero.setBounds(344, 118, 80, 33);
-		getContentPane().add(lblGenero);
 		
 		
 		

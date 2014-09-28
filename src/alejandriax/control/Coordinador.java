@@ -15,8 +15,8 @@ package alejandriax.control;
 
 import alejandriax.InformacionProyecto;
 import alejandriax.modelo.Logica;
-import alejandriax.vista.AgregarLibro;
-import alejandriax.vista.AgregarPersona;
+import alejandriax.vista.cliente.AgregarLibro;
+import alejandriax.vista.cliente.AgregarPersona;
 import alejandriax.vista.cliente.VentanaPrincipal;
 
 /**

@@ -28,8 +28,8 @@ import alejandriax.modelo.Logica;
 import alejandriax.modelo.Pelicula;
 import alejandriax.modelo.Persona;
 import alejandriax.modelo.Revista;
-import alejandriax.vista.AgregarLibro;
-import alejandriax.vista.AgregarPersona;
+import alejandriax.vista.cliente.AgregarLibro;
+import alejandriax.vista.cliente.AgregarPersona;
 import alejandriax.vista.cliente.VentanaPrincipal;
 
 /**

@@ -7,7 +7,7 @@
  * Gabriel Ramirez
  * 201020244
  */
-package alejandriax.vista;
+package alejandriax.vista.cliente;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -29,6 +29,9 @@ import alejandriax.modelo.Colega;
 import alejandriax.modelo.Estudiante;
 import alejandriax.modelo.Familiar;
 import alejandriax.modelo.Persona;
+import alejandriax.vista.PanelConFondo;
+import alejandriax.vista.TransparentTextField;
+import alejandriax.vista.VentanaEmergente;
 
 /**
  * @author xDiegoxD 13/09/2014
@@ -48,20 +51,20 @@ public class AgregarPersona extends VentanaEmergente{
 	public AgregarPersona(JFrame frame) {
 		super(frame, "Agregar Persona", "fondo_principal.png");
 
-		JLabel lblNombre = new JLabel("Nombre:");
+		JLabel lblNombre = new JLabel("Nombre: *");
 		lblNombre.setForeground(Color.BLACK);
 		lblNombre.setFont(Principal.getLetratexto2());
-		lblNombre.setBounds(26, 11, 80, 33);
+		lblNombre.setBounds(26, 11, 93, 33);
 		getContentPane().add(lblNombre);
 
-		JLabel lblPrimerApellido = new JLabel("Primer Apellido:");
+		JLabel lblPrimerApellido = new JLabel("Primer Apellido: *");
 		lblPrimerApellido.setFont(Principal.getLetratexto2());
-		lblPrimerApellido.setBounds(44, 98, 147, 33);
+		lblPrimerApellido.setBounds(44, 98, 161, 33);
 		getContentPane().add(lblPrimerApellido);
 
-		JLabel lblSegundoApellido = new JLabel("Segundo Apellido:");
+		JLabel lblSegundoApellido = new JLabel("Segundo Apellido: *");
 		lblSegundoApellido.setFont(Principal.getLetratexto2());
-		lblSegundoApellido.setBounds(384, 98, 162, 33);
+		lblSegundoApellido.setBounds(384, 98, 179, 33);
 		getContentPane().add(lblSegundoApellido);
 
 		JLabel lblTelefono = new JLabel("N\u00FAmero de Tel\u00E9fono:");
@@ -189,10 +192,10 @@ public class AgregarPersona extends VentanaEmergente{
 		btnSeguir.setBounds(540, 269, 59, 51);
 		getContentPane().add(btnSeguir);
 
-		JLabel lblCedula = new JLabel("C\u00E9dula:");
+		JLabel lblCedula = new JLabel("C\u00E9dula: *");
 		lblCedula.setForeground(Color.BLACK);
 		lblCedula.setFont(new Font("Georgia", Font.PLAIN, 20));
-		lblCedula.setBounds(234, 11, 80, 33);
+		lblCedula.setBounds(234, 11, 93, 33);
 		getContentPane().add(lblCedula);
 
 
