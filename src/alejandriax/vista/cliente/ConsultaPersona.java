@@ -23,13 +23,9 @@ public class ConsultaPersona extends VentanaConsulta {
 
 	private Coordinador coordinador;
 	private PanelPersonas panel;
-	private JFrame ventana;
-	private ConsultaPersona instancia;
 
 	public ConsultaPersona(JFrame frame) {
 		super(frame, "Consulta personas");
-		this.ventana = frame;
-		this.instancia = this;
 		getLblConsulta().setText("Consulta personas");
 
 		getCmbOpciones().setModel(new DefaultComboBoxModel(new String[] {"-----Seleccione-----",
@@ -45,7 +41,7 @@ public class ConsultaPersona extends VentanaConsulta {
 				if(cmbOpciones.getSelectedIndex() != 0){
 					ArrayList<Persona> personas = Principal.getPersonas();
 					ArrayList<Persona> res = (ArrayList<Persona>) personas.clone();
-					synchronized (ventana) {
+					synchronized (coordinador.getConsultaPersona()) {
 						switch (cmbOpciones.getSelectedIndex()) {
 						case 1:
 							if (!getTxtParametro().getText().equals(""))
@@ -82,7 +78,7 @@ public class ConsultaPersona extends VentanaConsulta {
 							llenarPanel(res);
 							break;
 						case 5:
-							panel = new PanelPersonas(ventana);
+							panel = new PanelPersonas(coordinador.getVentanaPrincipal());
 							getScrollPanelConsulta().setViewportView(panel);
 							
 							if (!getTxtParametro().getText().equals("")) {
@@ -101,16 +97,16 @@ public class ConsultaPersona extends VentanaConsulta {
 											.getEstudiantes();
 									for (Persona persona : aux)
 										panel.agregarPersona(persona);
-								} else
+								} else 
 									JOptionPane
 											.showMessageDialog(
-													null,
+													coordinador.getConsultaPersona(),
 													"Por favor, seleccione una opci\u00f3n de b\u00fasqueda v\u00e1lida.",
 													"Error",
 													JOptionPane.ERROR_MESSAGE);
 
 							} else
-								JOptionPane.showMessageDialog(null,
+								JOptionPane.showMessageDialog(coordinador.getConsultaPersona(),
 										"Caja de texto vac\u00eda.", "Error",
 										JOptionPane.ERROR_MESSAGE);
 							break;
@@ -125,14 +121,16 @@ public class ConsultaPersona extends VentanaConsulta {
 						default:
 							JOptionPane
 									.showMessageDialog(
-											null,
+											coordinador.getConsultaPersona(),
 											"Por favor, seleccione una opci\u00f3n de b\u00fasqueda v\u00e1lida.",
 											"Error", JOptionPane.ERROR_MESSAGE);
 							break;
 						}
 					}  
 				} else
-					JOptionPane.showMessageDialog(null, "Por favor, seleccione una opci\u00f3n de b\u00fasqueda v\u00e1lida.", "Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(coordinador.getConsultaPersona(), 
+							"Por favor, seleccione una opci\u00f3n de b\u00fasqueda v\u00e1lida.", 
+							"Error", JOptionPane.ERROR_MESSAGE);
 			}
 		});
 
@@ -141,7 +139,7 @@ public class ConsultaPersona extends VentanaConsulta {
 	}
 
 	public void llenarPanel(ArrayList<Persona> personas){
-		panel = new PanelPersonas(ventana);
+		panel = new PanelPersonas(coordinador.getVentanaPrincipal());
 		getScrollPanelConsulta().setViewportView(panel);
 
 		for(Persona persona : personas){
@@ -153,8 +151,8 @@ public class ConsultaPersona extends VentanaConsulta {
 		return coordinador;
 	}
 
-	public void setCoordinador(Coordinador coordinar) {
-		this.coordinador = coordinar;
+	public void setCoordinador(Coordinador coordinador) {
+		this.coordinador = coordinador;
 	}
 
 }

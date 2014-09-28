@@ -41,7 +41,7 @@ public class PanelPersonas extends JPanel {
 		setLayout(gridBagLayout);
 		
 		//Agrega titulos
-		JLabel titCedula = new JLabel("Cédula");
+		JLabel titCedula = new JLabel("C\u00E9dula");
 		GridBagConstraints gbc_titCedula = new GridBagConstraints();
 		gbc_titCedula.insets = new Insets(0, 0, 5, 5);
 		gbc_titCedula.gridx = 0;
@@ -69,7 +69,7 @@ public class PanelPersonas extends JPanel {
 		gbc_lblNombre.gridy = 0;
 		add(lblNombre, gbc_lblNombre);
 		
-		JLabel lblTelefono = new JLabel("Teléfono");
+		JLabel lblTelefono = new JLabel("Tel\u00E9fono");
 		GridBagConstraints gbc_lblTelefono = new GridBagConstraints();
 		gbc_lblTelefono.insets = new Insets(0, 0, 5, 5);
 		gbc_lblTelefono.gridx = 4;
@@ -83,7 +83,7 @@ public class PanelPersonas extends JPanel {
 		gbc_lblCorreo.gridy = 0;
 		add(lblCorreo, gbc_lblCorreo);
 		
-		JLabel lblPrestamos = new JLabel("Préstamos");
+		JLabel lblPrestamos = new JLabel("Pr\u00E9stamos");
 		GridBagConstraints gbc_lblPrestamos = new GridBagConstraints();
 		gbc_lblPrestamos.insets = new Insets(0, 0, 5, 5);
 		gbc_lblPrestamos.gridx = 6;
@@ -97,14 +97,6 @@ public class PanelPersonas extends JPanel {
 		gbc_lblVer.gridy = 0;
 		add(lblVer, gbc_lblVer);
 	}
-
-//	private String numeroCedula;
-//	private String primerApellido;
-//	private String segundoApellido;
-//	private String nombre;
-//	protected String telefono;
-//	protected String correoElectronico;
-//	private ArrayList<Prestamo> prestamos = new ArrayList<Prestamo>();
 	
 	public void agregarPersona(final Persona persona){
 		//Incremente contador
