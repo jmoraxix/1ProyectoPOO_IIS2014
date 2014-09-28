@@ -134,12 +134,15 @@ public class AgregarLibro extends VentanaEmergente {
 					//Crea la persona y la añade a las listas o envia msj de error
 					if (!existe) {
 							Libro libro = new Libro(
-									txtAutor.getText(), 
-									txtEdicion.getText(),
-									txtEditorial.getText(),
+									"lib" + String.valueOf(Principal.getLibros().size()+1),
 									txtTituloLibro.getText(),
+									txtAutor.getText(),
+									txtEditorial.getText(),
 									txtGenero.getText());
+							libro.setImagen("error_libro.png");
+							System.out.println(libro.getTituloArticulo());
 							Principal.addLibro(libro);
+							
 						}
 					
 					else 

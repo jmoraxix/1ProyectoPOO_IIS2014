@@ -91,7 +91,7 @@ public class MostrarPrestamo extends VentanaEmergente {
 		genero.setBounds(347, 196, 174, 27);
 		getContentPane().add(genero);
 
-		JLabel lblGenero = new JLabel("Género:");
+		JLabel lblGenero = new JLabel("G\u00E9nero:");
 		lblGenero.setBounds(347, 168, 73, 27);
 		getContentPane().add(lblGenero);
 
@@ -109,7 +109,7 @@ public class MostrarPrestamo extends VentanaEmergente {
 		edicion.setBounds(347, 307, 174, 27);
 		getContentPane().add(edicion);
 
-		JLabel lblEdicion = new JLabel("Edición:");
+		JLabel lblEdicion = new JLabel("Edici\u00F3n:");
 		lblEdicion.setBounds(347, 279, 92, 27);
 		getContentPane().add(lblEdicion);
 
