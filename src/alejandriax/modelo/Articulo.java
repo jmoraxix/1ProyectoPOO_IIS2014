@@ -55,6 +55,10 @@ public class Articulo {
 	public void dimitirPrestamo() {
 		this.disponible = true;
 	}
+	
+	public boolean estaDisponible(){
+		return this.disponible;
+	}
 
 	public String getImagen() {
 		return imagen;

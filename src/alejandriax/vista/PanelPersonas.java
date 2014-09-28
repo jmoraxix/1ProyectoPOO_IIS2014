@@ -48,7 +48,7 @@ public class PanelPersonas extends JPanel {
 		gbc_titCedula.gridy = 0;
 		add(titCedula, gbc_titCedula);
 		
-		JLabel lblPrimerApellido = new JLabel("PrimerApellido");
+		JLabel lblPrimerApellido = new JLabel("Primer Apellido");
 		GridBagConstraints gbc_lblPrimerapellido = new GridBagConstraints();
 		gbc_lblPrimerapellido.insets = new Insets(0, 0, 5, 5);
 		gbc_lblPrimerapellido.gridx = 1;
@@ -136,7 +136,7 @@ public class PanelPersonas extends JPanel {
 		gbc.gridx = 5;
 		add(lblCorreo, gbc);
 		//Verifica si tiene préstamos
-		JLabel lblPrest = new JLabel(!persona.getPrestamos().isEmpty() ? "Si" : "No");
+		JLabel lblPrest = new JLabel(!persona.getPrestamos().isEmpty() ? "S\u00ed" : "No");
 		componentes.add(lblPrest);
 		gbc.gridx = 6;
 		add(lblPrest, gbc);

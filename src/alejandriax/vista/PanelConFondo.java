@@ -48,7 +48,7 @@ public class PanelConFondo extends JPanel {
 			BgBorder borde = new BgBorder( img );
 			setBorder(borde);
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Error al cargar la imagen");
 		}
 
 		setLayout(null);
@@ -64,7 +64,7 @@ public class PanelConFondo extends JPanel {
 			BgBorder borde = new BgBorder( img );
 			setBorder(borde);
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Error al cargar la imagen");
 		}
 
 		setOpaque(isOpaque);
@@ -81,7 +81,7 @@ public class PanelConFondo extends JPanel {
 			BgBorder borde = new BgBorder( img );
 			setBorder(borde);
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Error al cargar la imagen");
 		}
 
 		setOpaque(isOpaque);
