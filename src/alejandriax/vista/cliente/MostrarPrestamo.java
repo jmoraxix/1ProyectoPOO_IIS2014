@@ -47,7 +47,7 @@ public class MostrarPrestamo extends VentanaEmergente {
 		getContentPane().setLayout(null);
 
 		PanelConFondo imagen = new PanelConFondo("portadas/" + libro.getImagen());
-		imagen.setBounds(81, 58, 184, 256);
+		imagen.setBounds(81, 43, 184, 256);
 		getContentPane().add(imagen);
 
 		JLabel lblTtulo = new JLabel("T\u00EDtulo:");
@@ -59,13 +59,13 @@ public class MostrarPrestamo extends VentanaEmergente {
 		titulo.setBounds(347, 86, 174, 27);
 		getContentPane().add(titulo);
 
-		JLabel lblCodigo = new JLabel("Código:");
-		lblCodigo.setBounds(55, 368, 79, 27);
+		JLabel lblCodigo = new JLabel("C\u00F3digo:");
+		lblCodigo.setBounds(80, 368, 79, 27);
 		getContentPane().add(lblCodigo);
 
 		JLabel codigo = new JLabel("");
 		codigo.setText(libro.getIdArticulo());
-		codigo.setBounds(125, 368, 115, 27);
+		codigo.setBounds(201, 368, 115, 27);
 		getContentPane().add(codigo);
 
 		JLabel lblAutor = new JLabel("Autor:");
@@ -114,13 +114,13 @@ public class MostrarPrestamo extends VentanaEmergente {
 		getContentPane().add(lblEdicion);
 
 		PanelCalificacion panelCalificacion = new PanelCalificacion(libro);
-		panelCalificacion.setBounds(81, 328, 184, 28);
+		panelCalificacion.setBounds(81, 320, 184, 28);
 		if(libro.getCalificacion() != 0)
 			panelCalificacion.setCalificacion(libro.getCalificacion());
 		getContentPane().add(panelCalificacion);
 
 		PanelConFondo btnEnviarCorreo = new PanelConFondo("boton_principal.png", false, "Enviar correo");
-		btnEnviarCorreo.setBounds(458, 407, 158, 49);
+		btnEnviarCorreo.setBounds(455, 368, 158, 49);
 		btnEnviarCorreo.getBtn().setFont(Principal.getLetratexto3());
 		btnEnviarCorreo.getBtn().addActionListener(new ActionListener() {
 			@Override
@@ -133,6 +133,14 @@ public class MostrarPrestamo extends VentanaEmergente {
 			}
 		});
 		getContentPane().add(btnEnviarCorreo);
+		
+		JLabel lblCdigo = new JLabel("C\u00F3digo Pr\u00E9stamo:");
+		lblCdigo.setBounds(81, 403, 92, 14);
+		getContentPane().add(lblCdigo);
+		
+		JLabel lblEstado = new JLabel("Estado Pr\u00E9stamo");
+		lblEstado.setBounds(183, 406, 82, 11);
+		getContentPane().add(lblEstado);
 	}
 
 	public Coordinador getCoodinador() {
