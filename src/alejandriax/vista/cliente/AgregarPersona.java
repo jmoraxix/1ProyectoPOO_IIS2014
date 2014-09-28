@@ -185,7 +185,7 @@ public class AgregarPersona extends VentanaEmergente{
 					coordinador.ocultarAgregarPersona();	
 				}
 				else 
-					JOptionPane.showMessageDialog(coordinador.getVentanaPrincipal(), "¡Hay un campo requerido vac\u00edo!", "Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(coordinador.getAgregarPersona(), "¡Hay un campo requerido vac\u00edo!", "Error", JOptionPane.ERROR_MESSAGE);
 				
 			}
 		});
