@@ -17,7 +17,9 @@ import alejandriax.InformacionProyecto;
 import alejandriax.modelo.Logica;
 import alejandriax.vista.cliente.AgregarLibro;
 import alejandriax.vista.cliente.AgregarPersona;
+import alejandriax.vista.cliente.ConsultaLibro;
 import alejandriax.vista.cliente.ConsultaPersona;
+import alejandriax.vista.cliente.ConsultaPrestamo;
 import alejandriax.vista.cliente.VentanaPrincipal;
 
 /**
@@ -38,6 +40,8 @@ public class Coordinador {
 	private static AgregarPersona agregarPersona;
 	private static AgregarLibro agregarLibro;
 	private static ConsultaPersona consultaPersona;
+	private static ConsultaLibro consultaLibro;
+	private static ConsultaPrestamo consultaPrestamo;
 	// Declaraci�n clase logica
 	private static Logica logica;
 
@@ -91,6 +95,22 @@ public class Coordinador {
 		Coordinador.consultaPersona = consultaPersona;
 	}
 
+	public static ConsultaLibro getConsultaLibro() {
+		return consultaLibro;
+	}
+
+	public static void setConsultaLibro(ConsultaLibro consultaLibro) {
+		Coordinador.consultaLibro = consultaLibro;
+	}
+
+	public static ConsultaPrestamo getConsultaPrestamo() {
+		return consultaPrestamo;
+	}
+
+	public static void setConsultaPrestamo(ConsultaPrestamo consultaPrestamo) {
+		Coordinador.consultaPrestamo = consultaPrestamo;
+	}
+
 	/** MOSTRAR VENTANAS **/
 	public static void mostrarVentanaPrincipal() {
 		ventanaPrincipal.setVisible(true);
@@ -104,8 +124,14 @@ public class Coordinador {
 	public static void mostrarAgregarLibro(){
 		agregarLibro.setVisible(true);	
 	}
-	public static void mostrarConsultaPerson(){
+	public static void mostrarConsultaPersona(){
 		consultaPersona.setVisible(true);
+	}
+	public static void mostrarConsultaLibro(){
+		consultaLibro.setVisible(true);
+	}
+	public static void mostrarConsultaPrestamo(){
+		consultaPrestamo.setVisible(true);
 	}
 	
 	/** OCULTAR VENTANAS **/
@@ -121,8 +147,14 @@ public class Coordinador {
 	public static void ocultarAgregarLibro(){
 		agregarLibro.setVisible(false);
 	}
-	public static void ocultarConsultaPerson(){
+	public static void ocultarConsultaPersona(){
 		consultaPersona.setVisible(false);
+	}
+	public static void ocultarConsultaLibro(){
+		consultaLibro.setVisible(false);
+	}
+	public static void ocultarConsultaPrestamo(){
+		consultaPrestamo.setVisible(false);
 	}
 	
 }

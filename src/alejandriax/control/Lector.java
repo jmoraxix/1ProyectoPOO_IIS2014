@@ -13,15 +13,22 @@
 
 package alejandriax.control;
 
-import java.io.*;
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.Date;
-
-import alejandriax.modelo.*;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+import alejandriax.modelo.Articulo;
+import alejandriax.modelo.Colega;
+import alejandriax.modelo.Estudiante;
+import alejandriax.modelo.Familiar;
+import alejandriax.modelo.Libro;
+import alejandriax.modelo.Persona;
+import alejandriax.modelo.Prestamo;
 
 public class Lector {
 	private static String[] salida;
@@ -222,6 +229,7 @@ public class Lector {
 					Prestamo nueva = new Prestamo(salida[0], 
 							new Date(Integer.parseInt(salida[1]), Integer.parseInt(salida[2]), Integer.parseInt(salida[3])), 
 							salida[4], articulo);
+					articulo.prestar();
 					persona.addPrestamos(nueva);
 				}
 				linea = bR.readLine();

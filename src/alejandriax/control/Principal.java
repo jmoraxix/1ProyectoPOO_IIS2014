@@ -30,7 +30,9 @@ import alejandriax.modelo.Persona;
 import alejandriax.modelo.Revista;
 import alejandriax.vista.cliente.AgregarLibro;
 import alejandriax.vista.cliente.AgregarPersona;
+import alejandriax.vista.cliente.ConsultaLibro;
 import alejandriax.vista.cliente.ConsultaPersona;
+import alejandriax.vista.cliente.ConsultaPrestamo;
 import alejandriax.vista.cliente.VentanaPrincipal;
 
 /**
@@ -63,6 +65,9 @@ public class Principal {
 	private static AgregarPersona agregarPersona;
 	private static AgregarLibro agregarLibro;
 	private static ConsultaPersona consultaPersona;
+	private static ConsultaLibro consultaLibro;
+	private static ConsultaPrestamo consultaPrestamo;
+	
 	public static void main(String[] args) {
 		System.gc();
 
@@ -72,6 +77,7 @@ public class Principal {
 			UIManager
 					.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
 		} catch (Exception e) {
+			System.out.println("Error al establecer el Look&Feel");
 		}
 
 		inicializarVentanas();
@@ -89,6 +95,8 @@ public class Principal {
 		agregarPersona = new AgregarPersona(ventanaPrincipal);
 		agregarLibro = new AgregarLibro(ventanaPrincipal);
 		consultaPersona = new ConsultaPersona(ventanaPrincipal);
+		consultaLibro = new ConsultaLibro(ventanaPrincipal);
+		consultaPrestamo = new ConsultaPrestamo(ventanaPrincipal);
 		
 		// Coordinador
 		coordinador = Coordinador.getINSTANCE();
@@ -101,6 +109,8 @@ public class Principal {
 		agregarPersona.setCoordinador(coordinador);
 		agregarLibro.setCoordinador(coordinador);
 		consultaPersona.setCoordinador(coordinador);
+		consultaLibro.setCoordinador(coordinador);
+		consultaPrestamo.setCoordinador(coordinador);
 		// L�gica
 		logica.setCoordinador(coordinador);
 
@@ -110,6 +120,8 @@ public class Principal {
 		coordinador.setAgregarPersona(agregarPersona);
 		coordinador.setAgregarLibro(agregarLibro);
 		coordinador.setConsultaPersona(consultaPersona);
+		coordinador.setConsultaLibro(consultaLibro);
+		coordinador.setConsultaPrestamo(consultaPrestamo);
 		// L�gica
 		coordinador.setLogica(logica);
 

@@ -20,6 +20,7 @@ public class Articulo {
 	private int calificacion;
 	private String ID;
 	private boolean disponible = true;
+	private int contadorPrestamos = 0;
 
 	/**** Constructor ****/
 	public Articulo(String tituloArticulo, String idArticulo) {
@@ -50,6 +51,7 @@ public class Articulo {
 
 	public void prestar() {
 		this.disponible = false;
+		this.contadorPrestamos++;
 	}
 
 	public void dimitirPrestamo() {
@@ -76,4 +78,7 @@ public class Articulo {
 		this.calificacion = calificacion;
 	}
 
+	public int getContadorPrestamos() {
+		return contadorPrestamos;
+	}
 }

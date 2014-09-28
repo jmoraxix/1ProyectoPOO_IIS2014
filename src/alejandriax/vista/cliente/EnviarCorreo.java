@@ -13,20 +13,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.ButtonGroup;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.UIManager;
-import javax.swing.border.TitledBorder;
-
-import alejandriax.vista.PanelConFondo;
-import alejandriax.vista.TransparentTextField;
-import alejandriax.vista.VentanaEmergente;
-import javax.swing.JTextArea;
-
 import java.util.Properties;
 
 import javax.mail.BodyPart;
@@ -40,7 +26,18 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-import org.junit.Test;
+import javax.swing.ButtonGroup;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
+import javax.swing.UIManager;
+import javax.swing.border.TitledBorder;
+
+import alejandriax.vista.PanelConFondo;
+import alejandriax.vista.TransparentTextField;
+import alejandriax.vista.VentanaEmergente;
 
 
 /**

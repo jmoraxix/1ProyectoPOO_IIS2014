@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import alejandriax.modelo.Colega;
 import alejandriax.modelo.Libro;
 import alejandriax.modelo.Persona;
 

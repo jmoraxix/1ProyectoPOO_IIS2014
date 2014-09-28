@@ -27,7 +27,6 @@ import alejandriax.vista.VentanaEmergente;
  */
 @SuppressWarnings("serial")
 public class InformacionProyecto extends VentanaEmergente {
-	private final String VERSION = "VERSION 1.0.0 (Actualizado 17/5/14)";
 	private static Coordinador coordinador;
 
 	public InformacionProyecto(JFrame padre) {
@@ -40,12 +39,6 @@ public class InformacionProyecto extends VentanaEmergente {
 		NomProyecto.setHorizontalAlignment(SwingConstants.CENTER);
 		NomProyecto.setFont(new Font("Consolas", Font.BOLD, 18));
 		getContentPane().add(NomProyecto);
-
-		JLabel Version = new JLabel("VERSION 1.0.0 (Actualizado 14/07/14)");
-		Version.setBounds(248, 70, 360, 22);
-		Version.setHorizontalAlignment(SwingConstants.CENTER);
-		Version.setFont(new Font("Consolas", Font.BOLD, 18));
-		getContentPane().add(Version);
 
 		JLabel Tec = new JLabel("Instituto Tecnol\u00f3gico de Costa Rica");
 		Tec.setBounds(248, 115, 350, 22);
