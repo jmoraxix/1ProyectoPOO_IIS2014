@@ -15,8 +15,8 @@ package alejandriax.control;
 
 import alejandriax.InformacionProyecto;
 import alejandriax.modelo.Logica;
+import alejandriax.vista.AgregarLibro;
 import alejandriax.vista.AgregarPersona;
-import alejandriax.vista.cliente.ConsultaPersona;
 import alejandriax.vista.cliente.VentanaPrincipal;
 
 /**
@@ -35,6 +35,7 @@ public class Coordinador {
 	private static VentanaPrincipal ventanaPrincipal;
 	private static InformacionProyecto informacionProyecto;
 	private static AgregarPersona agregarPersona;
+	private static AgregarLibro agregarLibro;
 	// Declaraci�n clase logica
 	private static Logica logica;
 
@@ -71,6 +72,14 @@ public class Coordinador {
 	public static void setAgregarPersona(AgregarPersona agregarPersona) {
 		Coordinador.agregarPersona = agregarPersona;
 	}
+	
+	public static AgregarLibro getAgregarLibro() {
+		return agregarLibro;
+	}
+
+	public static void setAgregarLibro(AgregarLibro agregarLibro) {
+		Coordinador.agregarLibro = agregarLibro;
+	}
 
 	/** MOSTRAR VENTANAS **/
 	public static void mostrarVentanaPrincipal() {
@@ -81,6 +90,9 @@ public class Coordinador {
 	}
 	public static void mostrarAgregarPersona(){
 		agregarPersona.setVisible(true);	
+	}
+	public static void mostrarAgregarLibro(){
+		agregarLibro.setVisible(true);	
 	}
 	
 	/** OCULTAR VENTANAS **/
@@ -93,4 +105,10 @@ public class Coordinador {
 	public static void ocultarAgregarPersona(){
 		agregarPersona.setVisible(false);
 	}
+	public static void ocultarAgregarLibro(){
+		agregarLibro.setVisible(false);
+	}
+
+
+	
 }
