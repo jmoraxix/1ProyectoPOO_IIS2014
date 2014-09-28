@@ -77,7 +77,7 @@ public class AgregarLibro extends VentanaEmergente {
 		JLabel lblEditorial = new JLabel("Editorial: *");
 		lblEditorial.setForeground(Color.BLACK);
 		lblEditorial.setFont(new Font("Georgia", Font.PLAIN, 20));
-		lblEditorial.setBounds(25, 198, 101, 33);
+		lblEditorial.setBounds(10, 198, 101, 33);
 		getContentPane().add(lblEditorial);
 		
 		txtEditorial = new TransparentTextField("", 0);

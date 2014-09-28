@@ -128,7 +128,7 @@ public class EnviarCorreo extends VentanaEmergente implements ActionListener{
 		props.put("mail.smtp.starttls.enable", true); // added this line
 	    props.put("mail.smtp.host", "smtp.gmail.com");
 	    props.put("mail.smtp.user", "a.diego.dc");
-	    props.put("mail.smtp.password", "ddelgado.cerdas.blanco.308");
+	    props.put("mail.smtp.password", "");
 	    props.put("mail.smtp.port", "587");
 	    props.put("mail.smtp.auth", true);
 	    

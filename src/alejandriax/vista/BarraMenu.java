@@ -75,6 +75,8 @@ public class BarraMenu extends JMenuBar{
 		mcrearPrestamo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				Coordinador.mostrarAgregarPrestamo();
+				
 			}
 		});
 		prestamos.add(mcrearPrestamo);
