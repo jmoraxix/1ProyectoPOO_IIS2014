@@ -17,12 +17,14 @@ import alejandriax.modelo.Familiar;
 import alejandriax.modelo.Libro;
 import alejandriax.vista.PanelMostrarLibros;
 import alejandriax.vista.VentanaConsulta;
+import javax.swing.JCheckBox;
 
 @SuppressWarnings("serial")
 public class ConsultaLibro extends VentanaConsulta {
 
 	private Coordinador coordinador;
 	private PanelMostrarLibros panel;
+	private JCheckBox chPrestado, chSinPrestar;
 
 	public ConsultaLibro(JFrame frame) {
 		super(frame, "Consulta libros");
@@ -36,11 +38,25 @@ public class ConsultaLibro extends VentanaConsulta {
 				"Edici\u00f3n",
 				"Idioma",
 		"G\u00e9nero"}));
+	
+		chPrestado = new JCheckBox("Prestado");
+		chPrestado.setSelected(true);
+		chPrestado.setBounds(661, 91, 129, 23);
+		getContentPane().add(chPrestado);
+		
+		chSinPrestar = new JCheckBox("Sin prestar");
+		chSinPrestar.setSelected(true);
+		chSinPrestar.setBounds(794, 91, 143, 23);
+		getContentPane().add(chSinPrestar);
 
 		getBtnBuscar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(cmbOpciones.getSelectedIndex() != 0){
-					ArrayList<Libro> libros = Principal.getLibros();
+					ArrayList<Libro> libros = new ArrayList<Libro>();
+					if(chSinPrestar.isSelected())
+						libros.addAll(Principal.getLibrosDisponibles());
+					if(chPrestado.isSelected())
+						libros.addAll(Principal.getLibrosPrestados());
 					ArrayList<Libro> res = (ArrayList<Libro>) libros.clone();
 					synchronized (coordinador.getConsultaLibro()) {
 						switch (cmbOpciones.getSelectedIndex()) {

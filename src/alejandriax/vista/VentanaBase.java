@@ -32,8 +32,8 @@ import alejandriax.Alejandriax;
 public class VentanaBase extends JFrame {
 
 	private int ancho_lateral = 365, ancho_principal = 1024, alto = 768;
-	private PanelLateral lateral;
-	private PanelPrincipal principal;
+	private PanelBarraLateral lateral;
+	private PanelContenidoPrincipal principal;
 
 	public VentanaBase() {
 		// Declaracion básica de la venta
@@ -58,7 +58,7 @@ public class VentanaBase extends JFrame {
 		contenido.setLayout(gbl_contenido);
 
 		// Panel con la barra lateral
-		lateral = new PanelLateral("fondo_barra_lateral.png", ancho_lateral, alto);
+		lateral = new PanelBarraLateral("fondo_barra_lateral.png", ancho_lateral, alto);
 		//Añade la barra lateral al panel del contenido principal
 		GridBagConstraints gbc_lateral = new GridBagConstraints();
 		gbc_lateral.anchor = GridBagConstraints.WEST;
@@ -69,7 +69,7 @@ public class VentanaBase extends JFrame {
 		contenido.add(lateral, gbc_lateral);
 
 		// Panel con el contenido principal
-		principal = new PanelPrincipal("fondo_principal.png", ancho_principal, alto);
+		principal = new PanelContenidoPrincipal("fondo_principal.png", ancho_principal, alto);
 		//Añade el panel principal del contenido 
 		GridBagConstraints gbc_principal = new GridBagConstraints();
 		gbc_principal.anchor = GridBagConstraints.WEST;
@@ -80,11 +80,11 @@ public class VentanaBase extends JFrame {
 
 	}
 
-	protected PanelLateral getPanelLateral() {
+	protected PanelBarraLateral getPanelLateral() {
 		return lateral;
 	}
 
-	protected PanelPrincipal getPanelPrincipal() {
+	protected PanelContenidoPrincipal getPanelPrincipal() {
 		return principal;
 	}
 }

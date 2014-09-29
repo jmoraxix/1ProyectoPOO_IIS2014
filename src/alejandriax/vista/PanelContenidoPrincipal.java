@@ -23,13 +23,13 @@ import javax.swing.JPanel;
  * @author jmora 27/8/2014 Declara el panel principal con su layout y métodos
  *         para manejarlo
  */
-public class PanelPrincipal extends PanelConFondo {
+public class PanelContenidoPrincipal extends PanelConFondo {
 
 	private int ancho, alto;
 	private int items_x = 0, items_y = 0;
 	private ArrayList<JPanel> items = new ArrayList<JPanel>();
 
-	public PanelPrincipal(String urlImagen, int ancho, int alto) {
+	public PanelContenidoPrincipal(String urlImagen, int ancho, int alto) {
 		// Inicializa el panel
 		super(urlImagen);
 		this.ancho = ancho;

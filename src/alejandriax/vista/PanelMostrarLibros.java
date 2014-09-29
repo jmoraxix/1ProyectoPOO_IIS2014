@@ -105,16 +105,6 @@ public class PanelMostrarLibros extends JPanel {
 		add(lblVer, gbc_lblVer);
 	}
 	
-	
-//	JLabel lblCodigo = new JLabel("C\u00f3digo");
-//	JLabel lblTitulo = new JLabel("Título");
-//	JLabel lblAutor = new JLabel("Autor");
-//	JLabel lblEditorial = new JLabel("Editorial");
-//	JLabel lblEdicion = new JLabel("Edici\u00f3n");
-//	JLabel lblIdioma = new JLabel("Idioma");
-//	JLabel lblGenero = new JLabel("G\u00e9nero");
-//	JLabel lblPrestado = new JLabel("Prestado");
-//	JLabel lblVer = new JLabel("Ver");
 	public void agregarLibro(final Libro libro){
 		//Incremente contador
 		contador++;
@@ -158,7 +148,7 @@ public class PanelMostrarLibros extends JPanel {
 		gbc.gridx = 6;
 		add(lblGenero, gbc);
 		//Verifica esta prestado el libro
-		JLabel lblPrest = new JLabel(libro.estaDisponible() ? "S\u00ed" : "No");
+		JLabel lblPrest = new JLabel(!libro.estaDisponible() ? "S\u00ed" : "No");
 		componentes.add(lblPrest);
 		gbc.gridx = 7;
 		add(lblPrest, gbc);

@@ -200,6 +200,22 @@ public class Principal {
 		return array;
 	}
 
+	public static ArrayList<Libro> getLibrosPrestados(){
+		ArrayList<Libro> array = new ArrayList<Libro>();
+		for(Libro libro : libros)
+			if(!libro.estaDisponible())
+				array.add(libro);
+		return array;
+	}
+
+	public static ArrayList<Libro> getLibrosDisponibles(){
+		ArrayList<Libro> array = new ArrayList<Libro>();
+		for(Libro libro : libros)
+			if(libro.estaDisponible())
+				array.add(libro);
+		return array;
+	}
+	
 	public static Coordinador getCoordinador() {
 		return coordinador;
 	}

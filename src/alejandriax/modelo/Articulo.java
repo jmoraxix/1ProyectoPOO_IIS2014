@@ -51,7 +51,7 @@ public class Articulo {
 
 	public void prestar() {
 		this.disponible = false;
-		this.contadorPrestamos++;
+		this.contadorPrestamos = (int) Math.floor(Math.random()*15+1);
 	}
 
 	public void dimitirPrestamo() {

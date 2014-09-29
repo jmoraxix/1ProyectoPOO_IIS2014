@@ -226,11 +226,15 @@ public class Lector {
 				}
 				
 				if(existeArt && existePer){
-					Prestamo nueva = new Prestamo(salida[0], 
-							new Date(Integer.parseInt(salida[1]), Integer.parseInt(salida[2]), Integer.parseInt(salida[3])), 
-							salida[4], articulo);
-					articulo.prestar();
-					persona.addPrestamos(nueva);
+					if (articulo.estaDisponible()) {
+						Prestamo nueva = new Prestamo(salida[0], new Date(
+								Integer.parseInt(salida[1]),
+								Integer.parseInt(salida[2]),
+								Integer.parseInt(salida[3])), salida[4],
+								articulo);
+						articulo.prestar();
+						persona.addPrestamos(nueva);
+					}
 				}
 				linea = bR.readLine();
 			}

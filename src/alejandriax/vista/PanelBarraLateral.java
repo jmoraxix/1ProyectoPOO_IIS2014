@@ -22,13 +22,13 @@ import java.util.ArrayList;
  * Declara el panel lateral con su layout y métodos para manejarlo
  */
 @SuppressWarnings("serial")
-public class PanelLateral extends PanelConFondo {
+public class PanelBarraLateral extends PanelConFondo {
 
 	private int ancho, alto;
 	private int items_lateral = 0;
 	private ArrayList<PanelConFondo> botonesPosicion = new ArrayList<PanelConFondo>();
 	
-	public PanelLateral(String urlImagen, int ancho, int alto) {
+	public PanelBarraLateral(String urlImagen, int ancho, int alto) {
 		//Inicializa el panel
 		super(urlImagen);
 		this.ancho = ancho;

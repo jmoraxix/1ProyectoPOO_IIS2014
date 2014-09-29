@@ -21,9 +21,10 @@ import alejandriax.control.Principal;
 import alejandriax.modelo.Libro;
 import alejandriax.modelo.Persona;
 import alejandriax.modelo.Prestamo;
+import alejandriax.vista.FotoPersona;
 import alejandriax.vista.PanelConFondo;
-import alejandriax.vista.PanelLateral;
-import alejandriax.vista.PanelPrincipal;
+import alejandriax.vista.PanelBarraLateral;
+import alejandriax.vista.PanelContenidoPrincipal;
 import alejandriax.vista.Portada;
 import alejandriax.vista.VentanaBase;
 
@@ -36,8 +37,8 @@ public class VentanaPrincipal extends VentanaBase {
 	/**** Atributos ****/
 	private static Coordinador coordinador;
 	private int posActual = 0;
-	private PanelLateral panelLateral;
-	private PanelPrincipal panelPrincipal;
+	private PanelBarraLateral panelLateral;
+	private PanelContenidoPrincipal panelPrincipal;
 
 	/**** Constructor ****/
 	public VentanaPrincipal() {
@@ -135,8 +136,11 @@ public class VentanaPrincipal extends VentanaBase {
 		panelLateral.mostrarBotonLateral(2);
 		posActual = 2;
 		for (final Persona persona : Principal.getPersonas()) {
-			PanelConFondo panel = new PanelConFondo("usuario.png", false, "");
-			panel.getBtn().addActionListener(new ActionListener() {
+			FotoPersona panel = new FotoPersona("libro_persona_rojo.png", 
+					persona.getPrimerApellido(),
+					persona.getSegundoApellido(),
+					persona.getNombre());
+			panel.getPanel().getBtn().addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					new MostrarPersona(coordinador.getVentanaPrincipal(), persona).setVisible(true);
