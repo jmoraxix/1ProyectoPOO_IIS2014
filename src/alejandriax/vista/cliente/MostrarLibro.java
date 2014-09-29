@@ -106,7 +106,7 @@ public class MostrarLibro extends VentanaEmergente {
 		edicion.setBounds(347, 354, 174, 27);
 		getContentPane().add(edicion);
 		
-		JLabel lblEdicion = new JLabel("Edición:");
+		JLabel lblEdicion = new JLabel("Edici\u00F3n:");
 		lblEdicion.setBounds(347, 326, 92, 27);
 		getContentPane().add(lblEdicion);
 		

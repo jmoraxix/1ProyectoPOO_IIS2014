@@ -80,6 +80,11 @@ public class BarraMenu extends JMenuBar{
 
 		mConsultarPrestamos = new JMenuItem("Consultar Pr\u00E9stamos");
 		mConsultarPrestamos.setMnemonic('P');
+		mConsultarPrestamos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Coordinador.mostrarConsultaPrestamo();
+			}
+		});
 		prestamos.add(mConsultarPrestamos);
 
 		mCargarPrestamos = new JMenuItem("Cargar Pr\u00E9stamos");
@@ -109,7 +114,7 @@ public class BarraMenu extends JMenuBar{
 		mConsultarPersonas.setMnemonic('A');
 		mConsultarPersonas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Coordinador.mostrarConsultaPrestamo();
+				Coordinador.mostrarConsultaPersona();
 			}
 		});
 		personas.add(mConsultarPersonas);

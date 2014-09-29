@@ -30,11 +30,11 @@ public class PanelMostrarLibros extends JPanel {
 		this.ventana = ventana;
 
 		int ancho = this.getWidth();
-		int tamCol = ancho/10;
+		int tamCol = ancho/9;
 		
 		//Declaración del layout
 		gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{tamCol, tamCol, tamCol, tamCol*2, tamCol, tamCol/2, tamCol/3*2, tamCol};
+		gridBagLayout.columnWidths = new int[]{tamCol, tamCol*2, tamCol, tamCol, tamCol, tamCol, tamCol, tamCol};
 		gridBagLayout.rowHeights = new int[]{0, 10};
 		gridBagLayout.columnWeights = new double[]{0.0, 0.6, 0.6, 1.0, 0.3, 0.3, 0.1, 1.0};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0};

@@ -93,7 +93,7 @@ public class VentanaPrincipal extends VentanaBase {
 		panelLateral.ocultarBotonLateral(posActual);
 		panelLateral.mostrarBotonLateral(0);
 		posActual = 0;
-		for(Persona persona : Principal.getPersonas()) {
+		for(final Persona persona : Principal.getPersonas()) {
 			ArrayList<Prestamo> prestamos = persona.getPrestamos();
 			if(!prestamos.isEmpty()) {
 				for (final Prestamo prestamo : prestamos) {
@@ -104,7 +104,8 @@ public class VentanaPrincipal extends VentanaBase {
 								@Override
 								public void actionPerformed(ActionEvent e) {
 									new MostrarPrestamo(coordinador.getVentanaPrincipal(),
-											prestamo.getArticulo()).setVisible(true);
+											persona,
+											prestamo).setVisible(true);
 								}
 							});
 					panelPrincipal.agregarContenido(panel);

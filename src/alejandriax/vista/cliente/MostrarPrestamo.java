@@ -34,16 +34,20 @@ import alejandriax.vista.VentanaEmergente;
 @SuppressWarnings("serial")
 public class MostrarPrestamo extends VentanaEmergente {
 
+	private Persona persona;
+	private Prestamo prestamo;
 	private Libro libro;
 	private Coordinador coodinador;
 
-	public MostrarPrestamo(JFrame frame, Articulo libro) {
-		super(frame, libro.getTituloArticulo(), "fondo_emergente.png");
-		this.libro = (Libro) libro;
+	public MostrarPrestamo(JFrame frame, Persona persona, Prestamo prestamo) {
+		super(frame, prestamo.getArticulo().getTituloArticulo(), "fondo_emergente.png", 650, 495);
+		this.persona = persona;
+		this.prestamo = prestamo;
+		this.libro = (Libro) prestamo.getArticulo();
 		inicializarVentana();
 	}
 
-	private void inicializarVentana() {
+	public void inicializarVentana() {
 		getContentPane().setLayout(null);
 
 		PanelConFondo imagen = new PanelConFondo("portadas/" + libro.getImagen());
@@ -51,76 +55,76 @@ public class MostrarPrestamo extends VentanaEmergente {
 		getContentPane().add(imagen);
 
 		JLabel lblTtulo = new JLabel("T\u00EDtulo:");
-		lblTtulo.setBounds(347, 58, 45, 27);
+		lblTtulo.setBounds(350, 74, 45, 27);
 		getContentPane().add(lblTtulo);
 
 		JLabel titulo = new JLabel("");
 		titulo.setText(libro.getTituloArticulo());
-		titulo.setBounds(347, 86, 174, 27);
+		titulo.setBounds(350, 102, 174, 27);
 		getContentPane().add(titulo);
 
-		JLabel lblCodigo = new JLabel("C\u00F3digo:");
-		lblCodigo.setBounds(80, 368, 79, 27);
+		JLabel lblCodigo = new JLabel("Código libro:");
+		lblCodigo.setBounds(61, 340, 99, 27);
 		getContentPane().add(lblCodigo);
 
-		JLabel codigo = new JLabel("");
-		codigo.setText(libro.getIdArticulo());
-		codigo.setBounds(201, 368, 115, 27);
-		getContentPane().add(codigo);
+		JLabel codigolibro = new JLabel("");
+		codigolibro.setText(libro.getIdArticulo());
+		codigolibro.setBounds(172, 340, 115, 27);
+		getContentPane().add(codigolibro);
 
 		JLabel lblAutor = new JLabel("Autor:");
-		lblAutor.setBounds(347, 113, 45, 27);
+		lblAutor.setBounds(350, 129, 45, 27);
 		getContentPane().add(lblAutor);
 
 		JLabel autor = new JLabel("");
 		autor.setText(libro.getAutor());
-		autor.setBounds(347, 141, 174, 27);
+		autor.setBounds(350, 157, 174, 27);
 		getContentPane().add(autor);
 
 		JLabel lblEditorial = new JLabel("Editorial:");
-		lblEditorial.setBounds(347, 224, 92, 27);
+		lblEditorial.setBounds(350, 240, 92, 27);
 		getContentPane().add(lblEditorial);
 
 		JLabel editorial = new JLabel("");
 		editorial.setText(libro.getEditorial());
-		editorial.setBounds(347, 252, 174, 27);
+		editorial.setBounds(350, 268, 174, 27);
 		getContentPane().add(editorial);
 
 		JLabel genero = new JLabel("");
 		genero.setText(libro.getGenero());
-		genero.setBounds(347, 196, 174, 27);
+		genero.setBounds(350, 212, 174, 27);
 		getContentPane().add(genero);
 
 		JLabel lblGenero = new JLabel("G\u00E9nero:");
-		lblGenero.setBounds(347, 168, 73, 27);
+		lblGenero.setBounds(350, 184, 73, 27);
 		getContentPane().add(lblGenero);
 
 		JLabel lblIdioma = new JLabel("Idioma:");
-		lblIdioma.setBounds(347, 340, 92, 27);
+		lblIdioma.setBounds(350, 356, 92, 27);
 		getContentPane().add(lblIdioma);
 
 		JLabel idioma = new JLabel("");
 		idioma.setText(libro.getIdioma());
-		idioma.setBounds(347, 368, 174, 27);
+		idioma.setBounds(350, 384, 174, 27);
 		getContentPane().add(idioma);
 
 		JLabel edicion = new JLabel("");
 		edicion.setText(libro.getEdicion());
-		edicion.setBounds(347, 307, 174, 27);
+		edicion.setBounds(350, 323, 174, 27);
 		getContentPane().add(edicion);
 
 		JLabel lblEdicion = new JLabel("Edici\u00F3n:");
-		lblEdicion.setBounds(347, 279, 92, 27);
+		lblEdicion.setBounds(350, 295, 92, 27);
 		getContentPane().add(lblEdicion);
 
 		PanelCalificacion panelCalificacion = new PanelCalificacion(libro);
-		panelCalificacion.setBounds(81, 320, 184, 28);
+		panelCalificacion.setBounds(81, 307, 184, 28);
 		if(libro.getCalificacion() != 0)
 			panelCalificacion.setCalificacion(libro.getCalificacion());
 		getContentPane().add(panelCalificacion);
 
 		PanelConFondo btnEnviarCorreo = new PanelConFondo("boton_principal.png", false, "Enviar correo");
-		btnEnviarCorreo.setBounds(455, 368, 158, 49);
+		btnEnviarCorreo.setBounds(458, 384, 158, 49);
 		btnEnviarCorreo.getBtn().setFont(Principal.getLetratexto3());
 		btnEnviarCorreo.getBtn().addActionListener(new ActionListener() {
 			@Override
@@ -135,12 +139,28 @@ public class MostrarPrestamo extends VentanaEmergente {
 		getContentPane().add(btnEnviarCorreo);
 		
 		JLabel lblCdigo = new JLabel("C\u00F3digo Pr\u00E9stamo:");
-		lblCdigo.setBounds(81, 403, 92, 14);
+		lblCdigo.setBounds(61, 374, 126, 15);
 		getContentPane().add(lblCdigo);
 		
-		JLabel lblEstado = new JLabel("Estado Pr\u00E9stamo");
-		lblEstado.setBounds(183, 406, 82, 11);
+		JLabel lblEstado = new JLabel("Estado Préstamo:");
+		lblEstado.setBounds(61, 402, 126, 15);
 		getContentPane().add(lblEstado);
+		
+		JLabel codigoPrestamo = new JLabel(prestamo.getCodigoPrestamo());
+		codigoPrestamo.setBounds(195, 374, 126, 15);
+		getContentPane().add(codigoPrestamo);
+		
+		JLabel estadoPrestamo = new JLabel(prestamo.getEstadoPrestamo());
+		estadoPrestamo.setBounds(195, 402, 126, 15);
+		getContentPane().add(estadoPrestamo);
+		
+		JLabel lblPersona = new JLabel("Persona:");
+		lblPersona.setBounds(350, 28, 92, 27);
+		getContentPane().add(lblPersona);
+		
+		JLabel persona = new JLabel(this.persona.getNombre() + " " + this.persona.getPrimerApellido());
+		persona.setBounds(350, 56, 174, 27);
+		getContentPane().add(persona);
 	}
 
 	public Coordinador getCoodinador() {

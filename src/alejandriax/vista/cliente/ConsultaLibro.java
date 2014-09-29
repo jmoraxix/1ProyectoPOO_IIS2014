@@ -32,7 +32,7 @@ public class ConsultaLibro extends VentanaConsulta {
 
 		getCmbOpciones().setModel(new DefaultComboBoxModel(new String[] {"-----Seleccione-----",
 				"C\u00f3digo",
-				"Título",
+				"T\u00edtulo",
 				"Autor",
 				"Editorial",
 				"Edici\u00f3n",

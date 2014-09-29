@@ -37,7 +37,7 @@ public class MostrarPersona extends VentanaEmergente{
 	 * @param title
 	 */
 	public MostrarPersona(JFrame frame, Persona persona) {
-		super(frame, "Agregar Persona", "fondo_principal.png");
+		super(frame, persona.getNombre() + " " + persona.getPrimerApellido(), "fondo_principal.png");
 		this.persona = persona;
 
 		JLabel lblNombre = new JLabel("Nombre:");

@@ -27,6 +27,7 @@ import alejandriax.modelo.Libro;
 import alejandriax.modelo.Logica;
 import alejandriax.modelo.Pelicula;
 import alejandriax.modelo.Persona;
+import alejandriax.modelo.Prestamo;
 import alejandriax.modelo.Revista;
 import alejandriax.vista.cliente.AgregarLibro;
 import alejandriax.vista.cliente.AgregarPersona;

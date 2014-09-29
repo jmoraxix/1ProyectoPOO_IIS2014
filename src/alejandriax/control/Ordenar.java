@@ -18,6 +18,7 @@ import java.util.Comparator;
 
 import alejandriax.modelo.Libro;
 import alejandriax.modelo.Persona;
+import alejandriax.modelo.Prestamo;
 
 /**
  * @author David
@@ -66,7 +67,7 @@ public class Ordenar {
 		Collections.sort(pArray, new Comparator<Libro>(){
 			@Override
 			public int compare(Libro o1, Libro o2) {
-				return o1.getEditorial().compareTo(o2.getGenero());
+				return o1.getEditorial().compareTo(o2.getEditorial());
 			}
 		});
 	}
@@ -75,7 +76,7 @@ public class Ordenar {
 		Collections.sort(pArray, new Comparator<Libro>(){
 			@Override
 			public int compare(Libro o1, Libro o2) {
-				return o1.getEdicion().compareTo(o2.getGenero());
+				return o1.getEdicion().compareTo(o2.getEdicion());
 			}
 		});
 	}
@@ -84,7 +85,7 @@ public class Ordenar {
 		Collections.sort(pArray, new Comparator<Libro>(){
 			@Override
 			public int compare(Libro o1, Libro o2) {
-				return o1.getIdioma().compareTo(o2.getGenero());
+				return o1.getIdioma().compareTo(o2.getIdioma());
 			}
 		});
 	}
@@ -119,6 +120,39 @@ public class Ordenar {
 			@Override
 			public int compare(Persona o1, Persona o2) {
 				return o1.getSegundoApellido().compareTo(o2.getSegundoApellido());
+			}
+		});
+	}
+	/****METODOS PARA ORDENAR PRESTAMOS****/
+	public static void ordenarPrestamoCodigo(ArrayList<? extends Prestamo> pArray){
+		Collections.sort(pArray, new Comparator<Prestamo>(){
+			@Override
+			public int compare(Prestamo o1, Prestamo o2) {
+				return o1.getCodigoPrestamo().compareTo(o2.getCodigoPrestamo());
+			}
+		});
+	}
+	public static void ordenarPrestamoFecha(ArrayList<? extends Prestamo> pArray){
+		Collections.sort(pArray, new Comparator<Prestamo>(){
+			@Override
+			public int compare(Prestamo o1, Prestamo o2) {
+				return o1.getFechaPrestamo().compareTo(o2.getFechaPrestamo());
+			}
+		});
+	}
+	public static void ordenarPrestamoEstado(ArrayList<? extends Prestamo> pArray){
+		Collections.sort(pArray, new Comparator<Prestamo>(){
+			@Override
+			public int compare(Prestamo o1, Prestamo o2) {
+				return o1.getEstadoPrestamo().compareTo(o2.getEstadoPrestamo());
+			}
+		});
+	}
+	public static void ordenarPrestamoNombreArticulo(ArrayList<? extends Prestamo> pArray){
+		Collections.sort(pArray, new Comparator<Prestamo>(){
+			@Override
+			public int compare(Prestamo o1, Prestamo o2) {
+				return o1.getArticulo().getTituloArticulo().compareTo(o2.getArticulo().getTituloArticulo());
 			}
 		});
 	}
