@@ -15,11 +15,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
 
 import alejandriax.control.Coordinador;
 import alejandriax.control.Principal;
@@ -35,9 +37,11 @@ import alejandriax.vista.VentanaEmergente;
  */
 public class AgregarPrestamo extends VentanaEmergente{
 
-	private JComboBox cboxPersonas;
+	private JComboBox<String> cboxPersonas;
 	private JComboBox cboxLibro;
 	private Coordinador coordinador;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private JRadioButton rdbMasDeTresSemanas, rdbUnaSemana, rdbDosSemanas;
 
 	public AgregarPrestamo(JFrame frame) {
 		super(frame, "Agregar Persona", "fondo_barra_lateral.png");
@@ -91,7 +95,9 @@ public class AgregarPrestamo extends VentanaEmergente{
 		PanelConFondo btnSeguir = new PanelConFondo("check.png", false, "");
 		btnSeguir.getBtn().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(cboxPersonas.getSelectedIndex() != 0 && cboxLibro.getSelectedIndex() != 0) {
+				if(cboxPersonas.getSelectedIndex() != 0 && 
+					cboxLibro.getSelectedIndex() != 0 &&
+					(rdbDosSemanas.isSelected() || rdbMasDeTresSemanas.isSelected() || rdbUnaSemana.isSelected())) {
 					if(Principal.getLibros().get(cboxLibro.getSelectedIndex()-1 ).estaDisponible()){
 
 						// Oculta la ventana
@@ -108,6 +114,21 @@ public class AgregarPrestamo extends VentanaEmergente{
 		});
 		btnSeguir.setBounds(540, 269, 59, 51);
 		getContentPane().add(btnSeguir);
+		
+		rdbUnaSemana = new JRadioButton("7 d\u00EDas");
+		buttonGroup.add(rdbUnaSemana);
+		rdbUnaSemana.setBounds(57, 180, 109, 23);
+		getContentPane().add(rdbUnaSemana);
+		
+		rdbDosSemanas = new JRadioButton("15 d\u00EDas");
+		buttonGroup.add(rdbDosSemanas);
+		rdbDosSemanas.setBounds(168, 180, 109, 23);
+		getContentPane().add(rdbDosSemanas);
+		
+		rdbMasDeTresSemanas = new JRadioButton("22 o m\u00E1s D\u00EDas");
+		buttonGroup.add(rdbMasDeTresSemanas);
+		rdbMasDeTresSemanas.setBounds(279, 180, 109, 23);
+		getContentPane().add(rdbMasDeTresSemanas);
 
 
 	}
