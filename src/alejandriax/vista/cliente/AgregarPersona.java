@@ -181,12 +181,12 @@ public class AgregarPersona extends VentanaEmergente{
 					else 
 						JOptionPane.showMessageDialog(coordinador.getAgregarPersona(), "La persona ya existe, ingrese otra cédula.", "Error", JOptionPane.ERROR_MESSAGE);
 					
-					// Oculta la ventana
+					// Limpia y oculta la ventana
+					limpiarDatos();
 					coordinador.ocultarAgregarPersona();	
 				}
 				else 
 					JOptionPane.showMessageDialog(coordinador.getAgregarPersona(), "¡Hay un campo requerido vac\u00edo!", "Error", JOptionPane.ERROR_MESSAGE);
-				
 			}
 		});
 		btnSeguir.setBounds(540, 269, 59, 51);
@@ -198,13 +198,20 @@ public class AgregarPersona extends VentanaEmergente{
 		lblCedula.setBounds(234, 11, 93, 33);
 		getContentPane().add(lblCedula);
 
-
 		txtCedula = new TransparentTextField("", 0);
 		soloNumeros(txtCedula);
 		txtCedula.setBounds(234, 42, 179, 31);
 		getContentPane().add(txtCedula);
 	}
 
+	public void limpiarDatos(){
+		txtCedula.setText("");
+		txtCorreo.setText("");
+		txtNombre.setText("");
+		txtPrimerApellido.setText("");
+		txtSegundoApellido.setText("");
+		txtTelefono.setText("");
+	}
 	
 	public void soloLetras(JTextField txt){
 		txt.addKeyListener(new KeyAdapter() {

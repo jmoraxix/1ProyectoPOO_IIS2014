@@ -140,7 +140,7 @@ public class VentanaPrincipal extends VentanaBase {
 					persona.getPrimerApellido(),
 					persona.getSegundoApellido(),
 					persona.getNombre());
-			panel.getPanel().getBtn().addActionListener(new ActionListener() {
+			panel.getBtn().addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					new MostrarPersona(coordinador.getVentanaPrincipal(), persona).setVisible(true);

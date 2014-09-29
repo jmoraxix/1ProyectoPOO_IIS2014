@@ -24,7 +24,6 @@ public class Prestamo {
 	/**** Constructor ****/
 	public Prestamo(String codigoPrestamo, Date fechaPrestamo,
 			String estadoPrestamo, Articulo articulo) {
-		super();
 		this.codigoPrestamo = codigoPrestamo;
 		this.fechaPrestamo = fechaPrestamo;
 		this.estadoPrestamo = estadoPrestamo;

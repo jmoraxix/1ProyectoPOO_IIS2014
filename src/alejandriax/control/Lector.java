@@ -232,7 +232,6 @@ public class Lector {
 								Integer.parseInt(salida[2]),
 								Integer.parseInt(salida[3])), salida[4],
 								articulo);
-						articulo.prestar();
 						persona.addPrestamos(nueva);
 					}
 				}

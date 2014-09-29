@@ -148,7 +148,8 @@ public class AgregarLibro extends VentanaEmergente {
 					else 
 						JOptionPane.showMessageDialog(coordinador.getVentanaPrincipal(), "La persona ya existe, ingrese otra cédula.", "Error", JOptionPane.ERROR_MESSAGE);
 					
-					// Oculta la ventana
+					// Limpia y oculta la ventana
+					limpiarDatos();
 					coordinador.ocultarAgregarLibro();	
 				}
 				else 
@@ -158,26 +159,23 @@ public class AgregarLibro extends VentanaEmergente {
 		});
 		btnSeguir.setBounds(540, 269, 59, 51);
 		getContentPane().add(btnSeguir);
-		
-		
-		
-		
-		
 	}
-		
 	
+	public void limpiarDatos(){
+		txtAutor.setText("");
+		txtEdicion.setText("");
+		txtEditorial.setText("");
+		txtGenero.setText("");
+		txtTituloLibro.setText("");
+	}
 
 	public Coordinador getCoordinador() {
 		return coordinador;
 	}
 
-
-
 	public void setCoordinador(Coordinador coordinador) {
 		this.coordinador = coordinador;
 	}
-
-
 
 	public void soloLetras(JTextField txt){
 		txt.addKeyListener(new KeyAdapter() {
