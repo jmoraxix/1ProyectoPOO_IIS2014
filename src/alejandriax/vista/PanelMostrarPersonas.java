@@ -17,14 +17,14 @@ import alejandriax.modelo.Persona;
 import alejandriax.vista.cliente.MostrarPersona;
 
 @SuppressWarnings("serial")
-public class PanelPersonas extends JPanel {
+public class PanelMostrarPersonas extends JPanel {
 	
 	private int contador = 0;
 	private ArrayList<Component> componentes = new ArrayList<Component>();
 	private JFrame ventana;
 	private GridBagLayout gridBagLayout;
 	
-	public PanelPersonas(JFrame ventana) {
+	public PanelMostrarPersonas(JFrame ventana) {
 		//Declaracion básica
 		setOpaque(false);
 		this.ventana = ventana;

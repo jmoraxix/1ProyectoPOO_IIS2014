@@ -15,14 +15,14 @@ import alejandriax.modelo.Colega;
 import alejandriax.modelo.Estudiante;
 import alejandriax.modelo.Familiar;
 import alejandriax.modelo.Persona;
-import alejandriax.vista.PanelPersonas;
+import alejandriax.vista.PanelMostrarPersonas;
 import alejandriax.vista.VentanaConsulta;
 
 @SuppressWarnings("serial")
 public class ConsultaPersona extends VentanaConsulta {
 
 	private Coordinador coordinador;
-	private PanelPersonas panel;
+	private PanelMostrarPersonas panel;
 
 	public ConsultaPersona(JFrame frame) {
 		super(frame, "Consulta personas");
@@ -78,7 +78,7 @@ public class ConsultaPersona extends VentanaConsulta {
 							llenarPanel(res);
 							break;
 						case 5:
-							panel = new PanelPersonas(coordinador.getVentanaPrincipal());
+							panel = new PanelMostrarPersonas(coordinador.getVentanaPrincipal());
 							getScrollPanelConsulta().setViewportView(panel);
 							
 							if (!getTxtParametro().getText().equals("")) {
@@ -139,7 +139,7 @@ public class ConsultaPersona extends VentanaConsulta {
 	}
 
 	public void llenarPanel(ArrayList<Persona> personas){
-		panel = new PanelPersonas(coordinador.getVentanaPrincipal());
+		panel = new PanelMostrarPersonas(coordinador.getVentanaPrincipal());
 		getScrollPanelConsulta().setViewportView(panel);
 
 		for(Persona persona : personas){

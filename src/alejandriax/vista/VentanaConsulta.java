@@ -40,7 +40,7 @@ public class VentanaConsulta extends VentanaEmergente {
 				
 		scrollPanelConsulta = new JScrollPane();
 		scrollPanelConsulta.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPanelConsulta.setBounds(92, 129, 1000, 350);
+		scrollPanelConsulta.setBounds(66, 129, 1010, 350);
 		getContentPane().add(scrollPanelConsulta);
 
 		cmbOpciones = new JComboBox();
