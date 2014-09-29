@@ -61,7 +61,6 @@ public class BarraMenu extends JMenuBar{
 		mSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);
-
 			}
 		});
 		archivo.add(mSalir);		
@@ -74,9 +73,7 @@ public class BarraMenu extends JMenuBar{
 		mcrearPrestamo.setMnemonic('C');
 		mcrearPrestamo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
 				Coordinador.mostrarAgregarPrestamo();
-				
 			}
 		});
 		prestamos.add(mcrearPrestamo);
@@ -112,7 +109,7 @@ public class BarraMenu extends JMenuBar{
 		mConsultarPersonas.setMnemonic('A');
 		mConsultarPersonas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new ConsultaPersona(Coordinador.getVentanaPrincipal()).setVisible(true);
+				Coordinador.mostrarConsultaPrestamo();
 			}
 		});
 		personas.add(mConsultarPersonas);
@@ -122,7 +119,6 @@ public class BarraMenu extends JMenuBar{
 		mCargarColegas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				nuevoLector.cargarColegas();
-				//				Ordenar.ordenarPersonaPrimerApellido(Principal.getColegas());
 			}
 		});
 		personas.add(mCargarColegas);
@@ -160,6 +156,11 @@ public class BarraMenu extends JMenuBar{
 
 		mConsultarLibros = new JMenuItem("Consultar Libros");
 		mConsultarLibros.setMnemonic('C');
+		mConsultarLibros.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Coordinador.mostrarConsultaLibro();
+			}
+		});
 		registrarLibro.add(mConsultarLibros);
 
 		mCargarLibros = new JMenuItem("Cargar Libros");

@@ -35,7 +35,7 @@ public class Ordenar {
 		});
 	}
 	
-	public static void ordenarLibroId(ArrayList<Libro> pArray){
+	public static void ordenarLibroCodigo(ArrayList<Libro> pArray){
 		Collections.sort(pArray, new Comparator<Libro>(){
 			@Override
 			public int compare(Libro o1, Libro o2) {
@@ -58,6 +58,33 @@ public class Ordenar {
 			@Override
 			public int compare(Libro o1, Libro o2) {
 				return o1.getGenero().compareTo(o2.getGenero());
+			}
+		});
+	}
+	
+	public static void ordenarLibroEditorial(ArrayList<Libro> pArray){
+		Collections.sort(pArray, new Comparator<Libro>(){
+			@Override
+			public int compare(Libro o1, Libro o2) {
+				return o1.getEditorial().compareTo(o2.getGenero());
+			}
+		});
+	}
+	
+	public static void ordenarLibroEdicion(ArrayList<Libro> pArray){
+		Collections.sort(pArray, new Comparator<Libro>(){
+			@Override
+			public int compare(Libro o1, Libro o2) {
+				return o1.getEdicion().compareTo(o2.getGenero());
+			}
+		});
+	}
+	
+	public static void ordenarLibroIdioma(ArrayList<Libro> pArray){
+		Collections.sort(pArray, new Comparator<Libro>(){
+			@Override
+			public int compare(Libro o1, Libro o2) {
+				return o1.getIdioma().compareTo(o2.getGenero());
 			}
 		});
 	}

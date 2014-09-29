@@ -17,14 +17,14 @@ import alejandriax.modelo.Libro;
 import alejandriax.vista.cliente.MostrarLibro;
 
 @SuppressWarnings("serial")
-public class PanelLibros extends JPanel {
+public class PanelMostrarLibros extends JPanel {
 	
 	private int contador = 0;
 	private ArrayList<Component> componentes = new ArrayList<Component>();
 	private JFrame ventana;
 	private GridBagLayout gridBagLayout;
 	
-	public PanelLibros(JFrame ventana) {
+	public PanelMostrarLibros(JFrame ventana) {
 		//Declaracion básica
 		setOpaque(false);
 		this.ventana = ventana;
@@ -36,7 +36,7 @@ public class PanelLibros extends JPanel {
 		gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{tamCol, tamCol, tamCol, tamCol*2, tamCol, tamCol/2, tamCol/3*2, tamCol};
 		gridBagLayout.rowHeights = new int[]{0, 10};
-		gridBagLayout.columnWeights = new double[]{1.0, 0.6, 0.6, 1.0, 0.3, 0.3, 0.1, 1.0};
+		gridBagLayout.columnWeights = new double[]{0.0, 0.6, 0.6, 1.0, 0.3, 0.3, 0.1, 1.0};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0};
 		setLayout(gridBagLayout);
 		
