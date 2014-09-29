@@ -107,7 +107,7 @@ public class AgregarPersona extends VentanaEmergente{
 		lblImagen.setBounds(483, 11, 80, 33);
 		getContentPane().add(lblImagen);
 
-		JLabel lblCategora = new JLabel("Categor\u00EDa:");
+		JLabel lblCategora = new JLabel("Categor\u00EDa: *");
 		lblCategora.setForeground(Color.BLACK);
 		lblCategora.setFont(new Font("Georgia", Font.PLAIN, 20));
 		lblCategora.setBounds(179, 256, 109, 33);
